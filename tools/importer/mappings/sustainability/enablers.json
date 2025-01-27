@@ -1,0 +1,173 @@
+{
+  "url": "https://www.absa.africa/sustainability/enablers/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1381992430
+  },
+  "pageHeight": 2043,
+  "mapping": [
+    {
+      "id": 1,
+      "path": "/nav",
+      "sections": [
+        {
+          "id": "1-1",
+          "blocks": [
+            {
+              "id": "box-id--855297627",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 69,
+              "xpath": "/html[1]/body[1]/header[1]/nav[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 0,
+              "mapping": "header",
+              "customBlockName": "aiheader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "path": "/sustainability/enablers/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1508697273",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 296,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 72,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent"
+            },
+            {
+              "id": "box-id--459007618",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 37,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 351,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent"
+            },
+            {
+              "id": "box-id--1370756449",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 692,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 518,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent"
+            },
+            {
+              "id": "box-id--1370756418",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 340,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 1211,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "path": "/footer",
+      "sections": [
+        {
+          "id": "3-1",
+          "blocks": [
+            {
+              "id": "box-id--1104850683",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 187,
+              "xpath": "/html[1]/body[1]/footer[1]/div[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/footer[1]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"site-footer\")/div[@class=\"container-fluid\"]/div[@class=\"container\"]/div[@class=\"row footer-row\"]/div[@class=\"col-6 col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/footer[1]/div[1]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"site-footer\")/div[@class=\"container-fluid\"]/div[@class=\"container\"]/div[@class=\"row footer-row\"]/div[@class=\"col-6 col-sm-6\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 1631,
+              "mapping": "columns",
+              "customBlockName": "aicolumns"
+            },
+            {
+              "id": "box-id--1104850652",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1152,
+              "height": 80,
+              "xpath": "/html[1]/body[1]/footer[1]/div[2]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 25,
+              "y": 1883,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
