@@ -4,4 +4,4 @@ Fix #<gh-issue-id>
 
 Test URLs:
 - Before: https://main--sta-playground--arumsey.aem.live/
-- After: https://<branch>--sta-playground--arumsey.aem.live/
+- After: https://main--sta-playground--arumsey.aem.live/
