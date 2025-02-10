@@ -1,0 +1,133 @@
+{
+  "url": "https://www.absa.africa/a-force-for-good",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 21
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1381992430
+  },
+  "pageHeight": 2150,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/a-force-for-good",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1508697273",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 296,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 72,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-wn8col-1508697273"
+            },
+            {
+              "id": "box-id--459007618",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 37,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 351,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-wn8col-459007618"
+            },
+            {
+              "id": "box-id--1899951866",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1176,
+              "height": 192,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 84,
+              "y": 500,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-wn8col-1899951866"
+            },
+            {
+              "id": "box-id--1899951835",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1176,
+              "height": 565,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+                  "xpathWithDetails": "id(\"post-8201\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-8201 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-y1okca9trduv fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-uo7rbliwq0pe\"]/div[@class=\"fl-col fl-node-32u6hsb5czrl fl-col-bg-color fl-col-small\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]",
+                  "xpathWithDetails": "id(\"post-8201\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-8201 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-y1okca9trduv fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-uo7rbliwq0pe\"]/div[@class=\"fl-col fl-node-uk5dptz1r3fx fl-col-bg-color fl-col-small\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 84,
+              "y": 692,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-wn8col-1899951835"
+            },
+            {
+              "id": "box-id--1370756418",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 381,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-8201\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-8201 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-mead5yxjk8vr fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-0k4si52gedqb\"]/div[@class=\"fl-col fl-node-g4atx1lp7qh3 fl-col-bg-color fl-col-small\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"post-8201\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-8201 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-mead5yxjk8vr fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-0k4si52gedqb\"]/div[@class=\"fl-col fl-node-9j2spk1av7df fl-col-bg-color fl-col-small\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]",
+                  "xpathWithDetails": "id(\"post-8201\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-8201 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-mead5yxjk8vr fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-0k4si52gedqb\"]/div[@class=\"fl-col fl-node-d103sqhjio2l fl-col-bg-color fl-col-small\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 1277,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-wn8col-1370756418"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

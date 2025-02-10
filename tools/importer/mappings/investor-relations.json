@@ -1,0 +1,156 @@
+{
+  "url": "https://www.absa.africa/investor-relations/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 21
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": 31690490
+  },
+  "pageHeight": 1630,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/investor-relations/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1508697273",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 296,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 72,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-1508697273"
+            },
+            {
+              "id": "box-id--459007618",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 37,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 351,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-459007618"
+            },
+            {
+              "id": "box-id--747683041",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 429,
+              "height": 360,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 433,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-747683041"
+            },
+            {
+              "id": "box-id--725050787",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 433,
+              "height": 360,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 846,
+              "y": 433,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-725050787"
+            },
+            {
+              "id": "box-id--736366914",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 416,
+              "height": 360,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 429,
+              "y": 434,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-736366914"
+            },
+            {
+              "id": "box-id-1981536038",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 350,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 444,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-73o99t-box-id-1981536038"
+            },
+            {
+              "id": "box-id--1508697242",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 691,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-vp5d7xk289hg fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-b2y7neic3goq\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-l6jmy80da4kn fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-sxtn8za0ugdj\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-fy5tp9h8emvs fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-20nfa479ysvg\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 448,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-73o99t-1508697242"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

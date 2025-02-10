@@ -1,0 +1,72 @@
+{
+  "url": "https://www.absa.africa/careers",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 21
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1145217670
+  },
+  "pageHeight": 2274,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/careers",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--657568318",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 1766,
+              "xpath": "/html[1]/body[1]/main[1]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-4xybs6qcnhvt fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-6utdxh79k8f5\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/figure[1]",
+                  "xpathWithDetails": "id(\"post-68\")/figure[@class=\"featured-media\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-lr34mzn52je8 fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-u42ncdpf87im\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+                  "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-obv43qhprwik fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-hrz9s3bvk1dt\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 2
+              },
+              "x": 0,
+              "y": 16,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-4p0hfd-657568318"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,834 @@
+{
+  "inventory": {
+    "blocks": [
+      {
+        "blockName": "defaultContent",
+        "instances": [
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--1104850683",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 278,
+            "xpath": "/html[1]/body[1]/footer[1]/div[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/footer[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"site-footer\")/div[@class=\"container-fluid\"]/div[@class=\"container\"]/div[@class=\"row footer-row\"]/div[@class=\"col-6 col-sm-6\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/footer[1]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"site-footer\")/div[@class=\"container-fluid\"]/div[@class=\"container\"]/div[@class=\"row footer-row\"]/div[@class=\"col-6 col-sm-6\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 1,
+              "numRows": 2
+            },
+            "x": 0,
+            "y": 1303,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--1104850652",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1152,
+            "height": 80,
+            "xpath": "/html[1]/body[1]/footer[1]/div[2]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 25,
+            "y": 1646,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--1508697273",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 296,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 72,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--459007618",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 37,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 351,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--747683041",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 640,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 439,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--736366914",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 640,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 640,
+            "y": 439,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id-1981536038",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 344,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 454,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--1508697273",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 296,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 72,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--459007618",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 37,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 351,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--1339840183",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 24,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]/figcaption[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 464,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--747683041",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 640,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 428,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--736366914",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 640,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 640,
+            "y": 428,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id-1981536038",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 344,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 444,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--1508697273",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 296,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 72,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--459007618",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 37,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 351,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--747683041",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 429,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 433,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--725050787",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 433,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 846,
+            "y": 433,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--736366914",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 416,
+            "height": 360,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 429,
+            "y": 434,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id-1981536038",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 350,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 444,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1508697273",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 296,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 72,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--459007618",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 853,
+            "height": 37,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 213,
+            "y": 351,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756449",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 104,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 480,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756418",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 113,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 584,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id-589577127",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 940,
+            "height": 40,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 170,
+            "y": 1112,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id-1834341608",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 940,
+            "height": 40,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 170,
+            "y": 1523,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756325",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 113,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[5]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 1583,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756263",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 113,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[7]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 2269,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756232",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 161,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[8]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 2382,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1864397910",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1040,
+            "height": 40,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 120,
+            "y": 3263,
+            "mapping": "defaultContent",
+            "customBlockName": "aidefaultContent"
+          }
+        ]
+      },
+      {
+        "blockName": "header",
+        "instances": [
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id--855297627",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 69,
+            "xpath": "/html[1]/body[1]/header[1]/nav[1]",
+            "childrenXpaths": null,
+            "layout": {
+              "numCols": 0,
+              "numRows": 0
+            },
+            "x": 0,
+            "y": 0,
+            "mapping": "header",
+            "customBlockName": "aiheader"
+          }
+        ]
+      },
+      {
+        "blockName": "columns",
+        "instances": [
+          {
+            "url": "https://www.absa.africa/about-us",
+            "id": "box-id-2028505215",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 743,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-12406\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12406 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-lz8hm41bv726 fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-dvcjl4kw32gh fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-83gy9rtcv504 fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-d61lwvej7c5p\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-12406\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12406 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-lz8hm41bv726 fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-dvcjl4kw32gh fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-ci4prs6vku5x fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-kcq8oa6htw7b\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"post-12406\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12406 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-lz8hm41bv726 fl-row-default-height fl-row-align-center\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"post-12406\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12406 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-fixed-width fl-row-bg-none fl-node-32ujqvkedi6x fl-row-default-height fl-row-align-center\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 2,
+              "numRows": 2
+            },
+            "x": 0,
+            "y": 480,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/news-and-insights",
+            "id": "box-id--1508697242",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 729,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-12407\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12407 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-igtqjpfs6hor fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-ztdfxqis3gvy fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-upoxzeqf0rl3 fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-tqyaxz3encjr\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-12407\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12407 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-igtqjpfs6hor fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-ztdfxqis3gvy fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-cwtnjd5zfbia fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-zomk2ta7xjv6\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]",
+                "xpathWithDetails": "id(\"post-12407\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12407 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-igtqjpfs6hor fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"post-12407\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-12407 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-fixed-width fl-row-bg-none fl-node-4u91naqeihvw fl-row-default-height fl-row-align-center\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 2,
+              "numRows": 2
+            },
+            "x": 0,
+            "y": 448,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/investor-relations",
+            "id": "box-id--1508697242",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 691,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-vp5d7xk289hg fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-b2y7neic3goq\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-l6jmy80da4kn fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-sxtn8za0ugdj\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-13277\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-13277 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-58aqw2y1zd7e fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-503kytdhapou fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-fy5tp9h8emvs fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-20nfa479ysvg\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 3,
+              "numRows": 1
+            },
+            "x": 0,
+            "y": 448,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/careers",
+            "id": "box-id--657568318",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 1766,
+            "xpath": "/html[1]/body[1]/main[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-4xybs6qcnhvt fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-6utdxh79k8f5\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/figure[1]",
+                "xpathWithDetails": "id(\"post-68\")/figure[@class=\"featured-media\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-lr34mzn52je8 fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-u42ncdpf87im\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+                "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-68\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-68 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-none fl-node-7cdt94k0lszj fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-o2ezd9wt1lr6 fl-col-group-equal-height fl-col-group-align-top\"]/div[@class=\"fl-col fl-node-obv43qhprwik fl-col-bg-color fl-col-small\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-rich-text fl-node-hrz9s3bvk1dt\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-rich-text\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 3,
+              "numRows": 2
+            },
+            "x": 0,
+            "y": 16,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id-589577096",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 940,
+            "height": 415,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-qvrd64ibysaz fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-4vjxgynm5k76 fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-qvrd64ibysaz fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-7mhiotzcfl2s fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-qvrd64ibysaz fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-s09yhqex41b6 fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[4]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-qvrd64ibysaz fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-ap14f5lucbvt fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 4,
+              "numRows": 1
+            },
+            "x": 170,
+            "y": 697,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id-1834341577",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 940,
+            "height": 351,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-xj6a245pfbv7 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-ryf4n17j2uag fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-xj6a245pfbv7 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-5ba2romwh8gi fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-xj6a245pfbv7 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-50yhdaefogjk fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[4]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@id=\"topIcons\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-xj6a245pfbv7 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width\"]/div[@class=\"fl-col fl-node-3sjfoydpkgt4 fl-col-bg-color fl-col-small fl-col-small-custom-width\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 4,
+              "numRows": 1
+            },
+            "x": 170,
+            "y": 1172,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756294",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 542,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[6]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-color fl-node-i0bshgad2683 fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-7kqnpt9i5hg0\"]/div[@class=\"fl-col fl-node-go0vlmfhztyk fl-col-bg-color fl-col-small\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"post-11430\")/div[@class=\"container post-inner thin\"]/div[@class=\"row entry-content\"]/div[@class=\"fl-builder-content fl-builder-content-11430 fl-builder-content-primary fl-builder-global-templates-locked\"]/div[@class=\"fl-row fl-row-full-width fl-row-bg-color fl-node-i0bshgad2683 fl-row-default-height fl-row-align-center\"]/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-7kqnpt9i5hg0\"]/div[@class=\"fl-col fl-node-ypxo5sch6g8j fl-col-bg-color\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 2,
+              "numRows": 1
+            },
+            "x": 0,
+            "y": 1697,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1370756201",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1280,
+            "height": 323,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[9]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"toprow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-7qzrxkhsdci0\"]/div[@class=\"fl-col fl-node-ez79svy4umf5 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-l4joqek3ncrg\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"toprow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-7qzrxkhsdci0\"]/div[@class=\"fl-col fl-node-ez79svy4umf5 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-l4joqek3ncrg\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"toprow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-7qzrxkhsdci0\"]/div[@class=\"fl-col fl-node-ez79svy4umf5 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-l4joqek3ncrg\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 3,
+              "numRows": 1
+            },
+            "x": 0,
+            "y": 2544,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          },
+          {
+            "url": "https://www.absa.africa/sustainability",
+            "id": "box-id--1864397941",
+            "color": "rgba(0, 255, 0, 1)",
+            "width": 1040,
+            "height": 365,
+            "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+            "childrenXpaths": [
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+                "xpathWithDetails": "id(\"bottomrow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-zt6p89k5lmy7\"]/div[@class=\"fl-col fl-node-szuny8w1vq37 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-zajdo15yfghb\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+                "xpathWithDetails": "id(\"bottomrow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-zt6p89k5lmy7\"]/div[@class=\"fl-col fl-node-szuny8w1vq37 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-zajdo15yfghb\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              },
+              {
+                "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+                "xpathWithDetails": "id(\"bottomrow\")/div[@class=\"fl-row-content-wrap\"]/div[@class=\"fl-row-content fl-row-full-width fl-node-content\"]/div[@class=\"fl-col-group fl-node-zt6p89k5lmy7\"]/div[@class=\"fl-col fl-node-szuny8w1vq37 fl-col-bg-color\"]/div[@class=\"fl-col-content fl-node-content\"]/div[@class=\"fl-module fl-module-post-grid fl-node-zajdo15yfghb\"]/div[@class=\"fl-module-content fl-node-content\"]/div[@class=\"fl-post-grid\"]/div[@class=\"fl-post-column\"]"
+              }
+            ],
+            "layout": {
+              "numCols": 3,
+              "numRows": 1
+            },
+            "x": 120,
+            "y": 2897,
+            "mapping": "columns",
+            "customBlockName": "aicolumns"
+          }
+        ]
+      }
+    ]
+  }
+}

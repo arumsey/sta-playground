@@ -1,5 +1,5 @@
 {
-  "url": "https://www.absa.africa/sustainability/enablers/",
+  "url": "https://www.absa.africa/our-stories/covid-19/2022/south-africas-consumer-sector-has-to-adapt-and-reinvent/",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
@@ -11,14 +11,14 @@
   },
   "autoDetect": true,
   "template": {
-    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
-    "hash": -1381992430
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[1]/div[1]\n  /html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]\n  /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/main[1]/article[1]/nav[1]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": 1134059909
   },
-  "pageHeight": 2043,
+  "pageHeight": 3385,
   "mapping": [
     {
       "id": 2,
-      "path": "/sustainability/enablers/index",
+      "path": "/our-stories/covid-19/2022/south-africas-consumer-sector-has-to-adapt-and-reinvent/index",
       "sections": [
         {
           "id": "2-1",
@@ -37,7 +37,7 @@
               "x": 213,
               "y": 72,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-st52gx-1508697273"
+              "customBlockName": "aidefaultContent-e1haq7-1508697273"
             },
             {
               "id": "box-id--459007618",
@@ -53,39 +53,55 @@
               "x": 213,
               "y": 351,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-st52gx-459007618"
+              "customBlockName": "aidefaultContent-e1haq7-459007618"
             },
             {
-              "id": "box-id--1370756449",
+              "id": "box-id--1959199981",
               "color": "rgba(0, 255, 0, 1)",
               "width": 1280,
-              "height": 692,
-              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]",
+              "height": 711,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]",
               "childrenXpaths": null,
               "layout": {
                 "numCols": 0,
                 "numRows": 0
               },
               "x": 0,
-              "y": 518,
+              "y": 16,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-st52gx-1370756449"
+              "customBlockName": "aidefaultContent-e1haq7-1959199981"
             },
             {
-              "id": "box-id--1370756418",
+              "id": "box-id--1508697242",
               "color": "rgba(0, 255, 0, 1)",
               "width": 1280,
-              "height": 340,
-              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
+              "height": 2361,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
               "childrenXpaths": null,
               "layout": {
                 "numCols": 0,
                 "numRows": 0
               },
               "x": 0,
-              "y": 1211,
+              "y": 448,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-st52gx-1370756418"
+              "customBlockName": "aidefaultContent-e1haq7-1508697242"
+            },
+            {
+              "id": "box-id--1229793931",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 256,
+              "height": 52,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/nav[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 512,
+              "y": 2825,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-e1haq7-1229793931"
             }
           ]
         }

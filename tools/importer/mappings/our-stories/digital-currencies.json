@@ -1,0 +1,124 @@
+{
+  "url": "https://www.absa.africa/our-stories/digital-currencies/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 21
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[1]\n  - /html[1]/body[1]/div[3]/div[1]/div[2]\n  - /html[1]/body[1]/div[3]/div[1]/div[3]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -745613234
+  },
+  "pageHeight": 2089,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/our-stories/digital-currencies/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1508697273",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 296,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 72,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-hznn02-1508697273"
+            },
+            {
+              "id": "box-id--459007618",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 853,
+              "height": 37,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 213,
+              "y": 351,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-hznn02-459007618"
+            },
+            {
+              "id": "box-id--1959199981",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 853,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 16,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-hznn02-1959199981"
+            },
+            {
+              "id": "box-id--1508697242",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 821,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 0,
+              "y": 448,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-hznn02-1508697242"
+            },
+            {
+              "id": "box-id--1102402240",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 360,
+              "xpath": "/html[1]/body[1]/div[3]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"categoryPage\")/div[@class=\"row\"]/div[@class=\"col-3\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"categoryPage\")/div[@class=\"row\"]/div[@class=\"col-3\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/div[1]/div[3]",
+                  "xpathWithDetails": "id(\"categoryPage\")/div[@class=\"row\"]/div[@class=\"col-3\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 1238,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-hznn02-1102402240"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
