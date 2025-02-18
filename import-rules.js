@@ -39,11 +39,10 @@ const importRules = {
       selectors: [
         'footer > div.container-fluid',
         'footer > div.row.terms',
-        'main > article > .HeaderBox',
-        'main > article > .container.post-inner',
-        'main > article > .container.post-inner .fl-builder-content',
-        'main > article > .container.post-inner .fl-builder-content .fl-col-group',
-        'main > article > .container.post-inner .fl-builder-content .fl-col-group .fl-col'
+        'main > article > div.HeaderBox',
+        'main > article > div.container.post-inner',
+        'main > article > div.container.post-inner > div.row.entry-content',
+        'main > article > div.container.post-inner > div.row.entry-content > div.fl-builder-content'
       ]
     },
     {
@@ -55,7 +54,7 @@ const importRules = {
     {
       type: 'aicolumns',
       selectors: [
-        'main > article > .container.post-inner .fl-builder-content'
+        'main > article > div.container.post-inner > div.row.entry-content'
       ]
     }
   ],
