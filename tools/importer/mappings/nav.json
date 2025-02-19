@@ -1,20 +1,19 @@
 {
-  "url": "https://www.absa.africa/about-us",
+  "url": "https://www.absa.africa/",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
     "adBlocker": true,
     "gdprBlocker": true,
     "delay": 0,
-    "screenshot": false,
-    "sectionMappingLimit": 21
+    "screenshot": false
   },
   "autoDetect": true,
   "template": {
-    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
-    "hash": -2095527051
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[1]\n  - /html[1]/body[1]/div[3]/div[1]/div[2]\n  /html[1]/body[1]/div[4]\n  - /html[1]/body[1]/div[4]/div[1]/div[1]\n  - /html[1]/body[1]/div[4]/div[1]/div[2]\n  /html[1]/body[1]/div[5]\n  - /html[1]/body[1]/div[5]/div[1]\n  - /html[1]/body[1]/div[5]/div[2]\n  /html[1]/body[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[1]\n  - /html[1]/body[1]/div[6]/div[1]/div[2]\n  - /html[1]/body[1]/div[6]/div[1]/div[3]\n  - /html[1]/body[1]/div[6]/div[1]/div[4]\n  - /html[1]/body[1]/div[6]/div[1]/div[5]\n  - /html[1]/body[1]/div[6]/div[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[7]\n  - /html[1]/body[1]/div[6]/div[1]/div[8]\n  - /html[1]/body[1]/div[6]/div[1]/div[9]\n  - /html[1]/body[1]/div[6]/div[1]/div[10]\n  - /html[1]/body[1]/div[6]/div[1]/div[11]\n  - /html[1]/body[1]/div[6]/div[1]/div[12]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1493493750
   },
-  "pageHeight": 1806,
+  "pageHeight": 4042,
   "mapping": [
     {
       "id": "nav-1",
@@ -37,7 +36,7 @@
               "x": 0,
               "y": 0,
               "mapping": "header",
-              "customBlockName": "aiheader-udcafu-855297627"
+              "customBlockName": "aiheader-j1v2mc-855297627"
             }
           ]
         }

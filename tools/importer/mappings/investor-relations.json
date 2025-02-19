@@ -1,13 +1,12 @@
 {
-  "url": "https://www.absa.africa/investor-relations/",
+  "url": "https://www.absa.africa/investor-relations",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
     "adBlocker": true,
     "gdprBlocker": true,
     "delay": 0,
-    "screenshot": false,
-    "sectionMappingLimit": 21
+    "screenshot": false
   },
   "autoDetect": true,
   "template": {
@@ -18,7 +17,7 @@
   "mapping": [
     {
       "id": 2,
-      "path": "/investor-relations/index",
+      "path": "/investor-relations",
       "sections": [
         {
           "id": "2-1",
@@ -37,7 +36,7 @@
               "x": 213,
               "y": 72,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-1508697273"
+              "customBlockName": "aidefaultContent-i3nhmq-1508697273"
             },
             {
               "id": "box-id--459007618",
@@ -53,7 +52,7 @@
               "x": 213,
               "y": 351,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-459007618"
+              "customBlockName": "aidefaultContent-i3nhmq-459007618"
             },
             {
               "id": "box-id--747683041",
@@ -69,7 +68,7 @@
               "x": 0,
               "y": 433,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-747683041"
+              "customBlockName": "aidefaultContent-i3nhmq-747683041"
             },
             {
               "id": "box-id--725050787",
@@ -85,7 +84,7 @@
               "x": 846,
               "y": 433,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-725050787"
+              "customBlockName": "aidefaultContent-i3nhmq-725050787"
             },
             {
               "id": "box-id--736366914",
@@ -101,7 +100,7 @@
               "x": 429,
               "y": 434,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-736366914"
+              "customBlockName": "aidefaultContent-i3nhmq-736366914"
             },
             {
               "id": "box-id-1981536038",
@@ -117,7 +116,7 @@
               "x": 0,
               "y": 444,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-73o99t-box-id-1981536038"
+              "customBlockName": "aidefaultContent-i3nhmq-box-id-1981536038"
             },
             {
               "id": "box-id--1508697242",
@@ -146,7 +145,7 @@
               "x": 0,
               "y": 448,
               "mapping": "columns",
-              "customBlockName": "aicolumns-73o99t-1508697242"
+              "customBlockName": "aicolumns-i3nhmq-1508697242"
             }
           ]
         }

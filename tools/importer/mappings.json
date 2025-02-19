@@ -1,0 +1,85 @@
+{
+  "mappings": [
+    {
+      "path": "tools/importer/mappings/nav.json"
+    },
+    {
+      "path": "tools/importer/mappings/footer.json"
+    },
+    {
+      "path": "tools/importer/mappings/about-us.json"
+    },
+    {
+      "path": "tools/importer/mappings/news-and-insights.json"
+    },
+    {
+      "path": "tools/importer/mappings/investor-relations.json"
+    },
+    {
+      "path": "tools/importer/mappings/careers.json"
+    },
+    {
+      "path": "tools/importer/mappings/sustainability.json"
+    },
+    {
+      "path": "tools/importer/mappings/a-force-for-good.json"
+    },
+    {
+      "path": "tools/importer/mappings/media-statements/2014/barclays-and-china-development-bank-sign-mou-on-strategic-cooperation.json"
+    },
+    {
+      "path": "tools/importer/mappings/our-stories/our-voices/2020/sovereign-debt-challenges-require-innovative-approaches.json"
+    },
+    {
+      "path": "tools/importer/mappings/sustainability/enablers.json"
+    },
+    {
+      "path": "tools/importer/mappings/careers/graduate-opportunities-old.json"
+    },
+    {
+      "path": "tools/importer/mappings/our-stories/covid-19/2022/south-africas-consumer-sector-has-to-adapt-and-reinvent.json"
+    },
+    {
+      "path": "tools/importer/mappings/impact-sa/covid-19-reveals-the-fragility-of-our-world.json"
+    },
+    {
+      "path": "tools/importer/mappings/financial-inclusion/how-to-achieve-financial-freedom/youre-ready-to-get-off-the-slippery-slope-of-credit-dependency.json"
+    },
+    {
+      "path": "tools/importer/mappings/our-stories/digital-currencies.json"
+    },
+    {
+      "path": "tools/importer/mappings/our-stories/digital-currencies/our-relationship-with-the-world-economic-forum.json"
+    },
+    {
+      "path": "tools/importer/mappings/bring-your-africanacity/covid-19-social-relief-programme-faqs.json"
+    },
+    {
+      "path": "tools/importer/mappings/financial-inclusion/handy-tips-and-tools.json"
+    },
+    {
+      "path": "tools/importer/mappings/ready-to-rise/be-inspired/busisiwe-yaka.json"
+    },
+    {
+      "path": "tools/importer/mappings/a-force-for-good/cybersecurity-academy.json"
+    },
+    {
+      "path": "tools/importer/mappings/about-us/board-and-management.json"
+    },
+    {
+      "path": "tools/importer/mappings/a-force-for-good/ready-to-support/absa-ready-to-support-artist-proof-studio.json"
+    },
+    {
+      "path": "tools/importer/mappings/legal.json"
+    },
+    {
+      "path": "tools/importer/mappings/a-force-for-good/cybersecurity-academy/wef-cybersecurity-learning-hub.json"
+    },
+    {
+      "path": "tools/importer/mappings/africanacity/change.json"
+    },
+    {
+      "path": "tools/importer/mappings/index.json"
+    }
+  ]
+}

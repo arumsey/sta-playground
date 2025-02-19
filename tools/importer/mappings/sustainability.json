@@ -1,13 +1,12 @@
 {
-  "url": "https://www.absa.africa/sustainability",
+  "url": "https://www.absa.africa/sustainability/",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
     "adBlocker": true,
     "gdprBlocker": true,
     "delay": 0,
-    "screenshot": false,
-    "sectionMappingLimit": 21
+    "screenshot": false
   },
   "autoDetect": true,
   "template": {
@@ -18,7 +17,7 @@
   "mapping": [
     {
       "id": 2,
-      "path": "/sustainability",
+      "path": "/sustainability/index",
       "sections": [
         {
           "id": "2-1",
@@ -37,7 +36,7 @@
               "x": 213,
               "y": 72,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1508697273"
+              "customBlockName": "aidefaultContent-ctj018-1508697273"
             },
             {
               "id": "box-id--459007618",
@@ -53,7 +52,7 @@
               "x": 213,
               "y": 351,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-459007618"
+              "customBlockName": "aidefaultContent-ctj018-459007618"
             },
             {
               "id": "box-id--1370756449",
@@ -69,7 +68,7 @@
               "x": 0,
               "y": 480,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1370756449"
+              "customBlockName": "aidefaultContent-ctj018-1370756449"
             },
             {
               "id": "box-id--1370756418",
@@ -85,7 +84,7 @@
               "x": 0,
               "y": 584,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1370756418"
+              "customBlockName": "aidefaultContent-ctj018-1370756418"
             },
             {
               "id": "box-id-589577096",
@@ -118,7 +117,7 @@
               "x": 170,
               "y": 697,
               "mapping": "columns",
-              "customBlockName": "aicolumns-2pdin7-box-id-589577096"
+              "customBlockName": "aicolumns-ctj018-box-id-589577096"
             },
             {
               "id": "box-id-589577127",
@@ -134,7 +133,7 @@
               "x": 170,
               "y": 1112,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-box-id-589577127"
+              "customBlockName": "aidefaultContent-ctj018-box-id-589577127"
             },
             {
               "id": "box-id-1834341577",
@@ -167,7 +166,7 @@
               "x": 170,
               "y": 1172,
               "mapping": "columns",
-              "customBlockName": "aicolumns-2pdin7-box-id-1834341577"
+              "customBlockName": "aicolumns-ctj018-box-id-1834341577"
             },
             {
               "id": "box-id-1834341608",
@@ -183,7 +182,7 @@
               "x": 170,
               "y": 1523,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-box-id-1834341608"
+              "customBlockName": "aidefaultContent-ctj018-box-id-1834341608"
             },
             {
               "id": "box-id--1370756325",
@@ -199,7 +198,7 @@
               "x": 0,
               "y": 1583,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1370756325"
+              "customBlockName": "aidefaultContent-ctj018-1370756325"
             },
             {
               "id": "box-id--1370756294",
@@ -224,7 +223,7 @@
               "x": 0,
               "y": 1697,
               "mapping": "columns",
-              "customBlockName": "aicolumns-2pdin7-1370756294"
+              "customBlockName": "aicolumns-ctj018-1370756294"
             },
             {
               "id": "box-id--1370756263",
@@ -240,7 +239,7 @@
               "x": 0,
               "y": 2269,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1370756263"
+              "customBlockName": "aidefaultContent-ctj018-1370756263"
             },
             {
               "id": "box-id--1370756232",
@@ -256,7 +255,7 @@
               "x": 0,
               "y": 2382,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1370756232"
+              "customBlockName": "aidefaultContent-ctj018-1370756232"
             },
             {
               "id": "box-id--1370756201",
@@ -285,7 +284,7 @@
               "x": 0,
               "y": 2544,
               "mapping": "columns",
-              "customBlockName": "aicolumns-2pdin7-1370756201"
+              "customBlockName": "aicolumns-ctj018-1370756201"
             },
             {
               "id": "box-id--1864397941",
@@ -314,7 +313,7 @@
               "x": 120,
               "y": 2897,
               "mapping": "columns",
-              "customBlockName": "aicolumns-2pdin7-1864397941"
+              "customBlockName": "aicolumns-ctj018-1864397941"
             },
             {
               "id": "box-id--1864397910",
@@ -330,7 +329,7 @@
               "x": 120,
               "y": 3263,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-2pdin7-1864397910"
+              "customBlockName": "aidefaultContent-ctj018-1864397910"
             }
           ]
         }

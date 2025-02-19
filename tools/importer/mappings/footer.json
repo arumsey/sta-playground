@@ -1,20 +1,19 @@
 {
-  "url": "https://www.absa.africa/about-us",
+  "url": "https://www.absa.africa/",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
     "adBlocker": true,
     "gdprBlocker": true,
     "delay": 0,
-    "screenshot": false,
-    "sectionMappingLimit": 21
+    "screenshot": false
   },
   "autoDetect": true,
   "template": {
-    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
-    "hash": -2095527051
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[1]\n  - /html[1]/body[1]/div[3]/div[1]/div[2]\n  /html[1]/body[1]/div[4]\n  - /html[1]/body[1]/div[4]/div[1]/div[1]\n  - /html[1]/body[1]/div[4]/div[1]/div[2]\n  /html[1]/body[1]/div[5]\n  - /html[1]/body[1]/div[5]/div[1]\n  - /html[1]/body[1]/div[5]/div[2]\n  /html[1]/body[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[1]\n  - /html[1]/body[1]/div[6]/div[1]/div[2]\n  - /html[1]/body[1]/div[6]/div[1]/div[3]\n  - /html[1]/body[1]/div[6]/div[1]/div[4]\n  - /html[1]/body[1]/div[6]/div[1]/div[5]\n  - /html[1]/body[1]/div[6]/div[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[7]\n  - /html[1]/body[1]/div[6]/div[1]/div[8]\n  - /html[1]/body[1]/div[6]/div[1]/div[9]\n  - /html[1]/body[1]/div[6]/div[1]/div[10]\n  - /html[1]/body[1]/div[6]/div[1]/div[11]\n  - /html[1]/body[1]/div[6]/div[1]/div[12]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1493493750
   },
-  "pageHeight": 1806,
+  "pageHeight": 4042,
   "mapping": [
     {
       "id": "footer-1",
@@ -27,7 +26,7 @@
               "id": "box-id--1104850683",
               "color": "rgba(0, 255, 0, 1)",
               "width": 1280,
-              "height": 278,
+              "height": 187,
               "xpath": "/html[1]/body[1]/footer[1]/div[1]",
               "childrenXpaths": [
                 {
@@ -40,13 +39,13 @@
                 }
               ],
               "layout": {
-                "numCols": 1,
-                "numRows": 2
+                "numCols": 2,
+                "numRows": 1
               },
               "x": 0,
-              "y": 1303,
-              "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-udcafu-1104850683"
+              "y": 3631,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-j1v2mc-1104850683"
             },
             {
               "id": "box-id--1104850652",
@@ -60,9 +59,9 @@
                 "numRows": 0
               },
               "x": 25,
-              "y": 1646,
+              "y": 3883,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-udcafu-1104850652"
+              "customBlockName": "aidefaultContent-j1v2mc-1104850652"
             }
           ]
         }

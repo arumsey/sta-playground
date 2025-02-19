@@ -1,5 +1,5 @@
 {
-  "url": "https://www.absa.africa/bring-your-africanacity/covid-19-social-relief-programme-faqs/",
+  "url": "https://www.absa.africa/a-force-for-good/cybersecurity-academy/wef-cybersecurity-learning-hub/",
   "browserOptions": {
     "width": 1280,
     "disableJS": false,
@@ -14,11 +14,11 @@
     "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/main[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]\n  - /html[1]/body[1]/main[1]/article[1]/figure[1]/div[1]\n  - /html[1]/body[1]/main[1]/article[1]/div[2]\n  /html[1]/body[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[1]\n  - /html[1]/body[1]/div[3]/div[1]/div[2]\n  - /html[1]/body[1]/div[3]/div[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[4]\n  /html[1]/body[1]/div[3]/div[1]/div[1]/p[2]\n  /html[1]/body[1]/div[3]/div[1]/div[2]/p[2]\n  /html[1]/body[1]/div[3]/div[1]/div[3]/p[2]\n  /html[1]/body[1]/div[3]/div[1]/div[4]/p[2]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
     "hash": -145542900
   },
-  "pageHeight": 2274,
+  "pageHeight": 1946,
   "mapping": [
     {
       "id": 2,
-      "path": "/bring-your-africanacity/covid-19-social-relief-programme-faqs/index",
+      "path": "/a-force-for-good/cybersecurity-academy/wef-cybersecurity-learning-hub/index",
       "sections": [
         {
           "id": "2-1",
@@ -37,7 +37,7 @@
               "x": 213,
               "y": 72,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-1508697273"
+              "customBlockName": "aidefaultContent-luv3vp-1508697273"
             },
             {
               "id": "box-id--459007618",
@@ -53,7 +53,7 @@
               "x": 213,
               "y": 351,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-459007618"
+              "customBlockName": "aidefaultContent-luv3vp-459007618"
             },
             {
               "id": "box-id--1959199981",
@@ -69,39 +69,39 @@
               "x": 0,
               "y": 16,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-1959199981"
+              "customBlockName": "aidefaultContent-luv3vp-1959199981"
             },
             {
-              "id": "box-id--988233442",
+              "id": "box-id--1370756449",
               "color": "rgba(0, 255, 0, 1)",
-              "width": 779,
-              "height": 797,
-              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+              "width": 1280,
+              "height": 428,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]",
               "childrenXpaths": null,
               "layout": {
                 "numCols": 0,
                 "numRows": 0
               },
-              "x": 199,
-              "y": 596,
+              "x": 0,
+              "y": 505,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-988233442"
+              "customBlockName": "aidefaultContent-luv3vp-1370756449"
             },
             {
-              "id": "box-id--988233411",
+              "id": "box-id--1370756418",
               "color": "rgba(0, 255, 0, 1)",
-              "width": 779,
-              "height": 40,
-              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+              "width": 1280,
+              "height": 166,
+              "xpath": "/html[1]/body[1]/main[1]/article[1]/div[2]/div[1]/div[1]/div[2]",
               "childrenXpaths": null,
               "layout": {
                 "numCols": 0,
                 "numRows": 0
               },
-              "x": 199,
-              "y": 1393,
+              "x": 0,
+              "y": 959,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-988233411"
+              "customBlockName": "aidefaultContent-luv3vp-1370756418"
             },
             {
               "id": "box-id--1102402240",
@@ -132,9 +132,9 @@
                 "numRows": 1
               },
               "x": 0,
-              "y": 1422,
+              "y": 1095,
               "mapping": "columns",
-              "customBlockName": "aicolumns-xspltw-1102402240"
+              "customBlockName": "aicolumns-luv3vp-1102402240"
             },
             {
               "id": "box-id--147230555",
@@ -148,9 +148,9 @@
                 "numRows": 0
               },
               "x": 53,
-              "y": 1710,
+              "y": 1382,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-147230555"
+              "customBlockName": "aidefaultContent-luv3vp-147230555"
             },
             {
               "id": "box-id-740273126",
@@ -164,9 +164,9 @@
                 "numRows": 0
               },
               "x": 373,
-              "y": 1710,
+              "y": 1382,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-box-id-740273126"
+              "customBlockName": "aidefaultContent-luv3vp-box-id-740273126"
             },
             {
               "id": "box-id-1627776807",
@@ -180,9 +180,9 @@
                 "numRows": 0
               },
               "x": 693,
-              "y": 1710,
+              "y": 1382,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-box-id-1627776807"
+              "customBlockName": "aidefaultContent-luv3vp-box-id-1627776807"
             },
             {
               "id": "box-id--1779686808",
@@ -196,9 +196,9 @@
                 "numRows": 0
               },
               "x": 1013,
-              "y": 1710,
+              "y": 1382,
               "mapping": "defaultContent",
-              "customBlockName": "aidefaultContent-xspltw-1779686808"
+              "customBlockName": "aidefaultContent-luv3vp-1779686808"
             }
           ]
         }

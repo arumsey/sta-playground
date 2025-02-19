@@ -1,0 +1,182 @@
+{
+  "url": "https://www.absa.africa/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 1
+  },
+  "autoDetect": true,
+  "template": {
+    "raw": "/html[1]/body[1]/header[1]/nav[1]\n  /html[1]/body[1]/div[3]\n  - /html[1]/body[1]/div[3]/div[1]/div[1]\n  - /html[1]/body[1]/div[3]/div[1]/div[2]\n  /html[1]/body[1]/div[4]\n  - /html[1]/body[1]/div[4]/div[1]/div[1]\n  - /html[1]/body[1]/div[4]/div[1]/div[2]\n  /html[1]/body[1]/div[5]\n  - /html[1]/body[1]/div[5]/div[1]\n  - /html[1]/body[1]/div[5]/div[2]\n  /html[1]/body[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[1]\n  - /html[1]/body[1]/div[6]/div[1]/div[2]\n  - /html[1]/body[1]/div[6]/div[1]/div[3]\n  - /html[1]/body[1]/div[6]/div[1]/div[4]\n  - /html[1]/body[1]/div[6]/div[1]/div[5]\n  - /html[1]/body[1]/div[6]/div[1]/div[6]\n  - /html[1]/body[1]/div[6]/div[1]/div[7]\n  - /html[1]/body[1]/div[6]/div[1]/div[8]\n  - /html[1]/body[1]/div[6]/div[1]/div[9]\n  - /html[1]/body[1]/div[6]/div[1]/div[10]\n  - /html[1]/body[1]/div[6]/div[1]/div[11]\n  - /html[1]/body[1]/div[6]/div[1]/div[12]\n  /html[1]/body[1]/footer[1]\n  - /html[1]/body[1]/footer[1]/div[1]\n  - /html[1]/body[1]/footer[1]/div[2]",
+    "hash": -1493493750
+  },
+  "pageHeight": 4042,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id--1102402240",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 901,
+              "xpath": "/html[1]/body[1]/div[3]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 1,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 0,
+              "mapping": "hero",
+              "customBlockName": "aihero-j1v2mc-1102402240"
+            },
+            {
+              "id": "box-id--1102402209",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 611,
+              "xpath": "/html[1]/body[1]/div[4]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"withImageDesktop\")/div[@class=\"row\"]/div[@class=\"col-6 col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[4]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"withImageDesktop\")/div[@class=\"row\"]/div[@class=\"col-6 col-sm-6\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 1
+              },
+              "x": 0,
+              "y": 965,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-j1v2mc-1102402209"
+            },
+            {
+              "id": "box-id-763685735",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 632,
+              "height": 48,
+              "xpath": "/html[1]/body[1]/div[5]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 153,
+              "y": 1733,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-j1v2mc-box-id-763685735"
+            },
+            {
+              "id": "box-id-763685766",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1265,
+              "height": 282,
+              "xpath": "/html[1]/body[1]/div[5]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[5]/div[2]/div[1]",
+                  "xpathWithDetails": "/html[@class=\"js\"]/body[@class=\"home page-template-default page page-id-13 wp-custom-logo wp-embed-responsive fl-builder-2-8-5-1 singular enable-search-modal missing-post-thumbnail has-no-pagination not-showing-comments hide-avatars footer-top-visible\"]/div[@class=\"container Ourstories\"]/div[@class=\"row text-center\"]/div[@class=\"col-md-3 pb-1 pb-md-0\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[5]/div[2]/div[2]",
+                  "xpathWithDetails": "/html[@class=\"js\"]/body[@class=\"home page-template-default page page-id-13 wp-custom-logo wp-embed-responsive fl-builder-2-8-5-1 singular enable-search-modal missing-post-thumbnail has-no-pagination not-showing-comments hide-avatars footer-top-visible\"]/div[@class=\"container Ourstories\"]/div[@class=\"row text-center\"]/div[@class=\"col-md-3 pb-1 pb-md-0\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[5]/div[2]/div[3]",
+                  "xpathWithDetails": "/html[@class=\"js\"]/body[@class=\"home page-template-default page page-id-13 wp-custom-logo wp-embed-responsive fl-builder-2-8-5-1 singular enable-search-modal missing-post-thumbnail has-no-pagination not-showing-comments hide-avatars footer-top-visible\"]/div[@class=\"container Ourstories\"]/div[@class=\"row text-center\"]/div[@class=\"col-md-3 pb-1 pb-md-0\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 3,
+                "numRows": 1
+              },
+              "x": 153,
+              "y": 1818,
+              "mapping": "cards",
+              "customBlockName": "aicards-j1v2mc-box-id-763685766"
+            },
+            {
+              "id": "box-id--1102402147",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 1280,
+              "height": 1402,
+              "xpath": "/html[1]/body[1]/div[6]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[3]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[4]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[5]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[6]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[7]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[8]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[9]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[10]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[11]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[6]/div[1]/div[12]",
+                  "xpathWithDetails": "id(\"mediaReleases\")/div[@class=\"row\"]/div[@class=\"col-6 .col-sm-6\"]"
+                }
+              ],
+              "layout": {
+                "numCols": 2,
+                "numRows": 6
+              },
+              "x": 153,
+              "y": 2148,
+              "mapping": "columns",
+              "customBlockName": "aicolumns-j1v2mc-1102402147"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

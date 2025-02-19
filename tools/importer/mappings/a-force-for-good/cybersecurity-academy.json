@@ -7,7 +7,7 @@
     "gdprBlocker": true,
     "delay": 0,
     "screenshot": false,
-    "sectionMappingLimit": 21
+    "sectionMappingLimit": 15
   },
   "autoDetect": true,
   "template": {
