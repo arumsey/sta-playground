@@ -1,0 +1,208 @@
+{
+  "url": "https://www.thechannelco.com/5-ways-to-become-a-trusted-cyber-security-thought-leader/",
+  "browserOptions": {
+    "width": 1280,
+    "disableJS": false,
+    "adBlocker": true,
+    "gdprBlocker": true,
+    "delay": 0,
+    "screenshot": false,
+    "sectionMappingLimit": 50
+  },
+  "autoDetect": true,
+  "template": {
+    "name": "article-blog",
+    "raw": "/html[1]/body[1]/div[1]/header[1]\n  /html[1]/body[1]/div[1]/main[1]\n  - /html[1]/body[1]/div[1]/main[1]/article[1]\n  - /html[1]/body[1]/div[1]/main[1]/div[1]\n  /html[1]/body[1]/div[1]/footer[1]\n  - /html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[1]\n  - /html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[2]",
+    "hash": 644490401
+  },
+  "pageHeight": 3231,
+  "mapping": [
+    {
+      "id": 2,
+      "path": "/5-ways-to-become-a-trusted-cyber-security-thought-leader/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [
+            {
+              "id": "box-id-966562858",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 148,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/header[1]/div[1]/h1[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 132,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-966562858"
+            },
+            {
+              "id": "box-id--163278454",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 95,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/header[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 320,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-163278454"
+            },
+            {
+              "id": "box-id-1903365414",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 328,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 446,
+              "mapping": "unknown",
+              "customBlockName": "aiunknown-jga8hk-1903365414"
+            },
+            {
+              "id": "box-id-1903365445",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 30,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[2]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 804,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365445"
+            },
+            {
+              "id": "box-id-1903365476",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 90,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[3]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 850,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365476"
+            },
+            {
+              "id": "box-id-1903365507",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 60,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[4]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 956,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365507"
+            },
+            {
+              "id": "box-id-1903365538",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 90,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[5]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 1032,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365538"
+            },
+            {
+              "id": "box-id-1903365569",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 1200,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[6]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 1138,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365569"
+            },
+            {
+              "id": "box-id-1903365631",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 90,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[8]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 2354,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365631"
+            },
+            {
+              "id": "box-id-1903365662",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 876,
+              "height": 30,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/article[1]/div[1]/div[1]/div[9]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 202,
+              "y": 2460,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-1903365662"
+            },
+            {
+              "id": "box-id--2114861052",
+              "color": "rgba(0, 255, 0, 1)",
+              "width": 900,
+              "height": 48,
+              "xpath": "/html[1]/body[1]/div[1]/main[1]/div[1]",
+              "childrenXpaths": null,
+              "layout": {
+                "numCols": 0,
+                "numRows": 0
+              },
+              "x": 190,
+              "y": 2586,
+              "mapping": "defaultContent",
+              "customBlockName": "aidefaultContent-jga8hk-2114861052"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
