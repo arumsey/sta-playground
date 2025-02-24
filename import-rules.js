@@ -15,8 +15,8 @@ const importRules = {
       'iframe',
       'link',
       'nav.navbar',
-      'nav > .col-lg-10',
-      'nav > .col-lg-2',
+      'nav.col-lg-10',
+      'nav.col-lg-2',
       'footer.footer'
     ],
     end: []
@@ -31,7 +31,7 @@ const importRules = {
     {
       type: 'aiheader-dxxjuf-855297627',
       selectors: [
-        'header > nav.navbar'
+        'header > nav'
       ],
       variants: []
     },
