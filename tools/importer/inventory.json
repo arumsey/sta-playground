@@ -3,6 +3,8 @@
       "blocks": [
         {
             "blockName": "Image + Text Card | Text-Button",
+            "blockType": "core-card",
+            "blockVariant": "image",
             "instances":[{
                 "url": "https://www.knowpneumonia.com/what-is-pneumococcal-disease",
                 "xpath": "/html/body/div[1]/div/div[1]/div/div[2]/section"
@@ -15,6 +17,8 @@
         },
         {
             "blockName": "Icon + Text Card | Text-Button",
+            "blockType": "core-card",
+            "blockVariant": "icon",
             "instances":[{
                 "url": "https://www.knowpneumonia.com/what-is-pneumococcal-disease",
                 "xpath": "/html/body/div[1]/div/div[1]/div/div[2]/section"
@@ -27,6 +31,8 @@
         },
         {
             "blockName": "Branded Default | Image Left | No Offset | White Background",
+            "blockType": "core-image",
+            "blockVariant": "right",
             "instances": [{
               "url": "https://www.knowpneumonia.com/understand-your-risk",
               "xpath": "/html/body/div[1]/div/div[1]/div/div/section[2]/div"
@@ -39,6 +45,7 @@
         },
         {
             "blockName": "Cards",
+          "blockType": "cards",
           "instances": [{
             "url": "https://www.highhopes-campaign.co.uk/support-resources",
             "xpath": "//*[@id='i7mf1']"
@@ -51,6 +58,7 @@
         },
         {
           "blockName": "Accordion",
+          "blockType": "core-accordion",
           "instances": [{
             "url": "https://www.highhopes-campaign.co.uk/faqs",
             "xpath": "/html[1]/body[1]/helix-core-layout-container[2]/helix-core-grid[1]/helix-core-grid-item[1]/helix-core-tabs[1]/section[1]/helix-core-accordion[1]"
