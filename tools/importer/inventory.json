@@ -1,5 +1,44 @@
 {
+  "fragments" : [
+    {
+      "name": "nav",
+      "path": "/nav",
+      "instances": [
+        {
+          "url": "https://www.myelomaandme.co.uk/communicating-effectively",
+          "xpath": "/html/body/header"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "path": "/footer",
+      "instances": [
+        {
+          "url": "https://www.myelomaandme.co.uk/communicating-effectively",
+          "xpath": "/html/body/footer/div/nav"
+        },
+        {
+          "url": "https://www.myelomaandme.co.uk/communicating-effectively",
+          "xpath": "/html/body/footer/div/div[1]"
+        }
+      ]
+    }
+  ],
   "blocks": [
+    {
+      "name": "Header",
+      "description": "",
+      "instances": [
+        {
+          "url": "https://www.myelomaandme.co.uk/communicating-effectively",
+          "xpath": "/html/body/header"
+        }
+      ],
+      "example": {
+        "content": ""
+      }
+    },
     {
       "name": "Hero",
       "description":"A hero block is a large block that is used to highlight a specific piece of content. It is often used at the top of a page to grab the user's attention. The hero content must be in a single cell with the image first, then the heading, then any additional content.",
