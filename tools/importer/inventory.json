@@ -28,7 +28,7 @@
   "blocks": [
     {
       "name": "Header",
-      "description": "",
+      "description": "A header block is used to display all the links and content in the main heading of a page. The links and content must be separated into brand, navigation, and tools sections. The navigation section contains the main navigation links of the site. The tools section contains any additional links that are displayed at the right side of the header. The brand section can contain a logo, name, and/or link. The navigation and tools section must be a nested unordered list of text and links. Any additional content that is found should be placed in a fourth section that contains a section-metadata block with a style value of hidden.",
       "instances": [
         {
           "url": "https://www.myelomaandme.co.uk/communicating-effectively",
@@ -36,7 +36,7 @@
         }
       ],
       "example": {
-        "content": ""
+        "content": "\n![Brand Logo](https://www.brand-name.com/assets/logo.png)\n[Brand Name](https://www.brand-name.com)\n\n---\n\n- Nav Heading 1\n  - [Link 1](https://www.brand-name.com/link-1)\n  - [Link 2](https://www.brand-name.com/link-2)\n- Nav Heading 2\n  - [Link 3](https://www.brand-name.com/link-3)\n  - [Link 4](https://www.brand-name.com/link-4)\n\n---\n\n- Search\n\n---\n\nAdditional content\n\n| section-metadata |          |\n|------------------|----------|\n| style            | hidden   |"
       }
     },
     {
