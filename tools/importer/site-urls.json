@@ -1,414 +1,114 @@
 {
-  "originUrl": "https://www.nuveen.com",
-  "lastCrawled": "https://www.nuveen.com/",
+  "originUrl": "https://business.x.com",
+  "lastCrawled": "https://business.x.com/",
   "urls": [
     {
-      "url": "https://www.nuveen.com/en-us",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/about-nuveen",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising?ref=en-btc-help-troubleshooting-how-it-works-footer",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/about-nuveen/for-the-media",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/ads-best-practices",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/about-nuveen/nuveen-by-the-numbers",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/analytics",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/about-nuveen/nuveen-to-acquire-arcmont",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/branded-notifications",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/equities-investment-council",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-creator",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/global-investment-committee",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/inclusion-diversity-and-equity-at-nuveen",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/amplify-pre-roll",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/app-installs",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/agr-partners",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/app-reengagements",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/arcmont-asset-management",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/engagements",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/brooklyn-investment-group",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/reach",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/churchill-asset-management",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/video-views",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/farmland",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/website-conversions",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/form-crs-disclosures",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/campaign-types/website-traffic",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/greenwood-resources",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/carousels",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/gresham-investment-management",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/formats",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/infrastructure",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/get-started-with-twitter-ads",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/municipal-sma-portfolio-management-and-cpms",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/measurement",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/natural-capital",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/partners/find-a-partner",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/nuveen",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/partners/find-a-partner/adaptly",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/nuveen-green-capital",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/partners/find-a-partner/amobee",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/nuveen-leveraged-finance",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/partners/find-a-partner/social-database",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/nuveen-real-estate",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/partners/find-a-partner/wiseblue",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/sustainability",
-      "source": "SITEMAPS"
+      "url": "https://business.x.com/en/advertising/targeting",
+      "source": "CRAWL"
     },
     {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/tiaa-investments",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/timberland",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/investment-specialists/winslow-capital",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/nuveen-leadership",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/a/dan-ashcraft",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/a/peter-agrimson",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/a/sooyun-antoine",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/aaron-brunette",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/calvin-bohman",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/christopher-g-barron",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/isela-bahena",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/jack-f-boyd",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/james-bergeron",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/jessica-bailey",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/jon-bosse",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/joost-bergsma",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/karen-l-bowie",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/karina-bubeck",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/kevin-w-bedell",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/michael-t-buckius",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/b/nathan-brown",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/charles-carr",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/christopher-cox",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/daniel-j-close",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/david-a-chalupnik",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/david-copp",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/francesco-cacciabue",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/james-a-colon",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/jason-campbell",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/jason-castelluccio",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/jeanne-casey",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/jeff-carlin",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/jim-campagna",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/joe-castro",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/john-cunniff",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/joy-crenshaw",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/leo-chung",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/mark-cameron",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/mark-coelho",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/matt-cruse",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/pei-chen",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/ravi-chintapalli",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/richard-cheng",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/richard-chiang",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/scott-caraher",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/stephen-candido",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/c/thomas-conklin",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/abigail-dean",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/andrew-deihl",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/anjali-doshi",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/anurag-dugar",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/daniel-r-dunnigan",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/dean-dumonthier",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/about-us/profiles/d/don-dimitrievich",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/citywatch-sydney",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/climate-risk-framework-for-farmland-investments",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/collaboration-in-the-middle-market",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/consider-income-producing-real-assets",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/decarbonising-the-energy-infrastructure-ecosystem",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/direct-lending-where-lps-should-be-focused",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/diving-into-private-markets",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/faces-from-the-field",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/farmland-and-timberland-rise-up-climate-agenda",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/farmland-investing-to-feed-a-growing-population",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/finding-cv-place-in-portfolios",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/full-speed-ahead-private-credit-outlook-2022",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/global-infrastructure-listed-securities-offer-opportunities",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/global-thoughts-newsletter",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/growing-renewable-fuels-market-continues-to-shape-us-soybean-demand",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/growth-of-the-east",
-      "source": "SITEMAPS"
-    },
-    {
-      "url": "https://www.nuveen.com/en-us/insights/alternatives/high-yield-debt",
-      "source": "SITEMAPS"
-    }
-  ],
-  "crawlOptions": {
-    "timeout": 64800000,
-    "inclusionPatterns": [],
-    "exclusionPatterns": [],
-    "limit": -1,
-    "sameDomain": true,
-    "keepHash": false,
-    "strategy": "SITEMAPS",
-    "logger": {}
-  },
-  "extractionErrors": [
-    {
-      "url": "https://www.nuveen.com/de-ch/sitemap.xml",
-      "status": "parseSitemapFromUrl (https://www.nuveen.com/de-ch/sitemap.xml): Failed to fetch or parse the sitemap. Failed to fetch the sitemap. Content-Type: text/html; charset=utf-8"
-    },
-    {
-      "url": "https://www.nuveen.com/sitemap.xml",
-      "status": "parseSitemapFromUrl (https://www.nuveen.com/sitemap.xml): Failed to fetch or parse the sitemap. Failed to fetch the sitemap. Content-Type: text/html; charset=utf-8"
+      "url": "https://business.x.com/en/advertising/tweet-composer",
+      "source": "CRAWL"
     }
   ]
 }
