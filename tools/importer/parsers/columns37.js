@@ -1,38 +1,55 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  // Define the header row for the block table
+  // Header row
   const headerRow = ['Columns'];
 
-  // Extract stats cards and build their respective cell content
-  const statsCards = Array.from(element.querySelectorAll('.nuv-stats-card'));
+  // Extract column 1 content dynamically
+  const leftColumn = element.querySelector('.ct01__column:nth-child(1)');
+  if (!leftColumn) {
+    throw new Error('Left column not found');
+  }
+  
+  const headlineElement = leftColumn.querySelector('.b01__headline');
+  const headline = headlineElement ? headlineElement.textContent.trim() : '';
+  
+  const descriptionElement = leftColumn.querySelector('.b02__rich-text');
+  const description = descriptionElement ? descriptionElement.innerHTML : '';
 
-  const contentRow = statsCards.map((card) => {
-    const valueElement = card.querySelector('.nuv-stats-card__value');
-    const captionElement = card.querySelector('.nuv-stats-card__caption');
+  const leftContent = document.createElement('div');
+  if (headline) {
+    const headlineNode = document.createElement('h2');
+    headlineNode.textContent = headline;
+    leftContent.appendChild(headlineNode);
+  }
+  if (descriptionElement) {
+    const descriptionNode = document.createElement('div');
+    descriptionNode.innerHTML = description;
+    leftContent.appendChild(descriptionNode);
+  }
 
-    // Handle potential missing elements
-    const valueText = valueElement ? valueElement.textContent.trim() : '';
-    const captionText = captionElement ? captionElement.textContent.trim() : '';
+  // Extract column 2 content dynamically
+  const rightColumn = element.querySelector('.ct01__column:nth-child(2)');
+  if (!rightColumn) {
+    throw new Error('Right column not found');
+  }
 
-    // Create elements for table cell content
-    const value = document.createElement('p');
-    value.textContent = valueText;
+  const imageElement = rightColumn.querySelector('img');
+  const image = document.createElement('img');
+  if (imageElement) {
+    image.src = imageElement.src;
+  } else {
+    image.alt = 'Placeholder image';
+  }
 
-    const caption = document.createElement('p');
-    caption.textContent = captionText;
+  // Define the cells array for the rows
+  const cells = [
+    headerRow, // Header row
+    [leftContent, image], // Content row with left and right columns
+  ];
 
-    // Combine value and caption into a container element
-    const container = document.createElement('div');
-    container.appendChild(value);
-    container.appendChild(caption);
+  // Create the block table
+  const block = WebImporter.DOMUtils.createTable(cells, document);
 
-    return container;
-  });
-
-  // Create the table with properly split columns
-  const blockTable = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
-
-  // Replace the original element with the constructed block table
-  element.replaceWith(blockTable);
+  // Replace the original element with the new block table
+  element.replaceWith(block);
 }
