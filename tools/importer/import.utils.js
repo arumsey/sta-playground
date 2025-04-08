@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 /* global WebImporter */
-/* eslint-disable no-console */
+
 /**
  *  Cleanup unwanted attributes in element and children
   * @param {Element} e
@@ -106,13 +106,12 @@ export async function handleOnLoad({ document }) {
 
 /**
  * Pre transform rules
- *
  * @param {Element} root
  * @param {Document} document
  * @param {string} url
  * @param {string} publishUrl
  * @param {string} originalURL
- */
+*/
 export function preTransformRules({
   root,
   document,
@@ -155,7 +154,6 @@ export function preTransformRules({
 
 /**
  * Post transform rules
- *
  * @param {Element} root
  * @param {Document} document
  * @param {string} url
@@ -166,6 +164,16 @@ export function postTransformRules({
   document,
   originalURL,
 }) {
+  // remove unwanted elements
+  WebImporter.DOMUtils.remove(root, [
+    'style',
+    'source',
+    'script',
+    'noscript',
+    'iframe',
+    'link',
+  ]);
+
   // transform background images
   WebImporter.rules.transformBackgroundImages(root, document);
 
@@ -185,7 +193,6 @@ export function postTransformRules({
 
 /**
  * Generate document path
- *
  * @param {string} url
  * @returns {string}
 */
