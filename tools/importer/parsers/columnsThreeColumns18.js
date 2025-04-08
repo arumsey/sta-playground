@@ -1,31 +1,46 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    const cards = element.querySelectorAll('.cards-card-body');
-    const headerRow = ['Columns'];
-    const contentRow = Array.from(cards).map(card => {
-        const imgWrapper = card.previousElementSibling;
-        const imgTag = imgWrapper.querySelector('img');
-        const image = document.createElement('img');
-        image.src = imgTag.src;
-        image.alt = imgTag.alt;
+  // Define header row
+  const headerRow = ['Columns'];
 
-        const title = card.querySelector('h3').textContent.trim();
-        const description = card.querySelector('p').textContent.trim();
+  // Extract cards and images from the HTML
+  const cards = element.querySelectorAll('.cards-card-body');
+  const images = element.querySelectorAll('.cards-card-image img');
 
-        const titleElement = document.createElement('h3');
-        titleElement.textContent = title;
+  // Ensure dynamic content is extracted properly
+  const rows = Array.from(cards).map((card, index) => {
+    const image = images[index];
 
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = description;
+    // Handle edge cases: missing or empty elements
+    const cardImage = document.createElement('img');
+    cardImage.src = image ? image.src : '';
+    cardImage.alt = image ? image.alt : '';
 
-        return [image, titleElement, descriptionElement];
-    });
+    const titleElement = card.querySelector('h3');
+    const title = titleElement ? titleElement.textContent.trim() : '';
 
-    const cells = [
-        headerRow,
-        contentRow
-    ];
+    const paragraphElement = card.querySelector('p');
+    const paragraph = paragraphElement ? paragraphElement.textContent.trim() : '';
 
-    const table = WebImporter.DOMUtils.createTable(cells, document);
-    element.replaceWith(table);
+    const titleBlock = document.createElement('h2');
+    titleBlock.textContent = title;
+
+    const paragraphBlock = document.createElement('p');
+    paragraphBlock.textContent = paragraph;
+
+    // Return column data for this card
+    return [cardImage, titleBlock, paragraphBlock];
+  });
+
+  // Structure the rows properly with each card in its own column
+  const tableData = [
+    headerRow,
+    rows // Each card forms a separate column, as required
+  ];
+
+  // Generate table block
+  const block = WebImporter.DOMUtils.createTable(tableData, document);
+
+  // Replace original element with the new table block
+  element.replaceWith(block);
 }

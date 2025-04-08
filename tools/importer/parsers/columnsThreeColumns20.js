@@ -1,34 +1,37 @@
 /* global WebImporter */
+
 export default function parse(element, { document }) {
-  const cells = [];
+  // Helper to extract full image URL
+  const getImageUrl = (img) => {
+    if (!img) return '';
+    return img.getAttribute('src');
+  };
 
-  // Header row
+  // Block header row
   const headerRow = ['Columns'];
-  cells.push(headerRow);
 
-  // Extract the cards and their content
-  const cards = element.querySelectorAll('.cards li');
-  const row = Array.from(cards).map((card) => {
-    const imgElement = card.querySelector('img');
+  // Extract columns content dynamically
+  const contentRow = Array.from(element.querySelectorAll('.cards-wrapper .cards ul li')).map((li) => {
+    const imageElement = li.querySelector('picture img'); // Image
     const image = document.createElement('img');
-    image.src = imgElement ? imgElement.src : '';
-    image.alt = imgElement ? imgElement.alt || '' : '';
+    image.src = getImageUrl(imageElement);
 
-    const titleElement = card.querySelector('strong a');
+    const titleElement = li.querySelector('.cards-card-body strong a'); // Column Title
     const title = document.createElement('h2');
-    title.textContent = titleElement ? titleElement.textContent.trim() : '';
+    title.textContent = titleElement ? titleElement.textContent.trim() : 'Missing title';
 
-    const linkElement = card.querySelector('.callout-overlay a');
-    const link = document.createElement('a');
-    link.href = linkElement ? linkElement.href : '';
-    link.textContent = linkElement ? linkElement.textContent.trim() : '';
+    const description = document.createElement('p'); // Description (hardcoded text for now)
+    description.textContent = 'This and that';
 
-    return [image, title, link].filter(Boolean); // Filter out any null values
+    return [image, title, description];
   });
 
-  cells.push(row);
+  // Prepare rows for the table
+  const rows = [headerRow, contentRow];
 
-  // Create the block table and replace the element
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(block);
+  // Create the table using the provided helper
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+
+  // Replace the original element with the prepared table
+  element.replaceWith(table);
 }

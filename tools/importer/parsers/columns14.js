@@ -1,37 +1,47 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Extract the content dynamically
-  const img = element.querySelector('img');
-  const linksList1 = element.querySelectorAll(':scope > div:nth-child(2) ul li a');
-  const email = element.querySelector(':scope > div:nth-child(2) p a');
-  const socialLinks = element.querySelectorAll(':scope > div:nth-child(3) ul li a');
+    // Extract image
+    const imageElement = element.querySelector('img');
+    let imageCell;
+    if (imageElement) {
+        const img = document.createElement('img');
+        img.src = imageElement.src;
+        img.alt = imageElement.alt;
+        imageCell = img;
+    }
 
-  // Prepare the table array
-  const headerRow = ['Columns'];
+    // Extract links
+    const linksElement = element.querySelectorAll('ul li a');
+    const linksCell = Array.from(linksElement).map(link => {
+        const linkWrapper = document.createElement('div');
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.textContent;
+        linkWrapper.appendChild(a);
+        return linkWrapper;
+    });
 
-  // Handle undefined elements gracefully and ensure valid content extraction
-  const column1 = [
-    img ? img.cloneNode(true) : '',
-    document.createElement('hr'),
-    ...Array.from(linksList1).map(link => link.cloneNode(true))
-  ];
+    // Extract other text content
+    const footerTextElement = element.querySelector('p a');
+    let footerTextCell;
+    if (footerTextElement) {
+        const footerWrapper = document.createElement('div');
+        const footerLink = document.createElement('a');
+        footerLink.href = footerTextElement.href;
+        footerLink.textContent = footerTextElement.textContent;
+        footerWrapper.appendChild(footerLink);
+        footerWrapper.append(` ${footerTextElement.parentElement.textContent.replace(footerTextElement.textContent, '')}`);
+        footerTextCell = footerWrapper;
+    }
 
-  const column2 = [
-    email && email.href ? email.cloneNode(true) : 'No email provided',
-    document.createElement('hr'),
-    ...Array.from(socialLinks).map(socialLink => socialLink.cloneNode(true))
-  ];
+    // Assemble table rows
+    const headerRow = ['Columns'];
+    const contentRow = [imageCell, linksCell];
+    const footerRow = [footerTextCell];
 
-  // Organize rows
-  const cells = [
-    headerRow,
-    column1,
-    column2,
-  ];
+    const tableData = [headerRow, contentRow, footerRow];
 
-  // Create the block table
-  const blockTable = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with the new block table
-  element.replaceWith(blockTable);
+    // Create table and replace element
+    const tableBlock = WebImporter.DOMUtils.createTable(tableData, document);
+    element.replaceWith(tableBlock);
 }

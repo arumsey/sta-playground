@@ -1,47 +1,40 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
+  // Extracting the header
+  const headerRow = ['Columns'];
 
-    const tableHeader = ['Columns'];
+  // Extracting content from the element dynamically
+  const navBrandImage = element.querySelector('.nav-brand img');
+  const navSectionsLinks = element.querySelectorAll('.nav-sections ul li a');
+  const donateButton = element.querySelector('.nav-tools .button-container a');
 
-    // Safely extract the logo information
-    const logoElement = element.querySelector('.nav-brand img');
-    const logoImage = document.createElement('img');
-    if (logoElement) {
-        logoImage.src = logoElement.getAttribute('src') || '';
-        logoImage.alt = logoElement.getAttribute('alt') || '';
-    } else {
-        logoImage.textContent = 'No logo found';
-    }
+  // Handle edge cases
+  const navImage = navBrandImage ? navBrandImage.cloneNode(true) : document.createTextNode('');
 
-    // Safely extract navigation links
-    const navLinksParent = element.querySelector('.nav-sections ul');
-    const navLinks = [];
-    if (navLinksParent) {
-        navLinks.push(...Array.from(navLinksParent.querySelectorAll('li a')).map((link) => {
-            const anchor = document.createElement('a');
-            anchor.href = link.getAttribute('href') || '#';
-            anchor.textContent = link.textContent.trim() || 'Unnamed link';
-            return anchor;
-        }));
-    }
+  const sections = navSectionsLinks.length
+    ? Array.from(navSectionsLinks).map((link) => {
+        const sectionContainer = document.createElement('div');
+        const hr = document.createElement('hr');
+        sectionContainer.append(hr, link.cloneNode(true));
+        return sectionContainer;
+      })
+    : [document.createTextNode('No sections available')];
 
-    // Safely extract the donate button
-    const donateButtonParent = element.querySelector('.nav-tools .button-container .button.primary');
-    const donateButton = document.createElement('a');
-    if (donateButtonParent) {
-        donateButton.href = donateButtonParent.getAttribute('href') || '#';
-        donateButton.textContent = donateButtonParent.textContent.trim() || 'Donate';
-    } else {
-        donateButton.textContent = 'No Donate button found';
-    }
+  const donateElement = donateButton ? donateButton.cloneNode(true) : document.createTextNode('No Donate button');
 
-    const tableData = [
-        [tableHeader],
-        [logoImage, navLinks, donateButton],
-    ];
+  // Create table cells structure
+  const cells = [
+    headerRow, // Header row matches example exactly
+    [
+      navImage,
+      sections, // Navigation sections dynamically extracted
+      donateElement, // Donate button dynamically extracted
+    ],
+  ];
 
-    const parsedTable = WebImporter.DOMUtils.createTable(tableData, document);
+  // Create structured table block using WebImporter.DOMUtils
+  const block = WebImporter.DOMUtils.createTable(cells, document);
 
-    element.replaceWith(parsedTable);
+  // Replace original element with new structured table block
+  element.replaceWith(block);
 }

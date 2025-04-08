@@ -1,25 +1,34 @@
 /* global WebImporter */
-export default function parse(element, { document }) {
-  // Extract unique carousel items by filtering duplicates
-  const items = Array.from(element.querySelectorAll('.logos > div'))
-    .filter((item, index, self) => {
-      const imageElement = item.querySelector('picture img');
-      return imageElement && !imageElement.hasAttribute('loading');
-    });
 
-  // Header row matches the example exactly
+export default function parse(element, { document }) {
   const headerRow = ['Carousel'];
 
-  // Map items to rows dynamically
-  const rows = items.map((item) => {
-    const imageElement = item.querySelector('picture img');
-    const imageCell = imageElement || '';
-    const textContent = item.querySelector('div:nth-of-type(2)');
-    const textCell = textContent && textContent.textContent.trim() ? textContent.textContent : '';
-    return [imageCell, textCell];
-  });
+  // Select all unique slide divs inside the logos wrapper (ignore duplicates with 'loading="lazy"')
+  const slides = Array.from(element.querySelectorAll('.logos > div'))
+    .filter((slide, index, self) => {
+      const img = slide.querySelector('img');
+      return img && self.findIndex(s => s.querySelector('img')?.src === img.src) === index;
+    });
 
-  const tableArray = [headerRow, ...rows];
-  const blockTable = WebImporter.DOMUtils.createTable(tableArray, document);
-  element.replaceWith(blockTable);
+  // Create rows by processing each slide
+  const rows = slides.map((slide) => {
+    const imageWrapper = slide.querySelector('img');
+    const image = imageWrapper && imageWrapper.cloneNode(true);
+
+    // Ensure there is content to process
+    if (!image) {
+      return ['']; // Empty row if image is missing
+    }
+
+    // Create the row with image only, no text
+    return [image];
+  }).filter((row) => row[0]); // Filter out rows that might be empty
+
+  const cells = [headerRow, ...rows];
+
+  // Create the table using the helper function
+  const carouselBlock = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the new block
+  element.replaceWith(carouselBlock);
 }

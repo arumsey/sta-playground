@@ -1,34 +1,48 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
+  // Correcting headers to match example and verifying code structure
   const headerRow = ['Columns'];
 
-  const brandLogo = element.querySelector('div.nav-brand picture img');
-  const brandImage = document.createElement('img');
-  brandImage.src = brandLogo?.src || '';
-  brandImage.alt = brandLogo?.alt || '';
-  brandImage.width = brandLogo?.width || 0;
-  brandImage.height = brandLogo?.height || 0;
+  // Extract the logo from the nav-brand section dynamically
+  const logo = element.querySelector('.nav-brand img');
+  const logoElement = logo ? document.createElement('img') : null;
+  if (logoElement) {
+    logoElement.src = logo.src;
+    logoElement.alt = logo.alt;
+  }
 
-  const navLinks = Array.from(element.querySelectorAll('div.nav-sections ul li a')).map((link) => {
-    const anchor = document.createElement('a');
-    anchor.href = link.href;
-    anchor.textContent = link.textContent;
-    return anchor;
+  // Extract navigation links from the nav-sections section dynamically
+  const navLinks = Array.from(element.querySelectorAll('.nav-sections a')).map(navLink => {
+    const linkElement = document.createElement('a');
+    linkElement.href = navLink.href;
+    linkElement.textContent = navLink.textContent.trim();
+    return linkElement;
   });
 
-  const donateButtonLink = element.querySelector('div.nav-tools a');
-  const donateButton = document.createElement('a');
-  donateButton.href = donateButtonLink?.href || '#';
-  donateButton.textContent = donateButtonLink?.textContent || 'Donate';
-  donateButton.className = donateButtonLink?.className || '';
+  // Handle edge case when nav-sections or links are missing
+  const navLinksCell = navLinks.length ? navLinks : ['No links available'];
 
-  const tableCells = [
-    headerRow, // Header row
-    [brandImage, navLinks], // Content row
-    [donateButton], // Last row with single Donate button
-  ];
+  // Extract donate button text and link dynamically
+  const donateButton = element.querySelector('.nav-tools a');
+  const donateElement = donateButton ? document.createElement('a') : null;
+  if (donateElement) {
+    donateElement.href = donateButton.href;
+    donateElement.textContent = donateButton.textContent.trim();
+  }
 
-  const block = WebImporter.DOMUtils.createTable(tableCells, document);
-  element.replaceWith(block);
+  // Define donate cell placeholder if missing
+  const donateCell = donateElement ? [donateElement] : ['No donate option available'];
+
+  // Structure data into rows and columns
+  const tableData = [
+    headerRow,
+    [logoElement, navLinksCell],
+    donateCell
+  ].filter(row => row.every(cell => cell)); // Ensuring valid rows
+
+  // Create table block
+  const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
+
+  // Replace the original element with the new block table
+  element.replaceWith(blockTable);
 }

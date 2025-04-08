@@ -2,56 +2,26 @@
 export default function parse(element, { document }) {
   const headerRow = ['Columns'];
 
-  // Extract the image from the first div
-  const imageContainer = element.querySelector('picture');
-  const image = imageContainer ? imageContainer.cloneNode(true) : '';
+  // Extract image from footer
+  const imageElement = element.querySelector('img');
 
-  // Extract links and content from the second div
-  const linksContainer = element.querySelector('ul');
-  const links = linksContainer ? Array.from(linksContainer.querySelectorAll('li')).map(link => {
-    const anchor = link.querySelector('a');
-    const linkElement = document.createElement('div');
-    if (anchor) {
-      const innerAnchor = document.createElement('a');
-      innerAnchor.href = anchor.href;
-      innerAnchor.textContent = anchor.textContent;
-      linkElement.appendChild(innerAnchor);
-      linkElement.appendChild(document.createElement('br')); // Add line break for readability
-    }
-    return linkElement;
-  }) : '';
+  const links = [...element.querySelectorAll('div:nth-of-type(2) ul li a')]
+    .map((link) => link.outerHTML);
 
-  const linksDiv = document.createElement('div');
-  linksDiv.append(...links);
+  // Extract additional links and content from third div
+  const socialLinks = [...element.querySelectorAll('div:nth-of-type(3) ul li a')]
+    .map((link) => link.outerHTML);
 
-  // Extract final paragraph from the second div
-  const footerParagraph = element.querySelector('p:last-of-type');
-  const footerText = footerParagraph ? footerParagraph.textContent.trim() : '';
+  // Extract text content from footer
+  const footerText = element.querySelector('div:nth-of-type(2) p').textContent.trim();
 
-  // Include footer text in a structured format
-  const footerDiv = document.createElement('div');
-  footerDiv.textContent = footerText;
-
-  // Extract social links from the third div
-  const socialLinksContainer = element.querySelectorAll('div:nth-of-type(3) ul li a');
-  const socialLinks = socialLinksContainer ? Array.from(socialLinksContainer).map(link => {
-    const socialElement = document.createElement('div');
-    socialElement.append(link.cloneNode(true));
-    socialElement.appendChild(document.createElement('br')); // Add line break for readability
-    return socialElement;
-  }) : '';
-
-  const socialDiv = document.createElement('div');
-  socialDiv.append(...socialLinks);
-
-  // Construct the table
   const cells = [
     headerRow,
-    [image, linksDiv],
-    [footerDiv, socialDiv]
+    [imageElement, links.join('<br>')],
+    [socialLinks.join('<br>'), footerText],
   ];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  element.replaceWith(table);
+  element.replaceWith(block);
 }

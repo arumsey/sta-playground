@@ -1,34 +1,27 @@
 /* global WebImporter */
- export default function parse(element, { document }) {
-   const headerRow = ['Hero'];
+export default function parse(element, { document }) {
+  const headerRow = ['Hero'];
 
-   // Extract Image
-   const imageElement = element.querySelector('img');
-   let image = null;
-   if (imageElement) {
-     image = document.createElement('img');
-     image.src = imageElement.src;
-     image.alt = imageElement.alt || '';
-   }
+  const titleElement = element.querySelector('h1');
+  const title = titleElement ? document.createElement('h1') : '';
+  if (titleElement) {
+    title.innerHTML = titleElement.innerHTML;
+  }
 
-   // Extract Heading
-   const headingElement = element.querySelector('h1') || element.querySelector('strong');
-   let heading = null;
-   if (headingElement) {
-     heading = document.createElement('h1');
-     heading.textContent = headingElement.textContent.trim();
-   }
+  const imageElement = element.querySelector('img');
+  const image = imageElement ? imageElement.cloneNode(true) : null;
 
-   // Create Table
-   const cells = [
-     headerRow,
-     [
-       image,
-       heading,
-     ].filter(Boolean),
-   ];
+  // Combine image and title into a single cell
+  const combinedContent = document.createElement('div');
+  if (image) combinedContent.appendChild(image);
+  if (title) combinedContent.appendChild(title);
 
-   // Create block table and replace original element
-   const blockTable = WebImporter.DOMUtils.createTable(cells, document);
-   element.parentNode.replaceChild(blockTable, element);
- }
+  const cells = [
+    headerRow,
+    [combinedContent],
+  ];
+
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  element.replaceWith(block);
+}

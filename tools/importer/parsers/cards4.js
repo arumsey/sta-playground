@@ -1,43 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const cells = [];
-
-  // Header row: Matches the example exactly
   const headerRow = ['Cards'];
-  cells.push(headerRow);
+  const rows = [];
 
-  // Approach: Extract individual card sections dynamically
-  const cardSections = element.querySelectorAll('.default-content-wrapper > h3');
+  // Process each heading (card title)
+  Array.from(element.querySelectorAll('h3')).forEach((heading) => {
+    const parent = heading.parentElement;
 
-  cardSections.forEach((titleElement) => {
-    const titleText = titleElement.textContent.trim();
+    // Extract the image related to the card
+    const image = parent.querySelector('picture img');
 
-    // Find the parent container
-    const parent = titleElement.closest('.default-content-wrapper');
+    // Extract the title from the heading
+    const title = heading.textContent.trim();
 
-    // Extract the corresponding image for the card section
-    const imageElement = titleElement.previousElementSibling.querySelector('img');
-    let imageNode = null;
-    if (imageElement) {
-      imageNode = document.createElement('img');
-      imageNode.src = imageElement.src;
-      imageNode.alt = imageElement.alt || '';
+    // Extract relevant description paragraphs below the heading
+    const descriptionElement = [];
+    let nextSibling = heading.nextElementSibling;
+    while (nextSibling && nextSibling.tagName !== 'H3' && nextSibling.tagName !== 'H2') {
+      if (nextSibling.tagName === 'P' && !nextSibling.querySelector('picture')) {
+        descriptionElement.push(nextSibling.textContent.trim());
+      }
+      nextSibling = nextSibling.nextElementSibling;
     }
 
-    // Extract the description paired with the title
-    const descriptionElement = titleElement.nextElementSibling;
-    const descriptionText = descriptionElement ? descriptionElement.textContent.trim() : '';
+    const descriptionText = descriptionElement.join(' ');
+    const descriptionNode = document.createElement('p');
+    descriptionNode.textContent = descriptionText;
 
-    // Add the card row (image node and combined title + description)
-    cells.push([
-      imageNode,
-      `${titleText}${descriptionText ? `\n${descriptionText}` : ''}`
-    ]);
+    const titleElement = document.createElement('strong');
+    titleElement.textContent = title;
+
+    if (image && title) {
+      rows.push([
+        image, // Image added dynamically into the first cell
+        [titleElement, descriptionNode], // Title and description structured dynamically into the second cell
+      ]);
+    }
   });
 
-  // Create the block table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with the new table
-  element.replaceWith(table);
+  // Construct the table and replace the element
+  const tableData = [headerRow, ...rows];
+  const block = WebImporter.DOMUtils.createTable(tableData, document);
+  element.replaceWith(block);
 }

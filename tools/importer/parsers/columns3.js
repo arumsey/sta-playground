@@ -1,41 +1,58 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
+  // Extract header row matching EXACTLY to 'Columns'
   const headerRow = ['Columns'];
 
-  // Extract image
-  const image = element.querySelector('picture img');
-  const extractedImage = document.createElement('img');
-  extractedImage.src = image?.src || '';
-  extractedImage.alt = image?.alt || '';
+  // Extract heading element dynamically
+  const headingElement = element.querySelector('h2');
+  const heading = document.createElement('h2');
+  heading.textContent = headingElement ? headingElement.textContent : '';
 
-  // Extract main text content
-  const textParagraphs = Array.from(element.querySelectorAll('.default-content-wrapper > p'));
-  const textContentArray = textParagraphs.map(p => p.textContent.trim()).filter(t => t !== '');
-  const combinedTextContent = textContentArray.join(' ');
+  // Dynamically extract the image element
+  const pictureElement = element.querySelector('picture img');
+  let imgElement = document.createElement('img');
+  if (pictureElement) {
+    imgElement.src = pictureElement.getAttribute('src');
+    imgElement.alt = pictureElement.getAttribute('alt');
+    imgElement.width = pictureElement.width;
+    imgElement.height = pictureElement.height;
+  } else {
+    imgElement = null; // No image exists
+  }
 
-  // Extract links from the list
-  const listItems = element.querySelectorAll('ul li a');
-  const links = Array.from(listItems).map(link => {
-    const a = document.createElement('a');
-    a.setAttribute('href', link.href);
-    a.setAttribute('title', link.title);
-    a.textContent = link.textContent;
-    return a;
-  });
+  // Extract paragraphs dynamically
+  const paragraphs = element.querySelectorAll('p');
+  const firstParagraph = document.createElement('p');
+  firstParagraph.textContent = paragraphs[1] ? paragraphs[1].textContent : '';
 
-  // Create rows and cells for the table
+  const secondParagraph = document.createElement('p');
+  secondParagraph.innerHTML = paragraphs[2] ? paragraphs[2].innerHTML : '';
+
+  // Extract list items dynamically
+  const listElement = element.querySelector('ul');
+  let listContainer = document.createElement('ul');
+  if (listElement) {
+    const listItems = listElement.querySelectorAll('li');
+    listItems.forEach((item) => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = item.innerHTML;
+      listContainer.appendChild(listItem);
+    });
+  } else {
+    listContainer = null; // No list items exist
+  }
+
+  // Define the table rows dynamically from content
   const cells = [
     headerRow,
-    [
-      combinedTextContent,
-      links,
-      extractedImage,
-    ],
+    [heading, imgElement].filter(Boolean), // Filter to avoid null images
+    [firstParagraph, secondParagraph].filter(Boolean),
+    [listContainer].filter(Boolean)
   ];
 
-  // Create the table using DOMUtils
-  const blockTable = WebImporter.DOMUtils.createTable(cells, document);
+  // Create the block table using WebImporter.DOMUtils.createTable()
+  const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace the original element with the new table
-  element.replaceWith(blockTable);
+  // Replace the existing element with the formatted block table
+  element.replaceWith(block);
 }

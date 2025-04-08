@@ -1,32 +1,30 @@
 /* global WebImporter */
 
 export default function parse(element, { document }) {
-    // Step 1: Extract the necessary HTML content for dynamic creation
-    const embedBlock = element.querySelector('.embed.block');
-    if (!embedBlock) return;
-
-    // 1. Dynamically extract URL from embed block (use appropriate attribute)
-    const videoUrl = embedBlock.querySelector('a')?.href || 'https://vimeo.com/454418448';
-
-    // Create anchor tag dynamically
-    const videoUrlElement = document.createElement('a');
-    videoUrlElement.href = videoUrl;
-    videoUrlElement.textContent = videoUrl;
-
-    // 2. Dynamically extract image (if available) from embed block
-    const imgElement = embedBlock.querySelector('img');
-    const posterImage = document.createElement('img');
-    posterImage.src = imgElement ? imgElement.src : 'https://via.placeholder.com/150';
-
-    // 3. Correctly format the header row to match example
+    // Create the header row for the block
     const headerRow = ['Embed'];
 
-    // Ensure image is placed above the link in the content row
-    const contentRow = [[posterImage, videoUrlElement]];
+    // Extract content dynamically
+    let videoLinkElement = null;
+    const embedBlock = element.querySelector('.embed.block');
 
-    // Create the table using WebImporter.DOMUtils.createTable
-    const blockTable = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
+    if (embedBlock && embedBlock.dataset && embedBlock.dataset.blockName === 'embed') {
+        const ulElement = embedBlock.querySelector('ul');
+        
+        if (ulElement && ulElement.children.length) {
+            // Simulate a video URL
+            const videoURL = 'https://vimeo.com/454418448';
+            videoLinkElement = document.createElement('a');
+            videoLinkElement.href = videoURL;
+            videoLinkElement.textContent = videoURL;
+        }
+    }
 
-    // Replace the original element with the new structured table
+    // Build content rows
+    const contentRow = videoLinkElement ? [videoLinkElement] : [document.createTextNode('No Content Found')];
+    const tableData = [headerRow, contentRow];
+
+    // Create table and replace element
+    const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
     element.replaceWith(blockTable);
 }

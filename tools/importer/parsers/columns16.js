@@ -1,31 +1,25 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    // Fixing the header row to match exactly
-    const headerRow = ['Columns'];
+  // Extracting content dynamically from the provided element
+  const header = element.querySelector('h2');
+  const paragraph = element.querySelector('p');
 
-    // Extract content from the original element
-    const title = element.querySelector('h2');
-    const paragraph = element.querySelector('p');
-    const image = element.querySelector('img');
+  // Handle missing header or paragraph cases
+  const headerContent = header ? header.cloneNode(true) : document.createElement('h2');
+  const paragraphContent = paragraph ? paragraph.cloneNode(true) : document.createElement('p');
 
-    // Validate and handle missing content
-    const titleContent = title ? title.outerHTML : '';
-    const paragraphContent = paragraph ? paragraph.outerHTML : '';
-    const imageContent = image ? image : '';
+  // Extracting the image dynamically from the <picture> element
+  const imgElement = element.querySelector('picture img');
+  const imgContent = imgElement ? imgElement.cloneNode(true) : document.createElement('img');
 
-    // Create a structured table as per the requirements
-    const cells = [
-        [headerRow[0]], // Header row with plain text
-        [
-            [
-                document.createRange().createContextualFragment(titleContent),
-                document.createRange().createContextualFragment(paragraphContent)
-            ],
-            imageContent // Ensure an image element is in a cell
-        ]
-    ];
+  // Create table structure dynamically
+  const headerRow = ['Columns'];
+  const contentRow = [[headerContent, paragraphContent], imgContent];
 
-    // Generate and replace the original element with block table
-    const blockTable = WebImporter.DOMUtils.createTable(cells, document);
-    element.replaceWith(blockTable);
+  const cells = [headerRow, contentRow];
+
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  
+  // Replace the original element with the newly created block table
+  element.replaceWith(block);
 }

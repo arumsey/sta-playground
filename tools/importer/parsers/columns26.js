@@ -1,49 +1,46 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const rows = [];
+  const cells = [];
 
-  // Header row
-  const headerRow = ['Columns'];
-  rows.push(headerRow);
+  // Header row: Correctly extracting and structuring header as "Columns"
+  cells.push(['Columns']);
 
-  // Data rows
-  const columns = element.querySelectorAll('div.list > div');
+  // Extracting content from HTML dynamically
+  const columns = Array.from(element.querySelectorAll('.columns > div'));
 
-  const contentRow = Array.from(columns).map((column) => {
-    // Extract image
-    const imgContainer = column.querySelector('picture img');
-    let imgElement = null;
-    if (imgContainer) {
-      imgElement = document.createElement('img');
-      imgElement.src = imgContainer.src;
-      imgElement.alt = imgContainer.alt;
-    }
+  if (columns.length) {
+    const row = columns.map((column) => {
+      const content = [];
 
-    // Extract text content
-    const textContainer = column.querySelector('div:last-child');
-    let textElement = null;
-    if (textContainer) {
-      textElement = document.createElement('div');
-      textElement.innerHTML = textContainer.innerHTML.trim();
-    }
+      // Add image if present
+      const img = column.querySelector('picture img');
+      if (img) {
+        const imgElement = document.createElement('img');
+        imgElement.src = img.src;
+        imgElement.alt = img.alt;
+        imgElement.width = img.width;
+        imgElement.height = img.height;
+        content.push(imgElement);
+      }
 
-    // Combine image and text for column cell
-    if (imgElement && textElement) {
-      return [imgElement, textElement];
-    } else if (imgElement) {
-      return imgElement;
-    } else if (textElement) {
-      return textElement;
-    } else {
-      return '';
-    }
-  });
+      // Add text content dynamically and ensure proper handling of edge cases
+      const textContent = column.querySelector('div:nth-of-type(2)');
+      if (textContent && textContent.textContent.trim().length > 0) {
+        content.push(textContent.cloneNode(true));
+      }
 
-  rows.push(contentRow);
+      return content;
+    });
 
-  // Create table
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+    cells.push(row);
+  } else {
+    // Edge case: when no columns are found, an empty row is added
+    cells.push(['No content available']);
+  }
 
-  // Replace original element
+  // Creating the table dynamically
+  const table = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace element with the newly created table
   element.replaceWith(table);
 }

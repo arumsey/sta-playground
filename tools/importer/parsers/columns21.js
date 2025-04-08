@@ -1,34 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    const headerRow = ['Columns'];
+  const rows = [];
 
-    const contentRows = [];
+  // Header row with block name
+  rows.push(['Columns']);
 
-    // Extract each column's info dynamically
-    const columns = element.querySelectorAll(':scope > .columns > div');
-    columns.forEach((column) => {
-        const imageElement = column.querySelector('picture img');
-        const image = imageElement ? document.createElement('img') : null;
-        if (image) {
-            image.src = imageElement.src;
-            image.width = imageElement.width;
-            image.height = imageElement.height;
-        }
+  const columns = Array.from(element.querySelectorAll('.columns > div'));
 
-        const textContent = column.querySelector('div:last-child');
-        const text = textContent ? document.createElement('div') : null;
-        if (text) {
-            text.innerHTML = textContent.innerHTML;
-        }
+  const blockColumns = columns.map((column) => {
+    const image = column.querySelector('picture img');
+    const imageElement = document.createElement('img');
+    if (image) {
+      imageElement.src = image.src;
+      imageElement.alt = image.alt || ''; // Defaulting to empty alt if missing
+    }
 
-        const row = image && text ? [image, text] : (image ? [image] : [text]);
-        contentRows.push(row);
-    });
+    const text = column.querySelector('div:last-child');
+    const contentElement = document.createElement('div');
+    if (text) {
+      contentElement.innerHTML = text.innerHTML;
+    }
 
-    const cells = [headerRow, ...contentRows];
+    // Combine content into a single cell to match example structure
+    return [imageElement, contentElement];
+  });
 
-    const table = WebImporter.DOMUtils.createTable(cells, document);
+  rows.push(...blockColumns.map(c => [c]));
 
-    // Replace the original element with the new table
-    element.replaceWith(table);
+  // Creating the table with helper function
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+
+  // Replacing the original element with the table
+  element.replaceWith(table);
 }

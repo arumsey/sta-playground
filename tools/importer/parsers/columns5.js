@@ -1,49 +1,29 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Helper function to create table cells
-  const createTextElement = (text) => {
-    const paragraph = document.createElement('p');
-    paragraph.textContent = text;
-    return paragraph;
-  };
+    const headerRow = ['Columns']; // Ensure header row matches example: "Columns"
 
-  // Extract and validate content from the provided HTML structure
-  const navBrandImage = element.querySelector('.nav-brand picture img');
-  
-  const navSectionsLinks = Array.from(element.querySelectorAll('.nav-sections ul li a'));
-  
-  const navToolsButton = element.querySelector('.nav-tools .button-container a');
+    // Dynamically extract nav brand image
+    const navBrandImage = element.querySelector('.nav-brand picture img')?.cloneNode(true);
 
-  // Check and handle edge cases for missing or empty elements
-  const navBrandImageClone = navBrandImage ? navBrandImage.cloneNode(true) : createTextElement('Image not available');
+    // Extract navigation links and clone them for later use
+    const navLinks = Array.from(element.querySelectorAll('.nav-sections ul li a')).map(link => link.cloneNode(true));
 
-  const column1Content = navSectionsLinks.length > 0
-    ? navSectionsLinks.map((link) => createTextElement(`- ${link.textContent}`))
-    : [createTextElement('No links available')];
+    // Extract donate button if present
+    const donateButton = element.querySelector('.button-container .button')?.cloneNode(true);
 
-  const navToolsButtonClone = navToolsButton ? navToolsButton.cloneNode(true) : createTextElement('Button not available');
+    // Handle missing or empty elements gracefully
+    const cells = [
+        headerRow,
+        [
+            navBrandImage || document.createTextNode(''), // Fallback to empty text node if image is missing
+            navLinks.length > 0 ? navLinks : [document.createTextNode('')], // Fallback to empty text node if links are missing
+            donateButton || document.createTextNode('') // Fallback to empty text node if button is missing
+        ]
+    ];
 
-  // Preparing structured content for the table
-  const headerRow = ['Columns'];
+    // Create structured table block
+    const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Row 2: Navigation links and branding image
-  const column1 = [
-    ...column1Content,
-    createTextElement('Live'),
-  ];
-  const column2 = [navBrandImageClone];
-
-  // Row 3: Donate button and preview link
-  const row3Column1 = [navToolsButtonClone];
-  const row3Column2 = [createTextElement('Or you can just view the preview'), navToolsButtonClone];
-
-  const cells = [
-    headerRow,
-    [column1, column2],
-    [row3Column1, row3Column2],
-  ];
-
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-
-  element.replaceWith(block);
+    // Replace original element with new structured block
+    element.replaceWith(table);
 }
