@@ -1,49 +1,34 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  const headerRow = ['Columns'];
+    const headerRow = ['Columns'];
 
-  const rows = [];
+    const contentRows = [];
 
-  // Process each column of content inside `nuv-content-feed__feed-items-container`
-  const columns = element.querySelectorAll(".nuv-content-feed__feed-item");
-  columns.forEach((column) => {
-    // Extract image
-    const imageContainer = column.querySelector(".nuv-content-feed__feed-item-thumb img");
-    const image = imageContainer ? imageContainer.cloneNode(true) : null;
+    // Extract each column's info dynamically
+    const columns = element.querySelectorAll(':scope > .columns > div');
+    columns.forEach((column) => {
+        const imageElement = column.querySelector('picture img');
+        const image = imageElement ? document.createElement('img') : null;
+        if (image) {
+            image.src = imageElement.src;
+            image.width = imageElement.width;
+            image.height = imageElement.height;
+        }
 
-    // Extract eyebrow text
-    const eyebrow = column.querySelector(".nuv-content-feed__feed-eyebrow");
-    const eyebrowText = eyebrow ? eyebrow.textContent.trim() : '';
+        const textContent = column.querySelector('div:last-child');
+        const text = textContent ? document.createElement('div') : null;
+        if (text) {
+            text.innerHTML = textContent.innerHTML;
+        }
 
-    // Extract title and create link
-    const title = column.querySelector(".nuv-content-feed__feed-main-title-url");
-    const titleLink = title ? document.createElement("a") : '';
-    if (titleLink) {
-      titleLink.href = title.href;
-      titleLink.textContent = title.textContent.trim();
-    }
+        const row = image && text ? [image, text] : (image ? [image] : [text]);
+        contentRows.push(row);
+    });
 
-    // Extract sub-title content
-    const subTitle = column.querySelector(".nuv-content-feed__feed-sub-title");
-    const subtitleContent = subTitle ? subTitle.innerHTML.trim() : '';
+    const cells = [headerRow, ...contentRows];
 
-    // Ensure rows consistently contain 3 aligned columns
-    rows.push([
-      image || '',
-      eyebrowText || '',
-      titleLink || subtitleContent || '',
-    ]);
-  });
+    const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Creating the table block
-  const cells = [
-    headerRow,
-    ...rows,
-  ];
-
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element
-  element.replaceWith(block);
+    // Replace the original element with the new table
+    element.replaceWith(table);
 }

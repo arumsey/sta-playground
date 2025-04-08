@@ -1,59 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Define the header row based on the example
   const headerRow = ['Columns'];
 
-  // Safely extract dynamic content from the element
-  const regionSelector = document.querySelector('#regionSelector');
-  const countrySelector = document.querySelector('#countryselector');
-  const roleSelector = document.querySelector('#roleSelection');
-  const termsAndConditionsText = document.querySelector('.site-switcher-update__content-terms')?.textContent?.trim() || 'Terms and conditions not available';
+  // Extract image
+  const image = element.querySelector('picture img');
+  const extractedImage = document.createElement('img');
+  extractedImage.src = image?.src || '';
+  extractedImage.alt = image?.alt || '';
 
-  const privacyLink = document.querySelector('.site-switcher-update__content-links--privacy');
-  const cookieLink = document.querySelector('.site-switcher-update__content-links--cookie');
-  const acceptButton = document.querySelector('.nuv-button__btn');
+  // Extract main text content
+  const textParagraphs = Array.from(element.querySelectorAll('.default-content-wrapper > p'));
+  const textContentArray = textParagraphs.map(p => p.textContent.trim()).filter(t => t !== '');
+  const combinedTextContent = textContentArray.join(' ');
 
-  // Extract values with proper fallbacks
-  const regionContent = regionSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Region not specified';
-  const locationContent = countrySelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Location not specified';
-  const roleContent = roleSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Role not specified';
+  // Extract links from the list
+  const listItems = element.querySelectorAll('ul li a');
+  const links = Array.from(listItems).map(link => {
+    const a = document.createElement('a');
+    a.setAttribute('href', link.href);
+    a.setAttribute('title', link.title);
+    a.textContent = link.textContent;
+    return a;
+  });
 
-  // Validate and create dynamic links
-  const privacyNoticeLink = privacyLink ? document.createElement('a') : document.createTextNode('Privacy link not available');
-  if (privacyLink) {
-    privacyNoticeLink.href = privacyLink.href;
-    privacyNoticeLink.textContent = 'Privacy notice';
-  }
-
-  const cookiePolicyLink = cookieLink ? document.createElement('a') : document.createTextNode('Cookie policy link not available');
-  if (cookieLink) {
-    cookiePolicyLink.href = cookieLink.href;
-    cookiePolicyLink.textContent = 'Cookie policy, terms of use';
-  }
-
-  const acceptLink = acceptButton ? document.createElement('a') : document.createTextNode('Accept button not available');
-  if (acceptButton) {
-    acceptLink.href = '#';
-    acceptLink.textContent = 'Accept to continue';
-  }
-
-  // Compile rows based on the example
-  const rows = [
-    [headerRow],
+  // Create rows and cells for the table
+  const cells = [
+    headerRow,
     [
-      `Region: ${regionContent}`,
-      `Location: ${locationContent}`,
-      `Role: ${roleContent}`
+      combinedTextContent,
+      links,
+      extractedImage,
     ],
-    [
-      termsAndConditionsText,
-      privacyNoticeLink,
-      cookiePolicyLink
-    ],
-    [acceptLink]
   ];
 
-  // Use DOMUtils to create the table and replace the element
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
+  // Create the table using DOMUtils
+  const blockTable = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the new table
   element.replaceWith(blockTable);
 }

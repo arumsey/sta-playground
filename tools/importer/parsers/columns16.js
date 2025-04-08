@@ -1,42 +1,31 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const headerRow = ['Columns'];
+    // Fixing the header row to match exactly
+    const headerRow = ['Columns'];
 
-  // Check if the element has a proper column structure
-  const columns = [...element.children];
+    // Extract content from the original element
+    const title = element.querySelector('h2');
+    const paragraph = element.querySelector('p');
+    const image = element.querySelector('img');
 
-  if (columns.length === 0) {
-    // Handle edge case where no content exists in the element
-    const emptyRow = document.createElement('p');
-    emptyRow.textContent = 'No content available';
-    const tableCells = [
-      headerRow,
-      [emptyRow],
+    // Validate and handle missing content
+    const titleContent = title ? title.outerHTML : '';
+    const paragraphContent = paragraph ? paragraph.outerHTML : '';
+    const imageContent = image ? image : '';
+
+    // Create a structured table as per the requirements
+    const cells = [
+        [headerRow[0]], // Header row with plain text
+        [
+            [
+                document.createRange().createContextualFragment(titleContent),
+                document.createRange().createContextualFragment(paragraphContent)
+            ],
+            imageContent // Ensure an image element is in a cell
+        ]
     ];
 
-    const table = WebImporter.DOMUtils.createTable(tableCells, document);
-    element.replaceWith(table);
-    return;
-  }
-
-  const columnData = columns.map((column) => {
-    const headerElement = column.querySelector('h2');
-    const textElement = column.querySelector('p');
-
-    const header = headerElement ? headerElement.cloneNode(true) : document.createElement('h2');
-    header.textContent = headerElement ? headerElement.textContent : 'Missing Header';
-
-    const text = textElement ? textElement.cloneNode(true) : document.createElement('p');
-    text.textContent = textElement ? textElement.textContent : 'Missing Content';
-
-    return [header, text];
-  });
-
-  const tableCells = [
-    headerRow,
-    columnData,
-  ];
-
-  const table = WebImporter.DOMUtils.createTable(tableCells, document);
-  element.replaceWith(table);
+    // Generate and replace the original element with block table
+    const blockTable = WebImporter.DOMUtils.createTable(cells, document);
+    element.replaceWith(blockTable);
 }
