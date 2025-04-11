@@ -11,7 +11,25 @@
  */
 /* global WebImporter */
 /* eslint-disable no-console */
-
+import columns5Parser from './parsers/columns5.js';
+import columns10Parser from './parsers/columns10.js';
+import columns3Parser from './parsers/columns3.js';
+import embedVideo13Parser from './parsers/embedVideo13.js';
+import hero2Parser from './parsers/hero2.js';
+import columnsThreeColumns11Parser from './parsers/columnsThreeColumns11.js';
+import hero7Parser from './parsers/hero7.js';
+import columns16Parser from './parsers/columns16.js';
+import columnsThreeColumns20Parser from './parsers/columnsThreeColumns20.js';
+import hero19Parser from './parsers/hero19.js';
+import carousel15Parser from './parsers/carousel15.js';
+import columns21Parser from './parsers/columns21.js';
+import columnsThreeColumns18Parser from './parsers/columnsThreeColumns18.js';
+import carousel24Parser from './parsers/carousel24.js';
+import columns14Parser from './parsers/columns14.js';
+import cards4Parser from './parsers/cards4.js';
+import columns12Parser from './parsers/columns12.js';
+import columns26Parser from './parsers/columns26.js';
+import columns23Parser from './parsers/columns23.js';
 import headerParser from './parsers/header.js';
 import metadataParser from './parsers/metadata.js';
 import {
@@ -23,7 +41,25 @@ import {
 
 const parsers = {
   metadata: metadataParser,
-
+  columns5: columns5Parser,
+  columns10: columns10Parser,
+  columns3: columns3Parser,
+  embedVideo13: embedVideo13Parser,
+  hero2: hero2Parser,
+  columnsThreeColumns11: columnsThreeColumns11Parser,
+  hero7: hero7Parser,
+  columns16: columns16Parser,
+  columnsThreeColumns20: columnsThreeColumns20Parser,
+  hero19: hero19Parser,
+  carousel15: carousel15Parser,
+  columns21: columns21Parser,
+  columnsThreeColumns18: columnsThreeColumns18Parser,
+  carousel24: carousel24Parser,
+  columns14: columns14Parser,
+  cards4: cards4Parser,
+  columns12: columns12Parser,
+  columns26: columns26Parser,
+  columns23: columns23Parser,
 };
 
 WebImporter.Import = {
@@ -157,7 +193,8 @@ function transformFragment(main, { fragment, inventory, ...source }) {
 
         if (!fragmentBlock) return;
         const { name, cluster } = fragmentBlock;
-        const parserFn = parsers[`${name} ${cluster}`];
+        const parserName = WebImporter.Import.getParserName({ name, cluster });
+        const parserFn = parsers[parserName];
         if (!parserFn) return;
 
         try {

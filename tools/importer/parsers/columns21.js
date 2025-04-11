@@ -1,49 +1,42 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  const headerRow = ['Columns'];
+    const headerRow = ['Columns']; // Matches example header row
 
-  const rows = [];
+    const rows = []; // Initialize rows for table data
 
-  // Process each column of content inside `nuv-content-feed__feed-items-container`
-  const columns = element.querySelectorAll(".nuv-content-feed__feed-item");
-  columns.forEach((column) => {
-    // Extract image
-    const imageContainer = column.querySelector(".nuv-content-feed__feed-item-thumb img");
-    const image = imageContainer ? imageContainer.cloneNode(true) : null;
+    // Iterate over each column block
+    element.querySelectorAll('.columns > div').forEach((column) => {
+        const image = column.querySelector('picture img');
 
-    // Extract eyebrow text
-    const eyebrow = column.querySelector(".nuv-content-feed__feed-eyebrow");
-    const eyebrowText = eyebrow ? eyebrow.textContent.trim() : '';
+        // Check if image exists and construct img element dynamically
+        const imgElement = image ? document.createElement('img') : null;
+        if (imgElement) {
+            imgElement.src = image.src;
+            imgElement.setAttribute('loading', 'lazy'); // Ensure lazy loading
+            imgElement.setAttribute('alt', image.getAttribute('alt') || ''); // Handle missing alt text
+        }
 
-    // Extract title and create link
-    const title = column.querySelector(".nuv-content-feed__feed-main-title-url");
-    const titleLink = title ? document.createElement("a") : '';
-    if (titleLink) {
-      titleLink.href = title.href;
-      titleLink.textContent = title.textContent.trim();
-    }
+        const textContent = column.querySelector('div:last-child'); // Extract descriptive text content
 
-    // Extract sub-title content
-    const subTitle = column.querySelector(".nuv-content-feed__feed-sub-title");
-    const subtitleContent = subTitle ? subTitle.innerHTML.trim() : '';
+        // Extract title (if present) and remaining content separately
+        const title = textContent.querySelector('strong');
+        const copy = document.createElement('div');
 
-    // Ensure rows consistently contain 3 aligned columns
-    rows.push([
-      image || '',
-      eyebrowText || '',
-      titleLink || subtitleContent || '',
-    ]);
-  });
+        // Clone only non-title child nodes into the copy div
+        Array.from(textContent.childNodes).forEach((node) => {
+            if (!node.isEqualNode(title)) {
+                copy.appendChild(node.cloneNode(true));
+            }
+        });
 
-  // Creating the table block
-  const cells = [
-    headerRow,
-    ...rows,
-  ];
+        rows.push([imgElement, [title, copy]]); // Combine image, title, and copy
+    });
 
-  const block = WebImporter.DOMUtils.createTable(cells, document);
+    // Construct table cells with header and rows
+    const cells = [headerRow, ...rows];
 
-  // Replace the original element
-  element.replaceWith(block);
+    // Create the table using WebImporter helper
+    const table = WebImporter.DOMUtils.createTable(cells, document);
+
+    element.replaceWith(table); // Replace old content with new table
 }

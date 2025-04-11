@@ -18,10 +18,15 @@ const brandLogoMapping = [
       if (bodyWidth && x < bodyWidth / 2) {
         const linkedPictureEl = document.createElement('div');
         const linkEl = e.parentElement;
+        let imgEl = e.cloneNode(true);
+        if (imgEl.tagName === 'PICTURE') {
+          imgEl = imgEl.querySelector('img');
+        }
+        linkEl.chilren = null;
         linkEl.parentElement.append(linkedPictureEl);
         linkedPictureEl.append(document.createElement('br'));
         linkedPictureEl.append(linkEl);
-        linkedPictureEl.prepend(...linkEl.children);
+        linkedPictureEl.prepend(imgEl);
         if (linkEl.textContent.replaceAll(/[\n\t]/gm, '').trim().length === 0) {
           linkEl.textContent = linkEl.href;
         }
