@@ -1,42 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const headerRow = ['Columns'];
+    // Safeguard: Verify element availability
+    if (!element || !document) return;
 
-  // Check if the element has a proper column structure
-  const columns = [...element.children];
+    // Extract the primary heading and paragraph content dynamically
+    const heading = element.querySelector('h2');
+    const headingContent = heading ? heading.textContent : '';
 
-  if (columns.length === 0) {
-    // Handle edge case where no content exists in the element
-    const emptyRow = document.createElement('p');
-    emptyRow.textContent = 'No content available';
-    const tableCells = [
-      headerRow,
-      [emptyRow],
+    const paragraph = element.querySelector('p');
+    const paragraphContent = paragraph ? paragraph.textContent : '';
+
+    // Extract the picture dynamically, fallback if missing
+    const picture = element.querySelector('picture');
+    const img = picture?.querySelector('img');
+    const imgElement = img ? img.cloneNode(true) : document.createTextNode('');
+
+    // Ensure proper headers match example structure
+    const headerRow = ['Columns'];
+
+    // Create rows: Dynamically ensure empty content is gracefully handled
+    const contentRow = [
+        [headingContent, paragraphContent],
+        imgElement,
     ];
 
-    const table = WebImporter.DOMUtils.createTable(tableCells, document);
-    element.replaceWith(table);
-    return;
-  }
+    // Create the block table
+    const block = WebImporter.DOMUtils.createTable([
+        headerRow, // Header row (block name)
+        contentRow // Content row with elements
+    ], document);
 
-  const columnData = columns.map((column) => {
-    const headerElement = column.querySelector('h2');
-    const textElement = column.querySelector('p');
-
-    const header = headerElement ? headerElement.cloneNode(true) : document.createElement('h2');
-    header.textContent = headerElement ? headerElement.textContent : 'Missing Header';
-
-    const text = textElement ? textElement.cloneNode(true) : document.createElement('p');
-    text.textContent = textElement ? textElement.textContent : 'Missing Content';
-
-    return [header, text];
-  });
-
-  const tableCells = [
-    headerRow,
-    columnData,
-  ];
-
-  const table = WebImporter.DOMUtils.createTable(tableCells, document);
-  element.replaceWith(table);
+    // Replace the original element with the new block table
+    element.replaceWith(block);
 }

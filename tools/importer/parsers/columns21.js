@@ -1,49 +1,46 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  const headerRow = ['Columns'];
+  const blockName = 'Columns';
 
-  const rows = [];
+  // Extracting relevant content from the input element dynamically
+  const columns = [...element.querySelectorAll('.columns > div')];
 
-  // Process each column of content inside `nuv-content-feed__feed-items-container`
-  const columns = element.querySelectorAll(".nuv-content-feed__feed-item");
-  columns.forEach((column) => {
-    // Extract image
-    const imageContainer = column.querySelector(".nuv-content-feed__feed-item-thumb img");
-    const image = imageContainer ? imageContainer.cloneNode(true) : null;
+  if (columns.length === 0) {
+    console.warn('No columns found within the element.');
+    return;
+  }
 
-    // Extract eyebrow text
-    const eyebrow = column.querySelector(".nuv-content-feed__feed-eyebrow");
-    const eyebrowText = eyebrow ? eyebrow.textContent.trim() : '';
+  const rows = columns.map((column) => {
+    const img = column.querySelector('img');
 
-    // Extract title and create link
-    const title = column.querySelector(".nuv-content-feed__feed-main-title-url");
-    const titleLink = title ? document.createElement("a") : '';
-    if (titleLink) {
-      titleLink.href = title.href;
-      titleLink.textContent = title.textContent.trim();
+    if (!img) {
+      console.warn('Image not found in column', column);
     }
 
-    // Extract sub-title content
-    const subTitle = column.querySelector(".nuv-content-feed__feed-sub-title");
-    const subtitleContent = subTitle ? subTitle.innerHTML.trim() : '';
+    const contentWrapper = document.createElement('div');
+    const content = column.querySelector('div:nth-of-type(2)');
+    if (content) {
+      contentWrapper.append(...content.childNodes);
+    } else {
+      console.warn('Content not found in column', column);
+    }
 
-    // Ensure rows consistently contain 3 aligned columns
-    rows.push([
-      image || '',
-      eyebrowText || '',
-      titleLink || subtitleContent || '',
-    ]);
+    return [img || '', contentWrapper];
   });
 
-  // Creating the table block
+  if (rows.length === 0) {
+    console.error('No valid rows extracted from the columns.');
+    return;
+  }
+
   const cells = [
-    headerRow,
+    [blockName],
     ...rows,
   ];
 
+  // Create the block table
   const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace the original element
+  // Replace the original element with the new block table
   element.replaceWith(block);
 }

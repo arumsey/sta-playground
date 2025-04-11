@@ -1,59 +1,56 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Define the header row based on the example
-  const headerRow = ['Columns'];
+    // Extract the heading
+    const heading = element.querySelector('h2') ? element.querySelector('h2').textContent.trim() : '';
 
-  // Safely extract dynamic content from the element
-  const regionSelector = document.querySelector('#regionSelector');
-  const countrySelector = document.querySelector('#countryselector');
-  const roleSelector = document.querySelector('#roleSelection');
-  const termsAndConditionsText = document.querySelector('.site-switcher-update__content-terms')?.textContent?.trim() || 'Terms and conditions not available';
+    // Extract the image
+    const imageElement = element.querySelector('img');
+    const image = document.createElement('img');
+    if (imageElement) {
+        image.src = imageElement.src;
+        image.alt = imageElement.alt;
+    } else {
+        image.alt = 'No image available';
+    }
 
-  const privacyLink = document.querySelector('.site-switcher-update__content-links--privacy');
-  const cookieLink = document.querySelector('.site-switcher-update__content-links--cookie');
-  const acceptButton = document.querySelector('.nuv-button__btn');
+    // Extract the paragraphs
+    const paragraphs = Array.from(element.querySelectorAll('.default-content-wrapper p')).map((p) => {
+        const div = document.createElement('div');
+        div.innerHTML = p.innerHTML.trim();
+        return div;
+    });
 
-  // Extract values with proper fallbacks
-  const regionContent = regionSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Region not specified';
-  const locationContent = countrySelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Location not specified';
-  const roleContent = roleSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Role not specified';
+    // Ensure we handle the case where paragraphs may be absent
+    const paragraphContent = paragraphs.length > 0 ? paragraphs : ['No content available'];
 
-  // Validate and create dynamic links
-  const privacyNoticeLink = privacyLink ? document.createElement('a') : document.createTextNode('Privacy link not available');
-  if (privacyLink) {
-    privacyNoticeLink.href = privacyLink.href;
-    privacyNoticeLink.textContent = 'Privacy notice';
-  }
+    // Extract the list items
+    const listItems = Array.from(element.querySelectorAll('ul li')).map((li) => {
+        const link = li.querySelector('a');
+        if (link) {
+            const anchor = document.createElement('a');
+            anchor.href = link.href;
+            anchor.textContent = link.textContent;
+            return anchor;
+        }
+        return null; // Handle case where list item is empty or lacks anchor
+    }).filter(Boolean);
 
-  const cookiePolicyLink = cookieLink ? document.createElement('a') : document.createTextNode('Cookie policy link not available');
-  if (cookieLink) {
-    cookiePolicyLink.href = cookieLink.href;
-    cookiePolicyLink.textContent = 'Cookie policy, terms of use';
-  }
+    const listDiv = document.createElement('div');
+    if (listItems.length > 0) {
+        listDiv.append(...listItems);
+    } else {
+        listDiv.textContent = 'No list items available';
+    }
 
-  const acceptLink = acceptButton ? document.createElement('a') : document.createTextNode('Accept button not available');
-  if (acceptButton) {
-    acceptLink.href = '#';
-    acceptLink.textContent = 'Accept to continue';
-  }
+    // Create the table content
+    const cells = [
+        ['Columns'], // Header row, ensures conformity to the example
+        [image, paragraphContent, listDiv],
+    ];
 
-  // Compile rows based on the example
-  const rows = [
-    [headerRow],
-    [
-      `Region: ${regionContent}`,
-      `Location: ${locationContent}`,
-      `Role: ${roleContent}`
-    ],
-    [
-      termsAndConditionsText,
-      privacyNoticeLink,
-      cookiePolicyLink
-    ],
-    [acceptLink]
-  ];
+    // Create the table block
+    const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Use DOMUtils to create the table and replace the element
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(blockTable);
+    // Replace the element
+    element.replaceWith(table);
 }
