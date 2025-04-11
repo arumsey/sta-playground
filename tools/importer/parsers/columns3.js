@@ -1,59 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Define the header row based on the example
   const headerRow = ['Columns'];
 
-  // Safely extract dynamic content from the element
-  const regionSelector = document.querySelector('#regionSelector');
-  const countrySelector = document.querySelector('#countryselector');
-  const roleSelector = document.querySelector('#roleSelection');
-  const termsAndConditionsText = document.querySelector('.site-switcher-update__content-terms')?.textContent?.trim() || 'Terms and conditions not available';
+  // Extract data dynamically from the element
+  const title = element.querySelector('h2');
+  const image = element.querySelector('picture img');
+  const paragraphs = Array.from(element.querySelectorAll('p'));
+  const links = Array.from(element.querySelectorAll('ul li a'));
 
-  const privacyLink = document.querySelector('.site-switcher-update__content-links--privacy');
-  const cookieLink = document.querySelector('.site-switcher-update__content-links--cookie');
-  const acceptButton = document.querySelector('.nuv-button__btn');
+  // Handle possible missing or empty elements
+  const titleClone = title ? title.cloneNode(true) : document.createTextNode('');
+  const imageClone = image ? image.cloneNode(true) : document.createTextNode('');
 
-  // Extract values with proper fallbacks
-  const regionContent = regionSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Region not specified';
-  const locationContent = countrySelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Location not specified';
-  const roleContent = roleSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Role not specified';
+  const paragraphClones = paragraphs.length > 0 
+    ? paragraphs.map(p => p.cloneNode(true)) 
+    : [document.createTextNode('')];
 
-  // Validate and create dynamic links
-  const privacyNoticeLink = privacyLink ? document.createElement('a') : document.createTextNode('Privacy link not available');
-  if (privacyLink) {
-    privacyNoticeLink.href = privacyLink.href;
-    privacyNoticeLink.textContent = 'Privacy notice';
-  }
+  const linkClones = links.length > 0 
+    ? links.map(link => link.cloneNode(true))
+    : [document.createTextNode('')];
 
-  const cookiePolicyLink = cookieLink ? document.createElement('a') : document.createTextNode('Cookie policy link not available');
-  if (cookieLink) {
-    cookiePolicyLink.href = cookieLink.href;
-    cookiePolicyLink.textContent = 'Cookie policy, terms of use';
-  }
-
-  const acceptLink = acceptButton ? document.createElement('a') : document.createTextNode('Accept button not available');
-  if (acceptButton) {
-    acceptLink.href = '#';
-    acceptLink.textContent = 'Accept to continue';
-  }
-
-  // Compile rows based on the example
-  const rows = [
-    [headerRow],
-    [
-      `Region: ${regionContent}`,
-      `Location: ${locationContent}`,
-      `Role: ${roleContent}`
-    ],
-    [
-      termsAndConditionsText,
-      privacyNoticeLink,
-      cookiePolicyLink
-    ],
-    [acceptLink]
+  // Create structured table rows
+  const secondRow = [
+    document.createElement('div'), // Left cell content accumulator
+    document.createElement('div') // Right cell content accumulator
   ];
 
-  // Use DOMUtils to create the table and replace the element
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(blockTable);
+  // Add title and text to the left cell
+  secondRow[0].append(titleClone, ...paragraphClones);
+
+  // Add image and links to the right cell
+  secondRow[1].append(imageClone, ...linkClones);
+
+  // Create the table
+  const cells = [
+    headerRow,
+    secondRow,
+  ];
+
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the new block
+  element.replaceWith(block);
 }
