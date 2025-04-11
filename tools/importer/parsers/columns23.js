@@ -1,51 +1,61 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Correct header row exactly matching the example
-  const headerRow = ['Columns'];
+  // Declare header row matching the example with <strong> wrapping the text
+  const headerRow = [document.createElement('strong')];
+  headerRow[0].textContent = 'Columns';
 
-  // Extract introductory paragraphs
-  const introParagraphs = Array.from(element.querySelectorAll(".default-content-wrapper p"))
-    .map(p => p.textContent.trim())
-    .join(" ");
+  // Initialize content array for structured layout
+  const cells = [headerRow];
 
-  // Extract the image element
-  const imageElement = element.querySelector(".default-content-wrapper picture img");
-  const clonedImage = imageElement ? imageElement.cloneNode(true) : null;
+  // Extract main content block dynamically
+  const tournamentContainer = element.querySelector('.default-content-wrapper');
+  if (tournamentContainer) {
+    const contentColumns = [];
 
-  // Extract tournament details
-  const tournaments = [];
-  const tournamentBlocks = element.querySelectorAll(".tournament-wrapper .tournament > div");
+    // Left content: heading & description paragraphs
+    const leftContent = document.createElement('div');
+    const heading = tournamentContainer.querySelector('h2');
+    const paragraphs = tournamentContainer.querySelectorAll('p');
+    
+    if (heading) leftContent.append(heading.cloneNode(true));
+    paragraphs.forEach(p => leftContent.append(p.cloneNode(true)));
 
-  tournamentBlocks.forEach((block) => {
-    const tournamentDetails = [];
+    // Right content: image
+    const rightContent = document.createElement('div');
+    const image = tournamentContainer.querySelector('img');
+    if (image) rightContent.append(image.cloneNode(true));
 
-    // Extract tournament text details
-    Array.from(block.querySelectorAll("div:not(.button-container)")).forEach(detailElement => {
-      tournamentDetails.push(document.createTextNode(detailElement.textContent.trim()));
+    contentColumns.push(leftContent, rightContent);
+    cells.push(contentColumns); // Add as a row to the table
+  }
+
+  // Extract tournament blocks dynamically
+  const tournaments = element.querySelector('.tournament-wrapper');
+  if (tournaments) {
+    const tournamentBlocks = tournaments.querySelectorAll('.tournament > div');
+
+    tournamentBlocks.forEach(block => {
+      const tournamentContent = [];
+
+      const eventName = block.children[0];
+      const location = block.children[1];
+      const date = block.children[2];
+      const button = block.querySelector('.button-container a');
+
+      const details = document.createElement('div');
+      if (eventName) details.append(eventName.cloneNode(true));
+      if (location) details.append(location.cloneNode(true));
+      if (date) details.append(date.cloneNode(true));
+      if (button) details.append(button.cloneNode(true));
+
+      tournamentContent.push(details);
+      cells.push(tournamentContent); // Add details as a row to the table
     });
-
-    // Extract email link if exists
-    const linkElement = block.querySelector("div.button-container a");
-    if (linkElement) {
-      tournamentDetails.push(linkElement.cloneNode(true));
-    }
-
-    tournaments.push(tournamentDetails);
-  });
-
-  // Build the table data (header row with exactly one column)
-  const tableData = [
-    headerRow, // Correct header row
-    [
-      document.createTextNode(introParagraphs),
-      clonedImage,
-    ],
-    ...tournaments, // Add tournament rows
-  ];
+  }
 
   // Create the structured block table
-  const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
+  const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace original element with constructed block table
-  element.replaceWith(blockTable);
+  // Replace the original element with the block table
+  element.replaceWith(block);
 }

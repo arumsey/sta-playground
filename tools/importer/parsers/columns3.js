@@ -1,56 +1,43 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    // Extract the heading
-    const heading = element.querySelector('h2') ? element.querySelector('h2').textContent.trim() : '';
+    // Declare header row for the table
+    const headerRow = ['Columns'];
 
-    // Extract the image
-    const imageElement = element.querySelector('img');
-    const image = document.createElement('img');
-    if (imageElement) {
-        image.src = imageElement.src;
-        image.alt = imageElement.alt;
-    } else {
-        image.alt = 'No image available';
-    }
+    // Extract image element dynamically
+    const image = element.querySelector('picture img');
+    const imageElement = document.createElement('img');
+    imageElement.src = image.src;
+    imageElement.alt = image.alt;
 
-    // Extract the paragraphs
-    const paragraphs = Array.from(element.querySelectorAll('.default-content-wrapper p')).map((p) => {
-        const div = document.createElement('div');
-        div.innerHTML = p.innerHTML.trim();
-        return div;
-    });
+    // Extract paragraphs dynamically
+    const descriptionParagraphs = Array.from(element.querySelectorAll('p'))
+        .filter(p => p.textContent.trim()) // ignore empty paragraphs
+        .map(p => p.cloneNode(true));
 
-    // Ensure we handle the case where paragraphs may be absent
-    const paragraphContent = paragraphs.length > 0 ? paragraphs : ['No content available'];
+    // Extract links dynamically
+    const linksList = element.querySelector('ul');
+    const links = Array.from(linksList ? linksList.querySelectorAll('li') : [])
+        .map(li => li.cloneNode(true));
 
-    // Extract the list items
-    const listItems = Array.from(element.querySelectorAll('ul li')).map((li) => {
-        const link = li.querySelector('a');
-        if (link) {
-            const anchor = document.createElement('a');
-            anchor.href = link.href;
-            anchor.textContent = link.textContent;
-            return anchor;
-        }
-        return null; // Handle case where list item is empty or lacks anchor
-    }).filter(Boolean);
+    // Include an <hr> element to separate sections
+    const hrElement = document.createElement('hr');
 
-    const listDiv = document.createElement('div');
-    if (listItems.length > 0) {
-        listDiv.append(...listItems);
-    } else {
-        listDiv.textContent = 'No list items available';
-    }
-
-    // Create the table content
+    // Create table content dynamically
     const cells = [
-        ['Columns'], // Header row, ensures conformity to the example
-        [image, paragraphContent, listDiv],
+        headerRow,
+        [
+            [
+                ...descriptionParagraphs,
+                hrElement,
+                ...links
+            ],
+            imageElement
+        ]
     ];
 
-    // Create the table block
-    const table = WebImporter.DOMUtils.createTable(cells, document);
+    // Create the block table
+    const blockTable = WebImporter.DOMUtils.createTable(cells, document);
 
-    // Replace the element
-    element.replaceWith(table);
+    // Replace the original element with the new block table
+    element.replaceWith(blockTable);
 }

@@ -2,42 +2,68 @@
 export default function parse(element, { document }) {
   const rows = [];
 
-  // Add the header row
-  rows.push(['Columns']);
+  // Add header row
+  const headerRow = ['Columns'];
+  rows.push(headerRow);
 
-  // Add the content rows
-  const items = element.querySelectorAll('.block.columns-2-cols > div');
-  items.forEach((item) => {
-    const image = item.querySelector('picture img');
-    const text = item.querySelector('div:nth-of-type(2)');
+  // Extract content rows
+  const contentRow = [];
+  const columnElements = element.querySelectorAll('.columns.list.block.columns-2-cols > div');
 
-    // Handle edge case for missing image or text
-    let imageElement; 
+  columnElements.forEach((column) => {
+    const parts = [];
+
+    // Extract image
+    const image = column.querySelector('picture > img');
     if (image) {
-      imageElement = document.createElement('img');
-      imageElement.src = image.src;
-      imageElement.alt = image.alt || '';
-      imageElement.width = image.width;
-      imageElement.height = image.height;
-    } else {
-      imageElement = document.createTextNode('');
+      const imgElement = document.createElement('img');
+      imgElement.src = image.src;
+      imgElement.alt = image.alt || '';
+      parts.push(imgElement);
     }
 
-    let textElement;
-    if (text) {
-      textElement = text.cloneNode(true);
-    } else {
-      textElement = document.createTextNode('');
+    // Extract and consolidate text into a single coherent structure
+    const textContainer = column.querySelector('div:not(:first-child)');
+    if (textContainer) {
+      const consolidatedText = document.createElement('div');
+
+      // Add heading text if available
+      const heading = textContainer.querySelector('strong');
+      if (heading) {
+        const headingElement = document.createElement('strong');
+        headingElement.textContent = heading.textContent;
+        consolidatedText.appendChild(headingElement);
+      }
+
+      // Add description paragraphs
+      textContainer.querySelectorAll('p').forEach((paragraph) => {
+        const paragraphElement = document.createElement('p');
+        paragraphElement.textContent = paragraph.textContent.trim();
+        consolidatedText.appendChild(paragraphElement);
+      });
+
+      // Add links uniquely
+      textContainer.querySelectorAll('a').forEach((link) => {
+        if (!consolidatedText.querySelector(`a[href="${link.href}"]`)) {
+          const linkElement = document.createElement('a');
+          linkElement.href = link.href;
+          linkElement.title = link.title || '';
+          linkElement.textContent = link.textContent;
+          consolidatedText.appendChild(linkElement);
+        }
+      });
+
+      parts.push(consolidatedText);
     }
 
-    rows.push([
-      [imageElement, textElement],
-    ]);
+    contentRow.push(parts);
   });
 
-  // Create the block table
+  rows.push(contentRow);
+
+  // Create table
   const table = WebImporter.DOMUtils.createTable(rows, document);
 
-  // Replace the original element with the new table
+  // Replace original element
   element.replaceWith(table);
 }

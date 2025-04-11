@@ -1,45 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Ensure dynamic extraction of data from the element
-  const rows = [];
+  const headerRow = ['Cards'];
 
-  // Insert Header row: EXACTLY matching the example (e.g., "Cards")
-  rows.push(['Cards']);
+  const cards = Array.from(element.querySelectorAll('h3')).map((heading) => {
+    // Extract image element if it exists
+    const imageContainer = heading.previousElementSibling;
+    const image = imageContainer ? imageContainer.querySelector('img') : null;
 
-  // Process each card, extracting image, title, and description, handling edge cases
-  Array.from(element.querySelectorAll('h3')).forEach((heading) => {
-    const imageElement = heading.previousElementSibling?.querySelector('img');
-    const descriptionElement = heading.nextElementSibling;
+    // Extract text content
+    const paragraphElem = heading.nextElementSibling;
+    const paragraphText = paragraphElem ? paragraphElem.textContent.trim() : '';
 
-    const cardContent = [];
-
-    // Extract and dynamically create the title element if available
-    if (heading) {
-      const title = document.createElement('h3');
-      title.textContent = heading.textContent;
-      cardContent.push(title);
+    // Prepare the image element
+    let imgElem = null;
+    if (image) {
+      imgElem = document.createElement('img');
+      imgElem.setAttribute('src', image.src);
+      imgElem.setAttribute('alt', image.alt);
     }
 
-    // Extract text descriptions if present
-    if (descriptionElement) {
-      const description = document.createElement('p');
-      description.textContent = descriptionElement.textContent.trim();
-      cardContent.push(description);
-    }
+    // Prepare the title element
+    const titleElem = document.createElement('strong');
+    titleElem.textContent = heading.textContent;
 
-    // Handle edge case: Ensure image extraction doesn’t fail
-    const image = document.createElement('img');
-    if (imageElement) {
-      image.src = imageElement.src;
-      image.alt = imageElement.alt || ''; // Provide fallback for missing alt
-    }
+    // Combine title and paragraph with proper spacing
+    const contentCell = document.createElement('div');
+    contentCell.appendChild(titleElem);
+    contentCell.appendChild(document.createElement('br')); // Add spacing
+    contentCell.appendChild(document.createTextNode(paragraphText));
 
-    rows.push([image, cardContent]);
+    // Return the card row
+    return [imgElem, contentCell];
   });
 
-  // Create the block table using WebImporter utility
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-
-  // Replace original element with the new table
-  element.replaceWith(table);
+  // Compile rows for the table
+  const cells = [headerRow, ...cards];
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  
+  // Replace the target element with the new table block
+  element.replaceWith(block);
 }

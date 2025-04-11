@@ -1,46 +1,39 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const blockName = 'Columns';
+  const columnsData = [];
 
-  // Extracting relevant content from the input element dynamically
-  const columns = [...element.querySelectorAll('.columns > div')];
+  // Ensure the header row matches the example exactly
+  const headerRow = ['Columns'];
+  columnsData.push(headerRow);
 
-  if (columns.length === 0) {
-    console.warn('No columns found within the element.');
-    return;
-  }
+  // Select all rows in the columns block
+  const rows = element.querySelectorAll('.columns > div');
 
-  const rows = columns.map((column) => {
-    const img = column.querySelector('img');
+  rows.forEach((row) => {
+    const img = row.querySelector('img');
+    const description = row.querySelector('div:last-child');
+    const content = [];
 
-    if (!img) {
-      console.warn('Image not found in column', column);
+    // Extract image dynamically if available
+    if (img) {
+      const imgElement = document.createElement('img');
+      imgElement.src = img.src;
+      imgElement.alt = img.alt || ''; // Handle missing alt attributes gracefully
+      content.push(imgElement);
     }
 
-    const contentWrapper = document.createElement('div');
-    const content = column.querySelector('div:nth-of-type(2)');
-    if (content) {
-      contentWrapper.append(...content.childNodes);
-    } else {
-      console.warn('Content not found in column', column);
+    // Extract and wrap description dynamically if available
+    if (description) {
+      const textElement = document.createElement('div');
+      textElement.innerHTML = description.innerHTML.trim(); // Ensure proper HTML content
+      content.push(textElement);
     }
 
-    return [img || '', contentWrapper];
+    // Ensure each cell contains properly formatted and structured elements
+    columnsData.push([content]);
   });
 
-  if (rows.length === 0) {
-    console.error('No valid rows extracted from the columns.');
-    return;
-  }
-
-  const cells = [
-    [blockName],
-    ...rows,
-  ];
-
-  // Create the block table
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with the new block table
+  // Create and replace block table using WebImporter.DOMUtils.createTable
+  const block = WebImporter.DOMUtils.createTable(columnsData, document);
   element.replaceWith(block);
 }

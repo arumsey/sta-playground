@@ -1,28 +1,44 @@
 /* global WebImporter */
+
 export default function parse(element, { document }) {
-  // Extract the picture element dynamically
-  const picture = element.querySelector('picture img');
-  const backgroundImage = picture ? `<img src="${picture.getAttribute('src')}" alt="${picture.getAttribute('alt') || ''}" loading="${picture.getAttribute('loading') || 'lazy'}" width="${picture.getAttribute('width')}" height="${picture.getAttribute('height')}" />` : '';
+  const cells = [];
 
-  // Extract heading dynamically
-  const heading = element.querySelector('h1');
-  const title = heading ? document.createElement('h1') : null;
-  if (title) title.textContent = heading.textContent.trim();
+  // Header row
+  const headerRow = ['Hero'];
+  cells.push(headerRow);
 
-  // Create dynamic wrapper for cells
-  const wrapperDiv = document.createElement('div');
-  if (backgroundImage) wrapperDiv.innerHTML = backgroundImage;
-  if (title) wrapperDiv.appendChild(title);
+  // Extracting content for the second row
+  const contentRow = [];
 
-  // Define table structure with header row exactly matching example
-  const cells = [
-    ['Hero'], // Header row matches exactly
-    [wrapperDiv] // Content row includes extracted elements
-  ];
+  // Merging image and headline into a single cell
+  const combinedContent = document.createElement('div');
 
-  // Create the table block using utility method
+  // Extracting the image element
+  const picture = element.querySelector('picture');
+  if (picture) {
+    const img = picture.querySelector('img');
+    if (img) {
+      const imageElement = document.createElement('img');
+      imageElement.src = img.src;
+      imageElement.alt = img.alt;
+      combinedContent.appendChild(imageElement);
+    }
+  }
+
+  // Extracting the headline text
+  const headline = element.querySelector('h1');
+  if (headline) {
+    const headingElement = document.createElement('h1');
+    headingElement.textContent = headline.textContent;
+    combinedContent.appendChild(headingElement);
+  }
+
+  contentRow.push(combinedContent);
+  cells.push(contentRow);
+
+  // Creating the block table
   const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace the original element with this block
+  // Replacing the original element
   element.replaceWith(block);
 }

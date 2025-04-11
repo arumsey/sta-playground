@@ -1,38 +1,37 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    // Extract information from the HTML element
-    const sectionWrapper = element.querySelector('.default-content-wrapper');
-    const cardsContainer = element.querySelector('.cards-wrapper ul');
+  // Helper function to extract the image URL from the img tag
+  const getImageUrl = (picture) => {
+    const source = picture.querySelector('source');
+    const img = picture.querySelector('img');
+    return source ? source.srcset : img ? img.src : '';
+  };
 
-    // Extract the heading and description text
-    const heading = sectionWrapper.querySelector('h2')?.textContent.trim() || '';
-    const descriptionParagraphs = Array.from(sectionWrapper.querySelectorAll('p')).map(p => p.textContent.trim());
-    const description = descriptionParagraphs.join(' ');
+  const headerRow = ['Columns'];
 
-    // Extract individual cards information
-    const cards = Array.from(cardsContainer.querySelectorAll('li')).map((card) => {
-        const imageElement = card.querySelector('picture img');
-        const image = document.createElement('img');
-        image.src = imageElement.getAttribute('src');
-        image.alt = imageElement.getAttribute('alt') || '';
+  // Extract content from the cards
+  const cards = [...element.querySelectorAll('.cards-wrapper .cards li')].map((cardElement) => {
+    const picture = cardElement.querySelector('picture');
+    const imageUrl = getImageUrl(picture);
 
-        const title = card.querySelector('.cards-card-body a')?.textContent.trim() || '';
+    const imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
 
-        const heading = document.createElement('h3');
-        heading.textContent = title;
+    const cardBody = cardElement.querySelector('.cards-card-body strong a');
+    const titleElement = document.createElement('h3');
+    titleElement.innerHTML = `<a href="${cardBody.href}" title="${cardBody.title}">${cardBody.textContent}</a>`;
 
-        return [image, document.createElement('br'), heading];
-    });
+    return [imgElement, titleElement, document.createTextNode('')];
+  });
 
-    // Construct table data
-    const headerRow = ['Columns'];
+  // Create table
+  const cells = [
+    headerRow,
+    ...cards
+  ];
 
-    // Ensure cards are placed in separate cells in contentRow
-    const contentRow = cards.map(card => card);
+  const blockTable = WebImporter.DOMUtils.createTable(cells, document);
 
-    // Create table using WebImporter.DOMUtils.createTable
-    const table = WebImporter.DOMUtils.createTable([headerRow, [...contentRow]], document);
-
-    // Replace the original element with the new table
-    element.replaceWith(table);
+  // Replace the original element
+  element.replaceWith(blockTable);
 }

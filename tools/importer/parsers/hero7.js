@@ -1,51 +1,39 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    // Extract the heading
-    const headingElement = element.querySelector('h1');
-    let heading = '';
-    if (headingElement) {
-        heading = headingElement.textContent.trim();
-    }
+  // Validate if required elements exist
+  const imageElement = element.querySelector('picture img');
+  const headingElement = element.querySelector('h1');
 
-    // Extract the image
-    const imgElement = element.querySelector('picture img');
-    let image = '';
-    if (imgElement) {
-        image = imgElement.getAttribute('src');
-    }
+  // Handle cases with missing image or heading
+  if (!imageElement && !headingElement) {
+    return; // Exit early if no content exists for processing
+  }
 
-    // Create table cells structure
-    const cells = [
-        // Header row (block type)
-        ['Hero'],
-        // Content row with elements
-        [
-            (() => {
-                const wrapper = document.createElement('div');
+  // Extract dynamic content
+  const headerRow = ['Hero']; // As per the example block structure
 
-                // Add image if exists
-                if (image) {
-                    const img = document.createElement('img');
-                    img.setAttribute('src', image);
-                    img.setAttribute('alt', '');
-                    wrapper.appendChild(img);
-                }
+  // Create an HR element for section separation
+  const hrElement = document.createElement('hr');
 
-                // Add heading if exists
-                if (heading) {
-                    const h1 = document.createElement('h1');
-                    h1.textContent = heading;
-                    wrapper.appendChild(h1);
-                }
+  // Format the content dynamically based on available elements
+  const contentRow = [];
+  if (imageElement) contentRow.push(imageElement);
+  contentRow.push(hrElement);
+  if (headingElement) {
+    const heading = document.createElement('h1');
+    heading.textContent = headingElement.textContent;
+    contentRow.push(heading);
+  }
 
-                return wrapper;
-            })()
-        ]
-    ];
+  // Generate the table rows
+  const cells = [
+    headerRow,
+    [contentRow],
+  ];
 
-    // Create table
-    const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Create the table block
+  const tableBlock = WebImporter.DOMUtils.createTable(cells, document);
 
-    // Replace original element
-    element.replaceWith(table);
+  // Replace the original element with the new block table
+  element.replaceWith(tableBlock);
 }

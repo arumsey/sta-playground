@@ -1,42 +1,55 @@
 /* global WebImporter */
-export default function parse(element, { document }) {
-  // Extract unique logos from the provided HTML
-  const logosSet = new Map(); // Use a Map to ensure uniqueness based on the src attribute
-
-  Array.from(element.querySelectorAll('.logos > div')).forEach((logoElement) => {
-    const img = logoElement.querySelector('picture img');
-    if (img) {
-      const src = img.src;
-      if (!logosSet.has(src)) {
-        const logoData = {
-          src,
-          alt: img.alt || '',
-          width: img.width,
-          height: img.height,
-        };
-        logosSet.set(src, logoData); // Store unique logos using src as the key
-      }
-    }
-  });
-
-  // Convert unique logos into DOM elements
-  const logos = Array.from(logosSet.values()).map(({ src, alt, width, height }) => {
-    const extractedImg = document.createElement('img');
-    extractedImg.setAttribute('src', src);
-    extractedImg.setAttribute('alt', alt);
-    extractedImg.setAttribute('width', width);
-    extractedImg.setAttribute('height', height);
-    return extractedImg;
-  });
-
-  // Construct table rows for the carousel block based on deduplicated content
+ export default function parse(element, { document }) {
   const headerRow = ['Carousel'];
-  const rows = logos.map((logo) => [logo]);
-  const cells = [headerRow, ...rows];
 
-  // Generate the block using WebImporter.DOMUtils.createTable
-  const block = WebImporter.DOMUtils.createTable(cells, document);
+  const rows = Array.from(element.querySelectorAll('.logos > div'))
+    .filter(div => div.querySelector('img')) // Ensure there's an image in the div
+    .map(div => {
+      const img = div.querySelector('img');
+      const textContent = div.querySelector('div:last-child');
 
-  // Replace the input element with the created block
-  element.replaceWith(block);
+      // Create image element
+      const imageElement = document.createElement('img');
+      imageElement.src = img.getAttribute('src');
+      imageElement.alt = img.alt;
+      imageElement.width = img.width;
+      imageElement.height = img.height;
+
+      // Prepare text cell content
+      let textElements = [];
+      if (textContent) {
+        const title = textContent.querySelector('h1, h2, h3, h4, h5, h6');
+        const paragraph = textContent.querySelector('p');
+        const link = textContent.querySelector('a');
+
+        if (title) {
+          const heading = document.createElement('h2');
+          heading.textContent = title.textContent;
+          textElements.push(heading);
+        }
+
+        if (paragraph) {
+          const para = document.createElement('p');
+          para.textContent = paragraph.textContent;
+          textElements.push(para);
+        }
+
+        if (link) {
+          const anchor = document.createElement('a');
+          anchor.href = link.href;
+          anchor.textContent = link.textContent;
+          textElements.push(anchor);
+        }
+      }
+
+      return [imageElement, textElements.length > 0 ? textElements : ''];
+    });
+
+  const uniqueRows = rows.filter((row, index, self) => {
+    const imageSrc = row[0].src;
+    return self.findIndex(r => r[0].src === imageSrc) === index;
+  });
+
+  const table = WebImporter.DOMUtils.createTable([headerRow, ...uniqueRows], document);
+  element.replaceWith(table);
 }

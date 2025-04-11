@@ -1,46 +1,52 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    const headerRow = ['Hero'];
+  // Extract heading
+  const title = element.querySelector('h2')?.textContent.trim() || '';
 
-    // Extract the heading
-    const heading = element.querySelector('h2');
-    const headingClone = document.createElement('h2');
-    headingClone.textContent = heading ? heading.textContent : '';
+  // Extract content paragraphs, ignoring duplicates
+  const paragraphs = Array.from(
+    element.querySelectorAll('.default-content-wrapper > p:not(.button-container)')
+  ).filter((p, index, self) => {
+    return (
+      self.map((para) => para.textContent.trim()).indexOf(p.textContent.trim()) === index
+    );
+  });
 
-    // Collect paragraphs
-    const paragraphs = Array.from(element.querySelectorAll('p:not(.button-container)')).map(p => {
-        const paraClone = document.createElement('p');
-        paraClone.innerHTML = p.innerHTML; // Preserve links and formatting
-        return paraClone;
-    });
+  // Extract link/button CTA
+  const buttonContainer = element.querySelector('.button-container a');
+  const button = buttonContainer ? document.createElement('a') : null;
+  if (button) {
+    button.href = buttonContainer.href;
+    button.textContent = buttonContainer.textContent.trim();
+  }
 
-    // Extract CTA button
-    const buttonContainer = element.querySelector('.button-container a');
-    const buttonClone = document.createElement('p');
-    if (buttonContainer) {
-        const buttonLink = document.createElement('a');
-        buttonLink.href = buttonContainer.href;
-        buttonLink.title = buttonContainer.title;
-        buttonLink.textContent = buttonContainer.textContent;
-        buttonClone.appendChild(buttonLink);
-    }
+  // Assemble content as HTML elements
+  const content = [];
 
-    // Structure rows logically
-    const contentRow = [
-        headingClone,
-        ...paragraphs,
-        buttonClone
-    ];
+  if (title) {
+    const heading = document.createElement('h1');
+    heading.textContent = title;
+    content.push(heading);
+  }
 
-    // Construct cells for the block table
-    const cells = [
-        headerRow,
-        [contentRow]
-    ];
+  paragraphs.forEach((p) => {
+    const paragraph = document.createElement('p');
+    paragraph.textContent = p.textContent.trim();
+    content.push(paragraph);
+  });
 
-    // Create the block table using WebImporter.DOMUtils.createTable
-    const block = WebImporter.DOMUtils.createTable(cells, document);
+  if (button) {
+    content.push(button);
+  }
 
-    // Replace the original element
-    element.replaceWith(block);
+  // Ensure proper block table structure
+  const tableCells = [
+    ['Hero'], // Header row matches the example
+    [content],
+  ];
+
+  const blockTable = WebImporter.DOMUtils.createTable(tableCells, document);
+
+  // Replace original element
+  element.replaceWith(blockTable);
 }

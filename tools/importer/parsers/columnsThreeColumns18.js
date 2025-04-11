@@ -1,42 +1,39 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  // Extract relevant cards information dynamically
-  const cards = Array.from(element.querySelectorAll('li'));
-
-  // Define the header row matching the example structure (required for block type identification)
   const headerRow = ['Columns'];
 
-  const contentRow = cards.map(card => {
-    // Extracting image, heading, and description dynamically
-    const image = card.querySelector('.cards-card-image img');
-    const heading = card.querySelector('.cards-card-body h3 a')?.textContent || '';
-    const description = card.querySelector('.cards-card-body p')?.textContent || '';
+  // Extract card content dynamically
+  const contentCells = Array.from(element.querySelectorAll('li')).map((card) => {
+    const imageContainer = card.querySelector('picture img');
+    const cardBody = card.querySelector('.cards-card-body');
+    const titleAnchor = cardBody.querySelector('h3 a');
+    const description = cardBody.querySelector('p');
 
-    let imageElement = null;
+    // Handle missing elements
+    const image = imageContainer ? document.createElement('img') : null;
     if (image) {
-      imageElement = document.createElement('img');
-      imageElement.src = image.src;
-      imageElement.alt = image.alt || '';
+      image.src = imageContainer.src;
+      image.alt = imageContainer.alt || '';
     }
 
-    const columnHeader = document.createElement('h3');
-    columnHeader.textContent = heading;
+    const title = titleAnchor ? document.createElement('h3') : null;
+    if (title) {
+      title.textContent = titleAnchor.textContent;
+    }
 
-    const columnDescription = document.createElement('p');
-    columnDescription.textContent = description;
+    const desc = description ? document.createElement('p') : null;
+    if (desc) {
+      desc.textContent = description.textContent;
+    }
 
-    // Combine extracted elements into the cell
-    return [imageElement, columnHeader, columnDescription];
+    // Return array of extracted elements
+    return [image, title, desc].filter(Boolean);
   });
 
-  const cells = [
-    headerRow,
-    contentRow,
-  ];
+  // Create table with extracted cells
+  const cells = [headerRow, contentCells];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  const blockTable = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with the newly created structured block
-  element.replaceWith(blockTable);
+  // Replace the original element with the new table
+  element.replaceWith(table);
 }

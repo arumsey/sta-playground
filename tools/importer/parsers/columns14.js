@@ -1,45 +1,49 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    // Extract header row
     const headerRow = ['Columns'];
 
-    // Extract logo
-    const logoWrapper = element.querySelector('picture');
-    const logoImage = logoWrapper.querySelector('img').cloneNode(true);
+    // Extract logo image from the footer block
+    const imageElement = element.querySelector('img');
+    const image = document.createElement('img');
+    image.src = imageElement?.src || '';
+    image.alt = imageElement?.alt || '';
 
-    // Extract links in the first list
-    const linksWrapper = element.querySelectorAll('ul')[0];
-    const links = Array.from(linksWrapper.querySelectorAll('li')).map(linkEl => {
-        const link = linkEl.querySelector('a');
-        return [link ? link.cloneNode(true) : document.createTextNode(linkEl.textContent)];
+    // Extract text links from second section (includes PDF links etc.)
+    const textLinks = Array.from(element.querySelectorAll('div:nth-of-type(2) ul li a')).map(a => {
+        const link = document.createElement('a');
+        link.href = a.href;
+        link.textContent = a.textContent;
+        return link;
     });
+    const textLinksContainer = document.createElement('div');
+    textLinks.forEach(link => textLinksContainer.appendChild(link));
 
-    // Extract email and copyright information
-    const emailWrapper = element.querySelectorAll('p')[1];
-    const emailLink = emailWrapper.querySelector('a').cloneNode(true);
-    const copyrightText = document.createTextNode(emailWrapper.textContent.replace(emailLink.textContent, '').trim());
+    // Extract footer email text and copyright
+    const finalText = element.querySelector('div:nth-of-type(2) p');
+    const emailAndCopyright = document.createElement('p');
+    emailAndCopyright.innerHTML = finalText?.innerHTML || '';
 
-    // Organize email and copyright into separate cells
-    const emailCell = [emailLink];
-    const copyrightCell = [copyrightText];
+    // Extract social media links from the third section
+    const socialLinksElements = Array.from(element.querySelectorAll('div:nth-of-type(3) ul li a')).map(a => {
+        const link = document.createElement('a');
+        link.href = a.href;
+        link.textContent = a.textContent;
+        return link;
+    });
+    const socialLinksContainer = document.createElement('div');
+    socialLinksElements.forEach(link => socialLinksContainer.appendChild(link));
 
-    // Extract social media links
-    const socialLinksWrapper = element.querySelectorAll('ul')[1];
-    const socialLinks = Array.from(socialLinksWrapper.querySelectorAll('a')).map(link => [link.cloneNode(true)]);
-
-    // Table structure: rows and cells
+    // Create two-column block table
     const cells = [
         headerRow,
         [
-            [logoImage], // First cell in second row
-            ...links,    // Each link is its own cell
-            emailCell,   // Email cell
-            copyrightCell // Copyright cell
-        ],
-        socialLinks.map(link => link) // Each social link in its own cell
+            [textLinksContainer, emailAndCopyright],
+            [image, socialLinksContainer]
+        ]
     ];
 
-    // Create table and replace the original element
-    const table = WebImporter.DOMUtils.createTable(cells, document);
-    element.replaceWith(table);
+    const blockTable = WebImporter.DOMUtils.createTable(cells, document);
+
+    // Replace original element with the new block table
+    element.replaceWith(blockTable);
 }
