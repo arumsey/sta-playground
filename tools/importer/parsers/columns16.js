@@ -1,42 +1,70 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
+  // Header row
   const headerRow = ['Columns'];
 
-  // Check if the element has a proper column structure
-  const columns = [...element.children];
+  const extractColumnContent = (column) => {
+    const heading = column.querySelector('.footer__heading');
+    const listItems = [...column.querySelectorAll('.footer__list li a')];
 
-  if (columns.length === 0) {
-    // Handle edge case where no content exists in the element
-    const emptyRow = document.createElement('p');
-    emptyRow.textContent = 'No content available';
-    const tableCells = [
-      headerRow,
-      [emptyRow],
-    ];
+    const listContent = document.createElement('ul');
+    listItems.forEach((link) => {
+      const liElement = document.createElement('li');
+      liElement.appendChild(link.cloneNode(true));
+      listContent.appendChild(liElement);
+    });
 
-    const table = WebImporter.DOMUtils.createTable(tableCells, document);
-    element.replaceWith(table);
-    return;
-  }
+    const columnContent = document.createElement('div');
+    if (heading) {
+      const headingElement = document.createElement('p');
+      headingElement.textContent = heading.textContent;
+      columnContent.appendChild(headingElement);
+    }
+    if (listItems.length > 0) {
+      columnContent.appendChild(listContent);
+    }
+    return columnContent;
+  };
 
-  const columnData = columns.map((column) => {
-    const headerElement = column.querySelector('h2');
-    const textElement = column.querySelector('p');
+  const extractSocialLinks = (socialElement) => {
+    const heading = socialElement.querySelector('.footer__heading');
+    const address = socialElement.querySelector('address');
 
-    const header = headerElement ? headerElement.cloneNode(true) : document.createElement('h2');
-    header.textContent = headerElement ? headerElement.textContent : 'Missing Header';
+    const socialLinks = [...socialElement.querySelectorAll('dl.share.share--footer dd a')].map((anchor) => (
+      anchor.cloneNode(true)
+    ));
 
-    const text = textElement ? textElement.cloneNode(true) : document.createElement('p');
-    text.textContent = textElement ? textElement.textContent : 'Missing Content';
+    const socialContent = document.createElement('div');
+    if (heading) {
+      const headingElement = document.createElement('p');
+      headingElement.textContent = heading.textContent;
+      socialContent.appendChild(headingElement);
+    }
+    if (address) {
+      socialContent.appendChild(address.cloneNode(true));
+    }
+    socialLinks.forEach((link) => {
+      socialContent.appendChild(link);
+    });
 
-    return [header, text];
-  });
+    return socialContent;
+  };
 
-  const tableCells = [
-    headerRow,
-    columnData,
+  const columnsSection = element.querySelector('.col-xs-landscape-6.col-sm-6.col-md-9 > .row');
+  const socialSection = element.querySelector('.col-xs-landscape-6.col-sm-6.col-md-3');
+
+  const columnContents = columnsSection
+    ? Array.from(columnsSection.children).map(extractColumnContent)
+    : [];
+  const socialLinksContent = socialSection ? extractSocialLinks(socialSection) : [];
+
+  // Build rows properly, with one cell per row containing separated column content
+  const cells = [
+    headerRow, // Header row
+    columnContents.map((content) => [content]),
+    [socialLinksContent],
   ];
 
-  const table = WebImporter.DOMUtils.createTable(tableCells, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  element.replaceWith(block);
 }

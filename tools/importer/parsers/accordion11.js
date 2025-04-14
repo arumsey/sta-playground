@@ -1,26 +1,30 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Critical Review: Ensure extraction is dynamic and table structure matches requirements
+    // Verify header matches example
+    const headerRow = ['Accordion'];
 
-  // Extract data dynamically from the element
-  const titleElement = element.querySelector('.nuv-three-up-content__header__title');
-  const buttonElement = element.querySelector('.nuv-button__btn');
+    // Extract content rows
+    const rows = Array.from(element.querySelectorAll('.accordions__toggler, .accordion__element')).map((accordionBlock) => {
+        const title = accordionBlock.classList.contains('accordions__toggler')
+            ? accordionBlock.textContent.trim()
+            : '';
 
-  const titleCell = titleElement ? titleElement.textContent.trim() : '';
-  const buttonCell = buttonElement ? buttonElement.cloneNode(true) : ''; // Clone button to preserve structure
+        const content = accordionBlock.classList.contains('accordion__element')
+            ? Array.from(accordionBlock.querySelectorAll('p, img, table')).map(content => {
+                const clonedElement = content.cloneNode(true);
+                return clonedElement;
+            })
+            : '';
 
-  // Create header matching example format
-  const headerRow = ['Accordion']; // Matches the block type from the example
+        return [title, content];
+    });
 
-  // Construct table structure based on the extracted data
-  const cells = [
-    headerRow, // First row (header)
-    [titleCell, buttonCell], // Second row (content)
-  ];
+    // Avoid creating empty rows/cells
+    const tableData = [headerRow, ...rows.filter(row => row.some(cell => cell))];
 
-  // Create block table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+    // Create the block table using WebImporter.DOMUtils.createTable
+    const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
 
-  // Replace original element with the new table
-  element.replaceWith(table);
+    // Replace the original element without returning output
+    element.replaceWith(blockTable);
 }

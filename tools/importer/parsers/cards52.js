@@ -1,46 +1,92 @@
 /* global WebImporter */
+
 export default function parse(element, { document }) {
-    const rows = [];
+    // Define the header row explicitly to match the example exactly
+    const headerRow = ['Cards'];
 
-    // Add the header row with the block name, matching the example exactly
-    rows.push(['Cards']);
+    // Extract Cards Data
+    const cardsData = [];
 
-    // Extract individual cards information
-    const items = element.querySelectorAll('.nuv-people-grid__item');
-    items.forEach((item) => {
-        const imageContainer = item.querySelector('picture');
-        const image = imageContainer?.querySelector('img');
+    element.querySelectorAll('.panel').forEach((panel) => {
+        const imageDiv = panel.querySelector('.panel__image');
+        const titleElement = panel.querySelector('h1, h2');
+        const descriptionElement = panel.querySelector('p:not(.panel__kicker)');
+        const ctaElement = panel.querySelector('.cta-btn, .panel__tags a');
+        const newsList = panel.querySelector('.panel__news-list');
 
-        const nameElement = item.querySelector('.nuv-people-grid__name');
-        const titleElement = item.querySelector('.nuv-people-grid__title');
-        const eyebrowElement = item.querySelector('.nuv-people-grid__featured-eyebrow');
+        const imageUrl = imageDiv ? imageDiv.style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/)[1] : '';
+        const title = titleElement ? titleElement.textContent.trim() : '';
+        const description = descriptionElement ? descriptionElement.textContent.trim() : '';
+        const cta = ctaElement ? ctaElement.textContent.trim() : '';
 
-        const imageElement = document.createElement('img');
-        if (image) {
-            imageElement.src = image.src;
-            imageElement.alt = image.alt || '';
+        const rowContent = [];
+
+        // Add image to row
+        if (imageUrl) {
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            rowContent.push(img);
         }
 
-        const textContainer = document.createElement('div');
-        if (nameElement) {
-            const nameHeading = document.createElement('h3');
-            nameHeading.textContent = nameElement.textContent;
-            textContainer.appendChild(nameHeading);
+        // Add text content (title, description, CTA, news list if applicable)
+        const textContent = document.createElement('div');
+        if (title) {
+            const titleEl = document.createElement('strong');
+            titleEl.textContent = title;
+            textContent.appendChild(titleEl);
         }
-        if (eyebrowElement && eyebrowElement.textContent.trim() !== '') {
-            const eyebrowParagraph = document.createElement('p');
-            eyebrowParagraph.textContent = eyebrowElement.textContent;
-            textContainer.appendChild(eyebrowParagraph);
+        if (description) {
+            const descEl = document.createElement('p');
+            descEl.textContent = description;
+            textContent.appendChild(descEl);
         }
-        if (titleElement) {
-            const titleParagraph = document.createElement('p');
-            titleParagraph.textContent = titleElement.textContent;
-            textContainer.appendChild(titleParagraph);
+        if (cta) {
+            const ctaEl = document.createElement('p');
+            ctaEl.textContent = cta;
+            textContent.appendChild(ctaEl);
         }
+        if (newsList) {
+            const listItems = [...newsList.querySelectorAll('li')].map((li) => {
+                const link = li.querySelector('a');
+                const time = li.querySelector('time');
+                return `${time.textContent.trim()} - ${link.textContent.trim()}`;
+            });
 
-        rows.push([imageElement, textContainer]);
+            const listEl = document.createElement('ul');
+            listItems.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                listEl.appendChild(li);
+            });
+            textContent.appendChild(listEl);
+        }
+        rowContent.push(textContent);
+
+        // Avoid creating rows with empty content and remove duplicate entries
+        if (rowContent.length > 0) {
+            cardsData.push(rowContent);
+        }
     });
 
-    const table = WebImporter.DOMUtils.createTable(rows, document);
-    element.replaceWith(table);
+    // Clean up 'Se flere nyheder' duplicate in 'PFA Nyheder'
+    cardsData.forEach((row) => {
+        const textContent = row[1];
+        if (textContent) {
+            const paragraphs = textContent.querySelectorAll('p');
+            const uniqueParagraphs = Array.from(paragraphs).filter((p, index, self) =>
+                self.findIndex((t) => t.textContent.trim() === p.textContent.trim()) === index
+            );
+            paragraphs.forEach((p) => p.remove()); // Remove originals
+            uniqueParagraphs.forEach((p) => textContent.appendChild(p)); // Append filtered
+        }
+    });
+
+    // Create Cards Table
+    const cardsTable = WebImporter.DOMUtils.createTable([
+        headerRow,
+        ...cardsData
+    ], document);
+
+    // Replace original element with Cards Table
+    element.replaceWith(cardsTable);
 }

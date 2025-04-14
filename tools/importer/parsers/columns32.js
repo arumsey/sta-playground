@@ -1,34 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const rows = [];
+    const headerRow = ['Columns'];
 
-  // Create the header row as per example
-  rows.push(['Columns']);
+    const contentCells = Array.from(element.querySelectorAll('.col-xs-12')).map((column) => {
+        const teaser = column.querySelector('.teasers__teaser');
+        if (!teaser) {
+            return ['Missing content'];
+        }
 
-  // Extracting each link and the corresponding Subscribe button, ensuring they are in separate rows
-  const items = element.querySelectorAll('li.nuv-homepage-literature__links-item');
+        // Extract and validate image
+        const img = teaser.querySelector('img');
+        const imgElement = img ? img : document.createElement('span');
+        if (!img || !img.getAttribute('src')) imgElement.textContent = 'No image available';
 
-  items.forEach((item) => {
-    const link = item.querySelector('a[href]');
-    const button = item.querySelector('.nuv-button__btn');
+        // Extract and validate title
+        const title = teaser.querySelector('h3');
+        const titleElement = title ? title : document.createElement('span');
+        titleElement.textContent = title ? title.textContent : 'No title available';
 
-    if (link) {
-      const linkElement = document.createElement('a');
-      linkElement.href = link.href;
-      linkElement.textContent = link.textContent.trim();
-      rows.push([linkElement]);
-    }
+        // Extract and validate description
+        const description = teaser.querySelector('p');
+        const descriptionElement = description ? description : document.createElement('span');
+        descriptionElement.textContent = description ? description.textContent : 'No description available';
 
-    if (button) {
-      const buttonElement = document.createElement('button');
-      buttonElement.textContent = button.textContent.trim();
-      rows.push([buttonElement]);
-    }
-  });
+        // Combine elements into an array for the cell
+        return [
+          imgElement,
+          titleElement,
+          descriptionElement,
+        ];
+    });
 
-  // Create table using WebImporter.DOMUtils.createTable
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
+    const cells = [
+      headerRow,
+      contentCells
+    ];
 
-  // Replace the original element with the blockTable
-  element.replaceWith(blockTable);
+    const block = WebImporter.DOMUtils.createTable(cells, document);
+
+    element.replaceWith(block);
 }
