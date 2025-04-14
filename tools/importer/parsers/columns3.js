@@ -1,59 +1,46 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Define the header row based on the example
+  // Extract the heading
+  const heading = document.createElement('h2');
+  heading.textContent = 'Online Psykolog';
+
+  // Extract the content on the left side
+  const leftContent = document.createElement('div');
+  const paragraphs = element.querySelectorAll('p');
+  const list = element.querySelector('ul');
+  const link = element.querySelector('a[href="http://www.prescriba.com/PFA"]');
+
+  paragraphs.forEach((p) => {
+    leftContent.appendChild(p.cloneNode(true));
+  });
+
+  if (list) {
+    leftContent.appendChild(list.cloneNode(true));
+  }
+
+  if (link) {
+    leftContent.appendChild(link.cloneNode(true));
+  }
+
+  // Extract the video content on the right side
+  const rightContent = document.createElement('div');
+  const iframe = element.querySelector('iframe');
+  const caption = element.querySelector('em');
+
+  if (iframe) {
+    rightContent.appendChild(iframe.cloneNode(true));
+  }
+
+  if (caption) {
+    rightContent.appendChild(caption.cloneNode(true));
+  }
+
+  // Define table headers and content rows
   const headerRow = ['Columns'];
+  const contentRow = [leftContent, rightContent];
 
-  // Safely extract dynamic content from the element
-  const regionSelector = document.querySelector('#regionSelector');
-  const countrySelector = document.querySelector('#countryselector');
-  const roleSelector = document.querySelector('#roleSelection');
-  const termsAndConditionsText = document.querySelector('.site-switcher-update__content-terms')?.textContent?.trim() || 'Terms and conditions not available';
+  const blockTable = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
 
-  const privacyLink = document.querySelector('.site-switcher-update__content-links--privacy');
-  const cookieLink = document.querySelector('.site-switcher-update__content-links--cookie');
-  const acceptButton = document.querySelector('.nuv-button__btn');
-
-  // Extract values with proper fallbacks
-  const regionContent = regionSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Region not specified';
-  const locationContent = countrySelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Location not specified';
-  const roleContent = roleSelector?.querySelector('.site-switcher-update-select-trigger')?.textContent?.trim() || 'Role not specified';
-
-  // Validate and create dynamic links
-  const privacyNoticeLink = privacyLink ? document.createElement('a') : document.createTextNode('Privacy link not available');
-  if (privacyLink) {
-    privacyNoticeLink.href = privacyLink.href;
-    privacyNoticeLink.textContent = 'Privacy notice';
-  }
-
-  const cookiePolicyLink = cookieLink ? document.createElement('a') : document.createTextNode('Cookie policy link not available');
-  if (cookieLink) {
-    cookiePolicyLink.href = cookieLink.href;
-    cookiePolicyLink.textContent = 'Cookie policy, terms of use';
-  }
-
-  const acceptLink = acceptButton ? document.createElement('a') : document.createTextNode('Accept button not available');
-  if (acceptButton) {
-    acceptLink.href = '#';
-    acceptLink.textContent = 'Accept to continue';
-  }
-
-  // Compile rows based on the example
-  const rows = [
-    [headerRow],
-    [
-      `Region: ${regionContent}`,
-      `Location: ${locationContent}`,
-      `Role: ${roleContent}`
-    ],
-    [
-      termsAndConditionsText,
-      privacyNoticeLink,
-      cookiePolicyLink
-    ],
-    [acceptLink]
-  ];
-
-  // Use DOMUtils to create the table and replace the element
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
+  // Replace the original element with the new block table
   element.replaceWith(blockTable);
 }

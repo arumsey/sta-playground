@@ -1,33 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Verify header row matches example exactly
   const headerRow = ['Columns'];
 
-  // Extract the title
-  const titleElement = element.querySelector('.nuv-retail-contacts__title');
-  const title = titleElement ? titleElement.textContent.trim() : '';
+  const columns = [];
 
-  // Extract contact information
-  const contactCardElement = element.querySelector('.nuv-contact-card__info');
-  const nameElement = contactCardElement ? contactCardElement.querySelector('.nuv-contact-card__name') : null;
-  const name = nameElement ? nameElement.textContent.trim() : '';
+  // Extracting column data
+  element.querySelectorAll('.col-xs-12').forEach((col) => {
+    const img = col.querySelector('img');
+    const title = col.querySelector('h4');
 
-  const emailElement = contactCardElement ? contactCardElement.querySelector('a[data-action="email"]') : null;
-  const emailLink = emailElement ? emailElement.getAttribute('href') : '';
-  const emailText = emailElement ? emailElement.textContent.trim() : '';
+    // Verify if img and title exist
+    if (img && title) {
+      const imgElement = document.createElement('img');
+      imgElement.src = img.src;
+      imgElement.alt = img.alt;
+      imgElement.style.maxWidth = img.style.maxWidth;
 
-  // Create table cells matching the structure of the example
-  const cells = [
-    headerRow, // Header row
-    [
-      [document.createTextNode(title), document.createElement('br'), document.createTextNode(name)],
-      [document.createTextNode(emailText), document.createElement('br'), document.createTextNode(emailLink)]
-    ]
+      const textElement = document.createElement('p');
+      textElement.textContent = title.textContent.trim();
+
+      columns.push([imgElement, textElement]);
+    } else {
+      columns.push([document.createTextNode('Missing data')]);
+    }
+  });
+
+  const tableData = [
+    headerRow,
+    ...columns.map(([imgElement, textElement]) => {
+      const cell = document.createElement('div');
+      cell.append(imgElement);
+      if (textElement) {
+        cell.append(textElement);
+      }
+      return [cell];
+    }),
   ];
 
-  // Create the table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with the new block table
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(tableData, document);
+  element.replaceWith(block);
 }

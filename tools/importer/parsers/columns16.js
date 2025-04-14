@@ -1,42 +1,76 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
+  // Assemble header row exactly as per the example
   const headerRow = ['Columns'];
 
-  // Check if the element has a proper column structure
-  const columns = [...element.children];
+  // Extract columns content
+  const columns = Array.from(element.querySelectorAll('.col-md-4')).map((column) => {
+    // Extract header
+    const header = column.querySelector('.footer__heading')?.textContent?.trim() || 'No Header';
+    
+    // Extract links
+    const links = Array.from(column.querySelectorAll('ul.footer__list li a')).map((link) => {
+      const a = document.createElement('a');
+      a.href = link.href;
+      a.textContent = link.textContent.trim() || 'No links available';
+      return a;
+    });
 
-  if (columns.length === 0) {
-    // Handle edge case where no content exists in the element
-    const emptyRow = document.createElement('p');
-    emptyRow.textContent = 'No content available';
-    const tableCells = [
-      headerRow,
-      [emptyRow],
-    ];
+    // Handle edge cases for missing links or content
+    if (links.length === 0) {
+      const noLinks = document.createElement('p');
+      noLinks.textContent = 'No links available';
+      links.push(noLinks);
+    }
 
-    const table = WebImporter.DOMUtils.createTable(tableCells, document);
-    element.replaceWith(table);
-    return;
-  }
+    // Create column structure
+    const col = document.createElement('div');
+    const colHeader = document.createElement('p');
+    colHeader.textContent = header;
+    col.appendChild(colHeader);
+    links.forEach((link) => col.appendChild(link));
 
-  const columnData = columns.map((column) => {
-    const headerElement = column.querySelector('h2');
-    const textElement = column.querySelector('p');
-
-    const header = headerElement ? headerElement.cloneNode(true) : document.createElement('h2');
-    header.textContent = headerElement ? headerElement.textContent : 'Missing Header';
-
-    const text = textElement ? textElement.cloneNode(true) : document.createElement('p');
-    text.textContent = textElement ? textElement.textContent : 'Missing Content';
-
-    return [header, text];
+    return col;
   });
 
-  const tableCells = [
-    headerRow,
-    columnData,
+  // Extract contact section
+  const contactSection = element.querySelector('.col-xs-landscape-6.col-sm-6.col-md-3');
+  const contactHeader = contactSection?.querySelector('.footer__heading')?.textContent?.trim() || 'Contact Information';
+  const address = contactSection?.querySelector('address')?.innerHTML?.trim() || 'Address not available';
+  const socials = Array.from(contactSection.querySelectorAll('dl.share dd a')).map((socialLink) => {
+    const a = document.createElement('a');
+    a.href = socialLink.href;
+    a.textContent = socialLink.textContent.trim() || 'No social links available';
+    return a;
+  });
+
+  // Handle missing social links
+  if (socials.length === 0) {
+    const noSocials = document.createElement('p');
+    noSocials.textContent = 'No social links available';
+    socials.push(noSocials);
+  }
+
+  // Create contact column structure
+  const contactDiv = document.createElement('div');
+  const contactHeaderElem = document.createElement('p');
+  contactHeaderElem.textContent = contactHeader;
+  const addressElem = document.createElement('div');
+  addressElem.innerHTML = address;
+  contactDiv.appendChild(contactHeaderElem);
+  contactDiv.appendChild(addressElem);
+  socials.forEach((social) => contactDiv.appendChild(social));
+
+  // Assemble table data
+  const cells = [
+    headerRow, // Header Row
+    columns,   // Content columns row
+    [contactDiv], // Contact row
   ];
 
-  const table = WebImporter.DOMUtils.createTable(tableCells, document);
-  element.replaceWith(table);
+  // Create table block
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace original element
+  element.replaceWith(block);
 }

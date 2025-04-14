@@ -1,58 +1,42 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Create table header row with the exact text from the example
-  const headerRow = ['Columns'];
+    const headerRow = ['Columns'];
+    const contentRow = [];
 
-  // Extract and organize relevant content dynamically
-  const listItems = [...element.querySelectorAll('ul li')].map((li) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = li.textContent.trim();
-    return listItem;
-  });
+    // Process each '.teasers__teaser' in the given HTML
+    const teasers = element.querySelectorAll('.teasers__teaser h3');
+    teasers.forEach(teaser => {
+        const link = teaser.querySelector('a');
+        const image = teaser.querySelector('img');
+        const textElement = teaser.querySelector('span');
+        const cellContent = [];
 
-  const firstImageElement = element.querySelectorAll('img')[0];
-  const firstImage = document.createElement('img');
-  if (firstImageElement) {
-    firstImage.src = firstImageElement.src;
-    firstImage.alt = firstImageElement.alt;
-  }
+        // Add image to the cell content
+        if (image) {
+            const imgElement = document.createElement('img');
+            imgElement.src = image.src;
+            imgElement.alt = image.alt;
+            imgElement.style = image.style.cssText;
+            cellContent.push(imgElement);
+        }
 
-  const secondImageElement = element.querySelectorAll('img')[1];
-  const secondImage = document.createElement('img');
-  if (secondImageElement) {
-    secondImage.src = secondImageElement.src;
-    secondImage.alt = secondImageElement.alt;
-  }
+        // Add text content if available
+        if (link && textElement) {
+            const linkElement = document.createElement('a');
+            linkElement.href = link.href;
+            linkElement.target = link.target;
+            linkElement.textContent = textElement.textContent; // Cleanly extract text
+            cellContent.push(linkElement);
+        }
 
-  const liveLinkElement = element.querySelector('a');
-  const liveLink = document.createElement('div');
-  if (liveLinkElement) {
-    const link = document.createElement('a');
-    link.href = liveLinkElement.href;
-    link.textContent = liveLinkElement.textContent.trim();
-    liveLink.appendChild(link);
-  }
+        // Push the processed cell content into the row
+        contentRow.push(cellContent);
+    });
 
-  const previewBlock = document.createElement('div');
-  const previewLink = document.createElement('a');
-  previewLink.href = 'https://word-edit.officeapps.live.com/';
-  previewLink.textContent = 'Preview';
-  previewBlock.appendChild(previewLink);
+    // Create the block table using WebImporter.DOMUtils.createTable
+    const cells = [headerRow, contentRow];
+    const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Prepare cells array dynamically by breaking content appropriately into rows and columns
-  const listColumn = document.createElement('ul');
-  listColumn.append(...listItems);
-
-  const cells = [
-    headerRow, // Header row
-    [listColumn, firstImage], // Second row: structured list items and first image in separate columns
-    [secondImage, liveLink], // Third row: second image and live link grouped properly in columns
-    ['Preview', previewBlock], // Fourth row: properly designed preview layout
-  ];
-
-  // Create the table using WebImporter.DOMUtils.createTable()
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element
-  element.replaceWith(table);
+    // Replace the original element with the new block table
+    element.replaceWith(block);
 }

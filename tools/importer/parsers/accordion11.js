@@ -1,26 +1,27 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Critical Review: Ensure extraction is dynamic and table structure matches requirements
+  // Define header row for the Accordion block
+  const headerRow = ['Accordion'];
 
-  // Extract data dynamically from the element
-  const titleElement = element.querySelector('.nuv-three-up-content__header__title');
-  const buttonElement = element.querySelector('.nuv-button__btn');
+  // Find all accordion toggler elements and their content
+  const togglerElements = element.querySelectorAll('.accordions__toggler');
+  const accordionContentElements = element.querySelectorAll('.accordions__element');
+  const rows = [];
 
-  const titleCell = titleElement ? titleElement.textContent.trim() : '';
-  const buttonCell = buttonElement ? buttonElement.cloneNode(true) : ''; // Clone button to preserve structure
+  togglerElements.forEach((toggler, index) => {
+    const contentElement = accordionContentElements[index];
+    const togglerTitle = toggler.textContent.trim();
 
-  // Create header matching example format
-  const headerRow = ['Accordion']; // Matches the block type from the example
+    // Validate content elements exist
+    const contentNodes = contentElement ? Array.from(contentElement.childNodes).map((node) => node.cloneNode(true)) : [document.createTextNode('')];
 
-  // Construct table structure based on the extracted data
-  const cells = [
-    headerRow, // First row (header)
-    [titleCell, buttonCell], // Second row (content)
-  ];
+    rows.push([togglerTitle, contentNodes]);
+  });
 
-  // Create block table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Create the table using the helper function
+  const cells = [headerRow, ...rows];
+  const tableBlock = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace original element with the new table
-  element.replaceWith(table);
+  // Replace the original element with the new table block
+  element.replaceWith(tableBlock);
 }

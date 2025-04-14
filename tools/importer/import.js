@@ -11,7 +11,91 @@
  */
 /* global WebImporter */
 /* eslint-disable no-console */
-
+import embedVideo1Parser from './parsers/embedVideo1.js';
+import hero6Parser from './parsers/hero6.js';
+import hero4Parser from './parsers/hero4.js';
+import columns10Parser from './parsers/columns10.js';
+import columns3Parser from './parsers/columns3.js';
+import columns5Parser from './parsers/columns5.js';
+import columns8Parser from './parsers/columns8.js';
+import hero9Parser from './parsers/hero9.js';
+import accordion11Parser from './parsers/accordion11.js';
+import cards15Parser from './parsers/cards15.js';
+import columns13Parser from './parsers/columns13.js';
+import embedVideo20Parser from './parsers/embedVideo20.js';
+import accordion21Parser from './parsers/accordion21.js';
+import columns16Parser from './parsers/columns16.js';
+import hero2Parser from './parsers/hero2.js';
+import columns19Parser from './parsers/columns19.js';
+import columns23Parser from './parsers/columns23.js';
+import cards22Parser from './parsers/cards22.js';
+import columns14Parser from './parsers/columns14.js';
+import accordion12Parser from './parsers/accordion12.js';
+import columns28Parser from './parsers/columns28.js';
+import columns27Parser from './parsers/columns27.js';
+import cards18Parser from './parsers/cards18.js';
+import tabs30Parser from './parsers/tabs30.js';
+import accordion25Parser from './parsers/accordion25.js';
+import embedVideo31Parser from './parsers/embedVideo31.js';
+import columns29Parser from './parsers/columns29.js';
+import accordion33Parser from './parsers/accordion33.js';
+import columns32Parser from './parsers/columns32.js';
+import columns34Parser from './parsers/columns34.js';
+import embedVideo35Parser from './parsers/embedVideo35.js';
+import accordion36Parser from './parsers/accordion36.js';
+import accordion7Parser from './parsers/accordion7.js';
+import accordion39Parser from './parsers/accordion39.js';
+import columns42Parser from './parsers/columns42.js';
+import columns37Parser from './parsers/columns37.js';
+import quoteWithAttribution41Parser from './parsers/quoteWithAttribution41.js';
+import accordion38Parser from './parsers/accordion38.js';
+import accordion40Parser from './parsers/accordion40.js';
+import columns24Parser from './parsers/columns24.js';
+import columns43Parser from './parsers/columns43.js';
+import accordion49Parser from './parsers/accordion49.js';
+import columns47Parser from './parsers/columns47.js';
+import columns45Parser from './parsers/columns45.js';
+import cardsNoImages51Parser from './parsers/cardsNoImages51.js';
+import accordion44Parser from './parsers/accordion44.js';
+import cards50Parser from './parsers/cards50.js';
+import accordion55Parser from './parsers/accordion55.js';
+import cards48Parser from './parsers/cards48.js';
+import columns46Parser from './parsers/columns46.js';
+import columns58Parser from './parsers/columns58.js';
+import accordion61Parser from './parsers/accordion61.js';
+import columns53Parser from './parsers/columns53.js';
+import columns54Parser from './parsers/columns54.js';
+import columns62Parser from './parsers/columns62.js';
+import accordion63Parser from './parsers/accordion63.js';
+import columns64Parser from './parsers/columns64.js';
+import embedVideo66Parser from './parsers/embedVideo66.js';
+import embedVideo68Parser from './parsers/embedVideo68.js';
+import columns69Parser from './parsers/columns69.js';
+import columns67Parser from './parsers/columns67.js';
+import tableStripedBordered17Parser from './parsers/tableStripedBordered17.js';
+import cards70Parser from './parsers/cards70.js';
+import accordion71Parser from './parsers/accordion71.js';
+import embedSocial74Parser from './parsers/embedSocial74.js';
+import columns65Parser from './parsers/columns65.js';
+import columns56Parser from './parsers/columns56.js';
+import columns77Parser from './parsers/columns77.js';
+import hero76Parser from './parsers/hero76.js';
+import cardsNoImages57Parser from './parsers/cardsNoImages57.js';
+import accordion81Parser from './parsers/accordion81.js';
+import columns80Parser from './parsers/columns80.js';
+import hero84Parser from './parsers/hero84.js';
+import accordion75Parser from './parsers/accordion75.js';
+import columns79Parser from './parsers/columns79.js';
+import columns86Parser from './parsers/columns86.js';
+import accordion82Parser from './parsers/accordion82.js';
+import accordion83Parser from './parsers/accordion83.js';
+import accordion26Parser from './parsers/accordion26.js';
+import hero87Parser from './parsers/hero87.js';
+import cards52Parser from './parsers/cards52.js';
+import embedVideo85Parser from './parsers/embedVideo85.js';
+import accordion78Parser from './parsers/accordion78.js';
+import accordion73Parser from './parsers/accordion73.js';
+import tableStripedBordered59Parser from './parsers/tableStripedBordered59.js';
 import headerParser from './parsers/header.js';
 import metadataParser from './parsers/metadata.js';
 import {
@@ -23,7 +107,91 @@ import {
 
 const parsers = {
   metadata: metadataParser,
-
+  embedVideo1: embedVideo1Parser,
+  hero6: hero6Parser,
+  hero4: hero4Parser,
+  columns10: columns10Parser,
+  columns3: columns3Parser,
+  columns5: columns5Parser,
+  columns8: columns8Parser,
+  hero9: hero9Parser,
+  accordion11: accordion11Parser,
+  cards15: cards15Parser,
+  columns13: columns13Parser,
+  embedVideo20: embedVideo20Parser,
+  accordion21: accordion21Parser,
+  columns16: columns16Parser,
+  hero2: hero2Parser,
+  columns19: columns19Parser,
+  columns23: columns23Parser,
+  cards22: cards22Parser,
+  columns14: columns14Parser,
+  accordion12: accordion12Parser,
+  columns28: columns28Parser,
+  columns27: columns27Parser,
+  cards18: cards18Parser,
+  tabs30: tabs30Parser,
+  accordion25: accordion25Parser,
+  embedVideo31: embedVideo31Parser,
+  columns29: columns29Parser,
+  accordion33: accordion33Parser,
+  columns32: columns32Parser,
+  columns34: columns34Parser,
+  embedVideo35: embedVideo35Parser,
+  accordion36: accordion36Parser,
+  accordion7: accordion7Parser,
+  accordion39: accordion39Parser,
+  columns42: columns42Parser,
+  columns37: columns37Parser,
+  quoteWithAttribution41: quoteWithAttribution41Parser,
+  accordion38: accordion38Parser,
+  accordion40: accordion40Parser,
+  columns24: columns24Parser,
+  columns43: columns43Parser,
+  accordion49: accordion49Parser,
+  columns47: columns47Parser,
+  columns45: columns45Parser,
+  cardsNoImages51: cardsNoImages51Parser,
+  accordion44: accordion44Parser,
+  cards50: cards50Parser,
+  accordion55: accordion55Parser,
+  cards48: cards48Parser,
+  columns46: columns46Parser,
+  columns58: columns58Parser,
+  accordion61: accordion61Parser,
+  columns53: columns53Parser,
+  columns54: columns54Parser,
+  columns62: columns62Parser,
+  accordion63: accordion63Parser,
+  columns64: columns64Parser,
+  embedVideo66: embedVideo66Parser,
+  embedVideo68: embedVideo68Parser,
+  columns69: columns69Parser,
+  columns67: columns67Parser,
+  tableStripedBordered17: tableStripedBordered17Parser,
+  cards70: cards70Parser,
+  accordion71: accordion71Parser,
+  embedSocial74: embedSocial74Parser,
+  columns65: columns65Parser,
+  columns56: columns56Parser,
+  columns77: columns77Parser,
+  hero76: hero76Parser,
+  cardsNoImages57: cardsNoImages57Parser,
+  accordion81: accordion81Parser,
+  columns80: columns80Parser,
+  hero84: hero84Parser,
+  accordion75: accordion75Parser,
+  columns79: columns79Parser,
+  columns86: columns86Parser,
+  accordion82: accordion82Parser,
+  accordion83: accordion83Parser,
+  accordion26: accordion26Parser,
+  hero87: hero87Parser,
+  cards52: cards52Parser,
+  embedVideo85: embedVideo85Parser,
+  accordion78: accordion78Parser,
+  accordion73: accordion73Parser,
+  tableStripedBordered59: tableStripedBordered59Parser,
 };
 
 WebImporter.Import = {
@@ -157,7 +325,8 @@ function transformFragment(main, { fragment, inventory, ...source }) {
 
         if (!fragmentBlock) return;
         const { name, cluster } = fragmentBlock;
-        const parserFn = parsers[`${name} ${cluster}`];
+        const parserName = WebImporter.Import.getParserName({ name, cluster });
+        const parserFn = parsers[parserName];
         if (!parserFn) return;
 
         try {

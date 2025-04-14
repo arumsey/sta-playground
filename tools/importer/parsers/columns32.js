@@ -1,34 +1,40 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const rows = [];
+    // Extract the teasers content
+    const teasers = Array.from(element.querySelectorAll('.teasers__teaser')).map(teaser => {
+        const img = teaser.querySelector('img');
+        const heading = teaser.querySelector('h3');
+        const paragraph = teaser.querySelector('p');
 
-  // Create the header row as per example
-  rows.push(['Columns']);
+        // Create the new content
+        const imgElement = document.createElement('img');
+        imgElement.src = img.src;
+        imgElement.alt = img.alt;
+        const headingElement = document.createElement('h3');
+        headingElement.textContent = heading.textContent;
+        const paragraphElement = document.createElement('p');
+        paragraphElement.textContent = paragraph.textContent;
 
-  // Extracting each link and the corresponding Subscribe button, ensuring they are in separate rows
-  const items = element.querySelectorAll('li.nuv-homepage-literature__links-item');
+        return [imgElement, headingElement, paragraphElement];
+    });
 
-  items.forEach((item) => {
-    const link = item.querySelector('a[href]');
-    const button = item.querySelector('.nuv-button__btn');
+    // Create the table structure with the corrected header formatting
+    const headerRow = [document.createElement('strong')];
+    headerRow[0].textContent = 'Columns';
 
-    if (link) {
-      const linkElement = document.createElement('a');
-      linkElement.href = link.href;
-      linkElement.textContent = link.textContent.trim();
-      rows.push([linkElement]);
-    }
+    const cells = [
+        [headerRow], // Corrected header row with bold styling
+        teasers.map(content => {
+            const container = document.createElement('div');
+            container.style.textAlign = 'center';
+            container.append(...content);
+            return container;
+        })
+    ];
 
-    if (button) {
-      const buttonElement = document.createElement('button');
-      buttonElement.textContent = button.textContent.trim();
-      rows.push([buttonElement]);
-    }
-  });
+    // Create the block table
+    const block = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Create table using WebImporter.DOMUtils.createTable
-  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
-
-  // Replace the original element with the blockTable
-  element.replaceWith(blockTable);
+    // Replace the original element with the block table
+    element.replaceWith(block);
 }

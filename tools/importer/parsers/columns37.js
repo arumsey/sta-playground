@@ -1,38 +1,65 @@
 /* global WebImporter */
 
 export default function parse(element, { document }) {
-  // Define the header row for the block table
   const headerRow = ['Columns'];
 
-  // Extract stats cards and build their respective cell content
-  const statsCards = Array.from(element.querySelectorAll('.nuv-stats-card'));
+  // Helper function to clean nodes by removing unnecessary styling and empty elements
+  const cleanNode = (node) => {
+    const clonedNode = node.cloneNode(true);
+    clonedNode.removeAttribute('style');
+    if (clonedNode.querySelectorAll('p:empty').length > 0) {
+      clonedNode.querySelectorAll('p:empty').forEach((emptyP) => emptyP.remove());
+    }
+    return clonedNode;
+  };
 
-  const contentRow = statsCards.map((card) => {
-    const valueElement = card.querySelector('.nuv-stats-card__value');
-    const captionElement = card.querySelector('.nuv-stats-card__caption');
+  // Left content extraction
+  const leftContent = document.createElement('div');
 
-    // Handle potential missing elements
-    const valueText = valueElement ? valueElement.textContent.trim() : '';
-    const captionText = captionElement ? captionElement.textContent.trim() : '';
+  const mainHeading = element.querySelector('h2:not([style*="display:none"])');
+  if (mainHeading) {
+    leftContent.appendChild(cleanNode(mainHeading));
+  }
 
-    // Create elements for table cell content
-    const value = document.createElement('p');
-    value.textContent = valueText;
-
-    const caption = document.createElement('p');
-    caption.textContent = captionText;
-
-    // Combine value and caption into a container element
-    const container = document.createElement('div');
-    container.appendChild(value);
-    container.appendChild(caption);
-
-    return container;
+  const paragraphs = element.querySelectorAll('.teasers__teaser p');
+  paragraphs.forEach((p) => {
+    if (p.textContent.trim().length > 0) {
+      leftContent.appendChild(cleanNode(p));
+    }
   });
 
-  // Create the table with properly split columns
-  const blockTable = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
+  const unorderedLists = element.querySelectorAll('ul');
+  unorderedLists.forEach((ul) => {
+    leftContent.appendChild(cleanNode(ul));
+  });
 
-  // Replace the original element with the constructed block table
-  element.replaceWith(blockTable);
+  const accordion = element.querySelector('.accordions__toggler');
+  if (accordion) {
+    leftContent.appendChild(cleanNode(accordion));
+  }
+
+  // Right content extraction
+  const rightContent = document.createElement('div');
+
+  const videoElement = element.querySelector('iframe');
+  if (videoElement) {
+    rightContent.appendChild(cleanNode(videoElement));
+  }
+
+  const videoCaption = element.querySelector('em');
+  if (videoCaption) {
+    rightContent.appendChild(cleanNode(videoCaption));
+  }
+
+  // Construct table data
+  const cells = [
+    headerRow,
+    [leftContent, rightContent],
+  ];
+
+  // Create table block
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace original element with block
+  element.replaceWith(block);
 }

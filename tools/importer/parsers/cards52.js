@@ -1,46 +1,86 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-    const rows = [];
+  // Ensure table header matches example correctly
+  const headerRow = ['Cards'];
+  const rows = [];
 
-    // Add the header row with the block name, matching the example exactly
-    rows.push(['Cards']);
+  // Select panels dynamically
+  element.querySelectorAll('.panel').forEach((panel) => {
+    let image = null, title = null, description = null, cta = null;
 
-    // Extract individual cards information
-    const items = element.querySelectorAll('.nuv-people-grid__item');
-    items.forEach((item) => {
-        const imageContainer = item.querySelector('picture');
-        const image = imageContainer?.querySelector('img');
+    // Extract the image URL dynamically
+    const imageStyle = panel.querySelector('.panel__image')?.style.backgroundImage;
+    if (imageStyle) {
+      const imageUrl = imageStyle.match(/url\("(.*?)"\)/)?.[1];
+      if (imageUrl) {
+        image = document.createElement('img');
+        image.src = imageUrl;
+      }
+    }
 
-        const nameElement = item.querySelector('.nuv-people-grid__name');
-        const titleElement = item.querySelector('.nuv-people-grid__title');
-        const eyebrowElement = item.querySelector('.nuv-people-grid__featured-eyebrow');
+    // Extract title text content dynamically and normalize line breaks and spaces
+    const headlineElement = panel.querySelector('.panel__headline');
+    if (headlineElement) {
+      title = document.createElement('h2');
+      title.textContent = headlineElement.textContent.replace(/\s+/g, ' ').trim();
+    }
 
-        const imageElement = document.createElement('img');
-        if (image) {
-            imageElement.src = image.src;
-            imageElement.alt = image.alt || '';
-        }
+    // Extract description dynamically from kicker
+    const descriptionElement = panel.querySelector('.panel__kicker');
+    if (descriptionElement) {
+      description = document.createElement('p');
+      description.textContent = descriptionElement.textContent.trim();
+    }
 
-        const textContainer = document.createElement('div');
-        if (nameElement) {
-            const nameHeading = document.createElement('h3');
-            nameHeading.textContent = nameElement.textContent;
-            textContainer.appendChild(nameHeading);
-        }
-        if (eyebrowElement && eyebrowElement.textContent.trim() !== '') {
-            const eyebrowParagraph = document.createElement('p');
-            eyebrowParagraph.textContent = eyebrowElement.textContent;
-            textContainer.appendChild(eyebrowParagraph);
-        }
-        if (titleElement) {
-            const titleParagraph = document.createElement('p');
-            titleParagraph.textContent = titleElement.textContent;
-            textContainer.appendChild(titleParagraph);
-        }
+    // Extract Call-to-Action dynamically
+    const ctaElement = panel.querySelector('.cta-btn');
+    if (ctaElement) {
+      cta = document.createElement('a');
+      cta.href = panel.href;
+      cta.textContent = ctaElement.textContent.trim();
+    }
 
-        rows.push([imageElement, textContainer]);
-    });
+    // Handle special panel types (PFA Nyheder and Nyttige Links)
+    const newsList = panel.querySelector('.panel__news-list');
+    if (newsList) {
+      const items = Array.from(newsList.querySelectorAll('li')).map((item) => {
+        return item.textContent.trim().replace(/\s+/g, ' ');
+      });
+      description = document.createElement('ul');
+      items.forEach((text) => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        description.appendChild(li);
+      });
+    }
 
-    const table = WebImporter.DOMUtils.createTable(rows, document);
-    element.replaceWith(table);
+    const linksList = panel.querySelector('.panel__list');
+    if (linksList) {
+      const items = Array.from(linksList.querySelectorAll('li')).map((link) => {
+        const href = link.querySelector('a')?.href;
+        const text = link.textContent.trim().replace(/\s+/g, ' ');
+        const linkElement = document.createElement('a');
+        linkElement.href = href;
+        linkElement.textContent = text;
+        return linkElement;
+      });
+      description = document.createElement('div');
+      items.forEach((linkElement) => {
+        description.appendChild(linkElement);
+      });
+    }
+
+    // Combine extracted elements into content cells
+    const contentCells = [];
+    if (title) contentCells.push(title);
+    if (description) contentCells.push(description);
+    if (cta) contentCells.push(cta);
+
+    // Ensure image is always present or empty without 'null'
+    rows.push([image || document.createElement('div'), contentCells]);
+  });
+
+  // Create and replace the table using WebImporter
+  const table = WebImporter.DOMUtils.createTable([headerRow, ...rows], document);
+  element.replaceWith(table);
 }
