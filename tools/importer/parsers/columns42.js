@@ -1,33 +1,34 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Verify header row matches example exactly
+  // Extracting and processing content dynamically
+  const columns = Array.from(element.querySelectorAll('.col-xs-12'));
+
+  // Prepare table header row dynamically based on example
   const headerRow = ['Columns'];
 
-  // Extract the title
-  const titleElement = element.querySelector('.nuv-retail-contacts__title');
-  const title = titleElement ? titleElement.textContent.trim() : '';
+  // Building rows dynamically from extracted content
+  const rows = columns.map((col) => {
+    const image = col.querySelector('img');
+    const title = col.querySelector('h4');
 
-  // Extract contact information
-  const contactCardElement = element.querySelector('.nuv-contact-card__info');
-  const nameElement = contactCardElement ? contactCardElement.querySelector('.nuv-contact-card__name') : null;
-  const name = nameElement ? nameElement.textContent.trim() : '';
+    // Handling cases where image or title might be missing
+    const imageElement = image && document.createElement('img');
+    if (imageElement) {
+      imageElement.src = image.src;
+      imageElement.alt = image.alt || '';
+    }
 
-  const emailElement = contactCardElement ? contactCardElement.querySelector('a[data-action="email"]') : null;
-  const emailLink = emailElement ? emailElement.getAttribute('href') : '';
-  const emailText = emailElement ? emailElement.textContent.trim() : '';
+    const titleText = title ? title.textContent.trim() : '';
 
-  // Create table cells matching the structure of the example
-  const cells = [
-    headerRow, // Header row
-    [
-      [document.createTextNode(title), document.createElement('br'), document.createTextNode(name)],
-      [document.createTextNode(emailText), document.createElement('br'), document.createTextNode(emailLink)]
-    ]
-  ];
+    return [imageElement, titleText];
+  });
 
-  // Create the table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Ensure all rows have consistent column count
+  const tableData = [headerRow, ...rows];
 
-  // Replace the original element with the new block table
-  element.replaceWith(table);
+  // Creating table block dynamically
+  const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
+
+  // Replacing original element with the new block table
+  element.replaceWith(blockTable);
 }

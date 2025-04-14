@@ -1,38 +1,82 @@
 /* global WebImporter */
-
 export default function parse(element, { document }) {
-  // Define the header row for the block table
-  const headerRow = ['Columns'];
+    function createContentCell(header, listItems, link, video, caption) {
+        const contentDiv = document.createElement('div');
 
-  // Extract stats cards and build their respective cell content
-  const statsCards = Array.from(element.querySelectorAll('.nuv-stats-card'));
+        // Add header
+        if (header) {
+            const headerEl = document.createElement('h2');
+            headerEl.innerHTML = header; // Preserve formatting like colors and inline HTML
+            contentDiv.appendChild(headerEl);
+        }
 
-  const contentRow = statsCards.map((card) => {
-    const valueElement = card.querySelector('.nuv-stats-card__value');
-    const captionElement = card.querySelector('.nuv-stats-card__caption');
+        // Add list of items
+        if (listItems.length > 0) {
+            const ul = document.createElement('ul');
+            listItems.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+            contentDiv.appendChild(ul);
+        }
 
-    // Handle potential missing elements
-    const valueText = valueElement ? valueElement.textContent.trim() : '';
-    const captionText = captionElement ? captionElement.textContent.trim() : '';
+        // Add link
+        if (link) {
+            const linkEl = document.createElement('a');
+            linkEl.href = link.href;
+            linkEl.innerHTML = link.text; // Preserve inline styling and formatting
+            contentDiv.appendChild(linkEl);
+        }
 
-    // Create elements for table cell content
-    const value = document.createElement('p');
-    value.textContent = valueText;
+        // Add video and caption
+        if (video) {
+            const videoDiv = document.createElement('div');
+            videoDiv.innerHTML = video.outerHTML; // Preserve iframe structure
+            contentDiv.appendChild(videoDiv);
 
-    const caption = document.createElement('p');
-    caption.textContent = captionText;
+            if (caption) {
+                const captionEl = document.createElement('em');
+                captionEl.textContent = caption; // Properly formatted caption text
+                contentDiv.appendChild(captionEl);
+            }
+        }
 
-    // Combine value and caption into a container element
-    const container = document.createElement('div');
-    container.appendChild(value);
-    container.appendChild(caption);
+        return contentDiv;
+    }
 
-    return container;
-  });
+    function extractData(element) {
+        const header = element.querySelector('h2 span')?.outerHTML || ''; // Preserve inline styles and formatting
+        const listItems = Array.from(element.querySelectorAll('ul li')).map((li) => li.textContent.trim());
 
-  // Create the table with properly split columns
-  const blockTable = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
+        const linkElement = element.querySelector('[href]'); // Target link with href directly
+        const link = linkElement
+            ? { href: linkElement.getAttribute('href'), text: linkElement.innerHTML.trim() } // Preserve href and inline formatting
+            : null;
 
-  // Replace the original element with the constructed block table
-  element.replaceWith(blockTable);
+        const video = element.querySelector('iframe');
+
+        const captionElement = element.querySelector('em span');
+        const caption = captionElement ? captionElement.textContent.trim() : ''; // Ensure single <em>
+
+        return { header, listItems, link, video, caption };
+    }
+
+    // Extract data from the element
+    const { header, listItems, link, video, caption } = extractData(element);
+
+    // Build columns block table
+    const cells = [
+        ['Columns'], // Header row, matches example exactly
+        [
+            createContentCell(header, listItems, link, null, null), // First column content
+            video ? createContentCell(null, [], null, video, caption) : '', // Second column video with caption
+        ],
+    ];
+
+    // Handle edge cases for missing content
+    if (cells[1].some((cell) => cell)) {
+        const blockTable = WebImporter.DOMUtils.createTable(cells, document);
+        element.replaceWith(blockTable);
+    }
 }
