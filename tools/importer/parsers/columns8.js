@@ -1,58 +1,48 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Create table header row with the exact text from the example
-  const headerRow = ['Columns'];
+  const hr = document.createElement('hr');
 
-  // Extract and organize relevant content dynamically
-  const listItems = [...element.querySelectorAll('ul li')].map((li) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = li.textContent.trim();
-    return listItem;
-  });
+  const createCellContent = (teaser) => {
+    const img = teaser.querySelector('img');
+    const heading = teaser.querySelector('h3, h4');
+    const link = teaser.querySelector('a');
+    const paragraph = teaser.querySelector('p:not(:empty)');
 
-  const firstImageElement = element.querySelectorAll('img')[0];
-  const firstImage = document.createElement('img');
-  if (firstImageElement) {
-    firstImage.src = firstImageElement.src;
-    firstImage.alt = firstImageElement.alt;
-  }
+    const content = [];
+    if (img) {
+      const imageElement = document.createElement('img');
+      imageElement.src = img.src;
+      imageElement.alt = img.alt || '';
+      content.push(imageElement);
+    }
 
-  const secondImageElement = element.querySelectorAll('img')[1];
-  const secondImage = document.createElement('img');
-  if (secondImageElement) {
-    secondImage.src = secondImageElement.src;
-    secondImage.alt = secondImageElement.alt;
-  }
+    if (heading) {
+      const headingElement = document.createElement(heading.tagName.toLowerCase());
+      headingElement.textContent = heading.textContent.trim();
+      content.push(headingElement);
+    }
 
-  const liveLinkElement = element.querySelector('a');
-  const liveLink = document.createElement('div');
-  if (liveLinkElement) {
-    const link = document.createElement('a');
-    link.href = liveLinkElement.href;
-    link.textContent = liveLinkElement.textContent.trim();
-    liveLink.appendChild(link);
-  }
+    if (paragraph) {
+      const paragraphElement = document.createElement('p');
+      paragraphElement.textContent = paragraph.textContent.trim();
+      content.push(paragraphElement);
+    }
 
-  const previewBlock = document.createElement('div');
-  const previewLink = document.createElement('a');
-  previewLink.href = 'https://word-edit.officeapps.live.com/';
-  previewLink.textContent = 'Preview';
-  previewBlock.appendChild(previewLink);
+    if (link) {
+      const linkElement = document.createElement('a');
+      linkElement.href = link.href;
+      linkElement.textContent = link.textContent.trim();
+      content.push(linkElement);
+    }
 
-  // Prepare cells array dynamically by breaking content appropriately into rows and columns
-  const listColumn = document.createElement('ul');
-  listColumn.append(...listItems);
+    return content;
+  };
 
-  const cells = [
-    headerRow, // Header row
-    [listColumn, firstImage], // Second row: structured list items and first image in separate columns
-    [secondImage, liveLink], // Third row: second image and live link grouped properly in columns
-    ['Preview', previewBlock], // Fourth row: properly designed preview layout
-  ];
+  const teasers = element.querySelectorAll('.teasers__teaser');
+  const rows = Array.from(teasers).map(createCellContent);
 
-  // Create the table using WebImporter.DOMUtils.createTable()
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  const tableData = [['Columns'], rows];
+  const blockTable = WebImporter.DOMUtils.createTable(tableData, document);
 
-  // Replace the original element
-  element.replaceWith(table);
+  element.replaceWith(hr, blockTable);
 }
