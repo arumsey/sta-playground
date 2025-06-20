@@ -3,6 +3,10 @@
   "lastCrawled": "https://business.x.com/",
   "urls": [
     {
+      "url": "https://business.x.com/en/basics/intro-x-for-business",
+      "source": "MANUAL"
+    },
+    {
       "url": "https://business.x.com/en",
       "source": "CRAWL"
     },
