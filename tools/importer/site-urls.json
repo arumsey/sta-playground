@@ -4,115 +4,171 @@
   "urls": [
     {
       "url": "https://business.x.com/en/basics/intro-x-for-business",
-      "source": "MANUAL"
+      "source": "MANUAL",
+      "id": "05cf3c74edad776bac6c2aec3d4c9548b1bb1a66",
+      "targetPath": "/en/basics/intro-x-for-business"
     },
     {
       "url": "https://business.x.com/en",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "4dc7c15e0b8feb63b4b5729463fbddaf78f72be7",
+      "targetPath": "/en"
     },
     {
       "url": "https://business.x.com/en/advertising",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "ae0526ea7b15a248728019520d069ef9bb21042a",
+      "targetPath": "/en/advertising"
     },
     {
       "url": "https://business.x.com/en/advertising?ref=en-btc-help-troubleshooting-how-it-works-footer",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "d45416d928a70e28009854ecca52a76613596765",
+      "targetPath": "/en/advertising"
     },
     {
       "url": "https://business.x.com/en/advertising/ads-best-practices",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "ab6f12dc9a89e9e225fb1369a0638b510482114a",
+      "targetPath": "/en/advertising/ads-best-practices"
     },
     {
       "url": "https://business.x.com/en/advertising/analytics",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "3ac800d770a87b5e3a69ed751730e0d1b2287b93",
+      "targetPath": "/en/advertising/analytics"
     },
     {
       "url": "https://business.x.com/en/advertising/branded-notifications",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "ad7e4babdb2af12ad5e13e6f88d66f104960d5f7",
+      "targetPath": "/en/advertising/branded-notifications"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-creator",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "1119e3cdbc709438b8ee7d425700a7ec65df0ae5",
+      "targetPath": "/en/advertising/campaign-creator"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "8ac5be202abe4e0a3cef22f05af9cd147aa8df02",
+      "targetPath": "/en/advertising/campaign-types"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/amplify-pre-roll",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "0e68abe26c479d81af03ae418344820ff152532f",
+      "targetPath": "/en/advertising/campaign-types/amplify-pre-roll"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/app-installs",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "547dae3db227b599e4e7ace70c566240d01167f9",
+      "targetPath": "/en/advertising/campaign-types/app-installs"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/app-reengagements",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "c8d58b251bf14f09be7c306d54832ae669a0e089",
+      "targetPath": "/en/advertising/campaign-types/app-reengagements"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/engagements",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "4551c396c4f850838a52269f8cfd63eb41d40b60",
+      "targetPath": "/en/advertising/campaign-types/engagements"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/reach",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "6e9bbd15383a9b7d51e7d7b0c621b5b973e605fd",
+      "targetPath": "/en/advertising/campaign-types/reach"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/video-views",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "a4719998d6ee114b7f8d2915126d753febd15fbc",
+      "targetPath": "/en/advertising/campaign-types/video-views"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/website-conversions",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "d2d941a76d8ab884de55b54ee5f24ef2a25bd89e",
+      "targetPath": "/en/advertising/campaign-types/website-conversions"
     },
     {
       "url": "https://business.x.com/en/advertising/campaign-types/website-traffic",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "b122711a9f7a3890c8fd6771421fb31fac813d0a",
+      "targetPath": "/en/advertising/campaign-types/website-traffic"
     },
     {
       "url": "https://business.x.com/en/advertising/carousels",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "58eef99cbd58f6bfbc5d857e2ed0fbc8153b48b1",
+      "targetPath": "/en/advertising/carousels"
     },
     {
       "url": "https://business.x.com/en/advertising/formats",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "c17a0205ad86fae4f5bb316fe232ac1229510622",
+      "targetPath": "/en/advertising/formats"
     },
     {
       "url": "https://business.x.com/en/advertising/get-started-with-twitter-ads",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "e6f03a6c9def0580704294851f8bfe2ec9cfdfc5",
+      "targetPath": "/en/advertising/get-started-with-twitter-ads"
     },
     {
       "url": "https://business.x.com/en/advertising/measurement",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "20729bcee31f621288c65f1aa492dd4d9bc1b808",
+      "targetPath": "/en/advertising/measurement"
     },
     {
       "url": "https://business.x.com/en/advertising/partners/find-a-partner",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "545dc26c9d657c1ef2a6a3dbfe098e753354241e",
+      "targetPath": "/en/advertising/partners/find-a-partner"
     },
     {
       "url": "https://business.x.com/en/advertising/partners/find-a-partner/adaptly",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "0259b1daf9e7ac55511228ea025551e4de407a5f",
+      "targetPath": "/en/advertising/partners/find-a-partner/adaptly"
     },
     {
       "url": "https://business.x.com/en/advertising/partners/find-a-partner/amobee",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "168af8313417995e160bb3f76cd02cd183b16d01",
+      "targetPath": "/en/advertising/partners/find-a-partner/amobee"
     },
     {
       "url": "https://business.x.com/en/advertising/partners/find-a-partner/social-database",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "f816ee0360c9a435ed4bea77b99e20d444ba0f44",
+      "targetPath": "/en/advertising/partners/find-a-partner/social-database"
     },
     {
       "url": "https://business.x.com/en/advertising/partners/find-a-partner/wiseblue",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "3780e69aa957f809f1c055a1320875501aca6a3a",
+      "targetPath": "/en/advertising/partners/find-a-partner/wiseblue"
     },
     {
       "url": "https://business.x.com/en/advertising/targeting",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "790aee4fe4326889819e13f8e80d35510af7bc3d",
+      "targetPath": "/en/advertising/targeting"
     },
     {
       "url": "https://business.x.com/en/advertising/tweet-composer",
-      "source": "CRAWL"
+      "source": "CRAWL",
+      "id": "96ab8e4049f8c32d5c057397eb833d641b076aa2",
+      "targetPath": "/en/advertising/tweet-composer"
     }
   ]
 }
