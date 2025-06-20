@@ -1,118 +1,23 @@
 {
-  "originUrl": "https://business.x.com",
-  "lastCrawled": "https://business.x.com/",
+  "originUrl": "https://www.pfa.dk",
   "urls": [
     {
-      "url": "https://business.x.com/en/basics/intro-x-for-business",
-      "source": "MANUAL"
+      "url": "https://www.pfa.dk/andet/din-kundeoplevelse",
+      "source": "MANUAL",
+      "targetPath": "/andet/din-kundeoplevelse",
+      "id": "84e45ae40456e994345273588d23b3ce9722ad87"
     },
     {
-      "url": "https://business.x.com/en",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising?ref=en-btc-help-troubleshooting-how-it-works-footer",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/ads-best-practices",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/analytics",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/branded-notifications",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-creator",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/amplify-pre-roll",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/app-installs",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/app-reengagements",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/engagements",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/reach",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/video-views",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/website-conversions",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/campaign-types/website-traffic",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/carousels",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/formats",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/get-started-with-twitter-ads",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/measurement",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/partners/find-a-partner",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/partners/find-a-partner/adaptly",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/partners/find-a-partner/amobee",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/partners/find-a-partner/social-database",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/partners/find-a-partner/wiseblue",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/targeting",
-      "source": "CRAWL"
-    },
-    {
-      "url": "https://business.x.com/en/advertising/tweet-composer",
-      "source": "CRAWL"
+      "url": "https://www.pfa.dk/companies/carlsberg",
+      "source": "MANUAL",
+      "targetPath": "/companies/carlsberg",
+      "id": "5d7a188dfc2d92c14aca557b62dbc5d12b69f28b"
     }
-  ]
+  ],
+  "crawlOptions": {
+    "strategy": "manual",
+    "strategiesAttempted": [
+      "MANUAL"
+    ]
+  }
 }
